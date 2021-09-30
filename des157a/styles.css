@@ -1,11 +1,12 @@
 body {
-    font-family: Roboto, serif;
+    font-family: 'Gaegu', serif;
     margin: auto;
     padding: 0;
     max-width: 1366px;
     min-width: 900px;
     height: 768px;
     width: 100%;
+    background-color: #FFFEF2;
 }
 
 
@@ -31,7 +32,6 @@ a {
 /* HEADER */
 
 header {
-    border: 2px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,19 +48,14 @@ header {
 
 #banner {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 1100px;
     height: 250px;
-    border: 2px solid blue;
-}
-
-#circle {
-    width: 225px;
-    height: 225px;
-    border: 2px solid purple;
-    border-radius: 50%;
-    text-align: center;
-    margin-top: 10px;
+    color: white;
+    background-color: #31343a;
+    border: 10px solid #B18D56;
 }
 
 
@@ -68,7 +63,6 @@ header {
 
 main {
     margin-top: 20px;
-    border: 2px solid black;
     display: flex;
     justify-content: space-evenly;
     height: 500px;
@@ -76,20 +70,21 @@ main {
     padding-bottom: 20px;
 }
 
-
-/*
-main section:first-of-type {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 2px solid red;
-}*/
-
 section {
     width: 300px;
-    border: 2px solid gray;
     display: flex;
     flex-direction: column;
+    background: rgb(79,116,77);
+    background: radial-gradient(circle, rgba(79,116,77,1) 0%, rgba(52,107,49,1) 100%);
+    border: 10px solid #B18D56;
+}
+
+section h2 {
+    font-size: 28px;
+}
+
+section h2, section ul a {
+    color: white;
 }
 
 section ul {
@@ -99,19 +94,33 @@ section ul {
 section ul,
 h2 {
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 section ul li {
     margin-top: 10px;
     margin-bottom: 20px;
+    transition: background-color 0.4s;
+    font-size: 18px;
+}
+
+section ul a:hover {
+    border-bottom: 2px solid white;
+}
+
+@keyframes uline {
 }
 
 
 /* FOOTER */
 
 footer {
-    border: 2px solid red;
-    margin-top: 20px;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+
+    background-color: #f5Eacf;
+    margin: 0;
+    padding: 0;
 }
 
 footer nav {
