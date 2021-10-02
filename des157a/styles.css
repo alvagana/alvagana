@@ -99,9 +99,8 @@ h1, #h1-outline {
 }
 
 #cat:hover {
-    animation: showCat 2s alternate;
+    animation: showCat 2s;
     animation-fill-mode: forwards;
-    animation-direction: both;
     cursor: pointer;
 }
 
