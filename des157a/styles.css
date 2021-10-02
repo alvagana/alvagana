@@ -1,12 +1,12 @@
 body {
-    font-family: 'Gaegu', serif;
+    font-family: 'Open Sans Condensed', serif;
     margin: auto;
     padding: 0;
     max-width: 1366px;
     min-width: 900px;
     height: 768px;
     width: 100%;
-    background: skyblue;
+    background-image: url('./brickwall.png');
 }
 
 /* I googled how to get rid of the indentation of list elements. https://stackoverflow.com/questions/13938975/how-to-remove-indentation-from-an-unordered-list-item/13939142 */
@@ -108,7 +108,7 @@ header {
     left: 70px;
 }
 
-#meow {
+.meow {
     position: relative;
     bottom: 80px;
     left: 30px;
@@ -172,12 +172,58 @@ header {
     border-bottom: 80px solid lightgray;
 }
 
-#plant {
+#coffee {
     position: relative;
-    bottom: -58px;
+    bottom: 342px;
     right: 25px;
 }
 
+.steam {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    animation: steam 1.5s ease-out infinite;
+}
+
+#steam-one {
+    position: relative;
+    bottom: 30px;
+    left: 155px;
+}
+
+#steam-two {
+    position: relative;
+    bottom: 130px;
+    left: 155px;
+    animation-delay: 0.5s;
+}
+
+#steam-three {
+    position: relative;
+    bottom: 230px;
+    left: 155px;
+    animation-delay: 0.75s;
+}
+
+#steam-four {
+    position: relative;
+    bottom: 330px;
+    left: 155px;
+    animation-delay: 1s;
+}
+
+@keyframes steam {
+    from {
+        opacity: 0.5;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0.05;
+        transform: translateY(-50px) scale(2);
+    }
+}
 
 
 #shelf {
