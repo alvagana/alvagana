@@ -10,7 +10,6 @@ body {
 }
 
 /* I googled how to get rid of the indentation of list elements. https://stackoverflow.com/questions/13938975/how-to-remove-indentation-from-an-unordered-list-item/13939142 */
-
 ul {
     list-style: none;
     padding-left: 0;
@@ -27,42 +26,7 @@ a {
     font-weight: 300;
 }
 
-h1, #h1-outline {
-    font-size: 86px;
-    color: black;
-    font-family: 'Birthstone Bounce', cursvie;
-}
-
-#h1-outline {
-    position: relative;
-    font-weight: bold;
-    bottom: 152px;
-    left: 5px;
-    color: white;
-    z-index: -1;
-}
-
-@keyframes colorchange {
-    0% {
-        text-shadow: 0px 0px 15px turquoise;
-    }
-    25% {
-        text-shadow: 0px 0px 15px orange;
-    }
-    50% {
-        text-shadow: 0px 0px 15px green
-    }
-    75% {
-        text-shadow: 0px 0px 15px red;
-    }
-    100% {
-        text-shadow: 0px 0px 15px turquoise;
-    }
-}
-
-
 /* HEADER */
-
 header {
     display: flex;
     flex-direction: column;
@@ -81,21 +45,36 @@ header {
     justify-content: end;
 }
 
-#banner-content {
+#banner div:nth-child(1) {
     display: flex;
     justify-content: space-between;
 }
-#banner-content section {
+#banner div:nth-child(1) section {
     width: 30%;
     height: 200px;
     text-align: center;
 }
 
-#banner-content section div {
+#banner div:nth-child(1) section div {
     margin-top: 75px;
 }
 
-#class-tag {
+h1, #h1-outline {
+    font-size: 86px;
+    color: black;
+    font-family: 'Birthstone Bounce', cursvie;
+}
+
+#h1-outline {
+    position: relative;
+    font-weight: bold;
+    bottom: 152px;
+    left: 5px;
+    color: white;
+    z-index: -1;
+}
+
+#banner div:nth-child(1) section:nth-child(3) {
     display: flex;
     align-items: end;
     position: relative;
@@ -126,30 +105,6 @@ header {
     cursor: pointer;
 }
 
-@keyframes showCat {
-    0% {
-        bottom: 0px;
-    }
-    100% {
-        bottom: 35px;
-    }
-}
-
-@keyframes meow {
-    0% {
-        opacity: 0;
-    }
-    20% {
-        opacity: 1;
-    }
-    25% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
 #rectangle {
     width: 250px;
     height: 80px;
@@ -158,13 +113,15 @@ header {
     display: flex;
     justify-content: center;
 }
+
 #rectangle p {
     width: 75%;
     text-align: center;
 }
+
 #triangle-right {
     position: relative;
-    right: 11px;
+    right: 9.4px;
     width: 0;
     height: 0;
     border-left: 20px solid rgba(0,0,0,0);
@@ -214,6 +171,12 @@ header {
     animation-delay: 1s;
 }
 
+#shelf {
+    border-bottom: 30px solid #eabf7c;
+    box-shadow: 1px 13px 8px -4px rgba(0,0,0,0.25)
+}
+
+/* ANIMATIONS / KEYFRAMES */
 @keyframes steam {
     from {
         opacity: 0.5;
@@ -225,10 +188,28 @@ header {
     }
 }
 
+@keyframes showCat {
+    0% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: 35px;
+    }
+}
 
-#shelf {
-    border-bottom: 30px solid #eabf7c;
-    box-shadow: 1px 13px 8px -4px rgba(0,0,0,0.25)
+@keyframes meow {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 
@@ -255,12 +236,13 @@ main section h2 {
     font-size: 28px;
 }
 
-main section h2 span {
-    border-bottom: 3px solid white;
+main section h2, 
+section a {
+    color: white;
 }
 
-main section h2, section ul a {
-    color: white;
+main section:nth-child(3) a {
+    margin-left: 10px;
 }
 
 main section ul {
@@ -280,31 +262,6 @@ main section ul li {
     overflow: hidden;
 }
 
-
-main section ul a:hover {
-    border-bottom: 1px solid white;
-}
-
-.left-string {
-    width: 140px;
-    height: 5px;
-    background: lightgray;
-    transform: rotate(-30deg);
-    position: relative;
-    bottom: 40px;
-    right: 10px;
-}
-
-.right-string {
-    width: 140px;
-    height: 5px;
-    background: lightgray;
-    transform: rotate(30deg);
-    position: relative;
-    bottom: 45px;
-    left: 120px;
-}
-
 .circle {
     width: 15px;
     height: 15px;
@@ -317,46 +274,25 @@ main section ul a:hover {
 
 
 /* FOOTER */
+footer, 
+footer nav, 
+footer nav ul {
+    display: flex;
+}
+
+footer, 
+footer nav {
+    justify-content: center;
+}
 
 footer {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
 }
 
-footer nav {
-    display: flex;
-    justify-content: center;
-}
-
 footer nav ul {
-    display: flex;
-    justify-content: space-between;
-    width: 400px;
-}
-
-#table {
-    width: 800px;
-    height: 20px;
-    background-color: #eabf7c;
-}
-
-#table-leg-1 {
-    width: 40px;
-    height: 40px;
-    background-color: #eabf7c;
-    position: relative;
-    left: 20px;
-}
-
-#table-leg-2 {
-    width: 40px;
-    height: 40px;
-    background-color: #eabf7c;
-    position: relative;
-    left: 740px;
-    bottom: 40px;
+    justify-content: space-around;
+    width: 500px;
 }
