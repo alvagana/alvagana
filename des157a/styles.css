@@ -9,7 +9,11 @@ body {
     background-image: url('./brickwall.png');
 }
 
-/* I googled how to get rid of the indentation of list elements. https://stackoverflow.com/questions/13938975/how-to-remove-indentation-from-an-unordered-list-item/13939142 */
+/* 
+I googled how to get rid of the 
+indentation of list elements. 
+https://stackoverflow.com/questions/13938975/how-to-remove-indentation-from-an-unordered-list-item/13939142 
+*/
 ul {
     list-style: none;
     padding-left: 0;
