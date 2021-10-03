@@ -49,18 +49,25 @@ header {
     justify-content: end;
 }
 
-#banner div:nth-child(1) {
+#banner > div:nth-child(1) {
     display: flex;
     justify-content: space-between;
 }
-#banner div:nth-child(1) section {
+#banner-container > div {
     width: 30%;
     height: 200px;
     text-align: center;
 }
 
-#banner div:nth-child(1) section div {
+#banner-container > div div {
     margin-top: 75px;
+}
+
+#banner-container > div:nth-child(3) {
+    display: flex;
+    align-items: end;
+    position: relative;
+    left: 10px;
 }
 
 h1, #h1-outline {
@@ -76,13 +83,6 @@ h1, #h1-outline {
     left: 5px;
     color: white;
     z-index: -1;
-}
-
-#banner div:nth-child(1) section:nth-child(3) {
-    display: flex;
-    align-items: end;
-    position: relative;
-    left: 10px;
 }
 
 #cat {
@@ -291,7 +291,7 @@ footer nav {
 footer {
     flex-direction: column;
     align-items: center;
-    margin: 0;
+    margin-top: 20px;
     padding: 0;
 }
 
