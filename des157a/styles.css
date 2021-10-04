@@ -265,17 +265,6 @@ main section ul li {
     overflow: hidden;
 }
 
-.circle {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: black;
-    position: relative;
-    bottom: 92.5px;
-    left: 117.5px;
-}
-
-
 /* FOOTER */
 footer, 
 footer nav, 
