@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 1</title>
+</head>
+
+<body>
+    <h1>Experiment 1</h1>
+    <h2>Open console to see the JavaScript code!</h2>
+
+    <script>
+        // This program will take a list of strings and reverse each of the strings in the list.
+        // This is done using nested for loops.
+        console.log("This script will reverse all the strings in an array of strings.");
+
+        var originalStrings = ["design", "computer", "science", "davis", "coding"];
+        var reversedStrings = originalStrings
+
+        // Printing the original list of strings
+        console.log(originalStrings);
+
+        // Iterating through each string, then iterating through each letter of the string backwards
+        // Storing the letters into a new variable, and then replacing the string with the reversed string
+        for (var i = 0; i < reversedStrings.length; i++) {
+            var reversedString = "";
+            for (var j = reversedStrings[i].length - 1; j >= 0; j--) {
+                reversedString += reversedStrings[i][j];
+            }
+            reversedStrings[i] = reversedString
+        }
+
+        // Printing the list of reversed strings
+        console.log(reversedStrings);
+    </script>
+</body>
+
+</html>
