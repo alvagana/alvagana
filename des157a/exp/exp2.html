@@ -6,11 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experiment 2</title>
+    <style>
+        .color {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            border: 2px solid black;
+        }
+        
+        section {
+            display: flex;
+        }
+        
+        .red {
+            background-color: red;
+        }
+        
+        .blue {
+            background-color: blue;
+        }
+        
+        .green {
+            background-color: green;
+        }
+        
+        .yellow {
+            background-color: yellow;
+        }
+        
+        #id {
+            background-color: gray;
+        }
+    </style>
 </head>
 
 <body>
     <!-- The element that we will use querySelector on to display the resulting message -->
     <h1 id="msg"></h1>
+    <main>
+        <section>
+            <p>The random color is: </p>
+
+            <div class="color red"></div>
+            <div class="color blue"></div>
+            <div class="color green"></div>
+            <div class="color yellow"></div>
+        </section>
+    </main>
 
     <script>
         // Color array that we will randomly pick from 
@@ -28,8 +70,11 @@
         if (input.toLowerCase() == colors[randomColor]) {
             msg.textContent = "*high five* you are definitely cool";
         } else {
-            msg.textContent = "sorry, you got it wrong, but you're still cool. refresh to try again";
+            msg.textContent = `sorry, you got it wrong--you guessed ${input}, but you're still cool. refresh to try again`;
         }
+
+        var actualColor = document.querySelector(`.${colors[randomColor]}`);
+        actualColor.style.boxShadow = `0px 0px 2.5px 2.5px ${colors[randomColor]}`;
     </script>
 </body>
 
