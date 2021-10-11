@@ -9,7 +9,28 @@
 </head>
 
 <body>
+    <!-- The element that we will use querySelector on to display the resulting message -->
+    <h1 id="msg"></h1>
 
+    <script>
+        // Color array that we will randomly pick from 
+        var colors = ["red", "blue", "green", "yellow"];
+        var randomColor = Math.floor(Math.random() * 4);
+
+        // Prompting the user for user input
+        var input = prompt("I'm thinking of a color (red, blue, green, yellow)..if you guess it right, you get a high five.", "none");
+
+        // Using querySelector to manipulate the DOM
+        var msg = document.querySelector('#msg');
+
+        // If the input is the same as the random color, then that person gets a high five
+        // Otherwise, they don't :( but they can refresh to try again
+        if (input.toLowerCase() == colors[randomColor]) {
+            msg.textContent = "*high five* you are definitely cool";
+        } else {
+            msg.textContent = "sorry, you got it wrong, but you're still cool. refresh to try again";
+        }
+    </script>
 </body>
 
 </html>
