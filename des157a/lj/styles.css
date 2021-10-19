@@ -4,12 +4,18 @@ body {
     width: 1366px;
     height: 750px;
     font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
 }
 
-main {
+article {
     display: flex;
     height: 100%;
     margin-top: 20px;
+}
+
+#journal1, #journal2 {
+    display: flex;
 }
 
 h1 {
@@ -23,16 +29,16 @@ section {
     height: 100%;
 }
 
-article {
-    width: 70%;
-    font-size: 18px;
-}
-
 .article-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-left: 1px solid gray;
+}
+
+.article-container p {
+    width: 70%;
+    font-size: 18px;
 }
 .section2 {
     height: 80%;
@@ -73,9 +79,18 @@ article {
 
 section:first-child {
     display: flex;
-
 }
 
+#img1, #img3 {
+    width: 285px; 
+    height: 350px;
+}
+
+#img2, #img4 {
+    width: 225px; 
+    height: 300px; 
+    margin-bottom: 100px;
+}
 
 
 
