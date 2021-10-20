@@ -6,10 +6,6 @@ body {
     margin: auto;
 }
 
-#flex-header {
-    border: 2px solid blue;
-}
-
 section:first-of-type {
     display: flex;
     justify-content: center;
@@ -22,15 +18,10 @@ section {
     border: 2px solid black;
 }
 
-section:last-of-type {
-    border: 2px solid purple;
-}
-
 .form-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 2px solid purple;
     height: 80%;
     margin-top: 10%;
     align-items: center;
@@ -56,4 +47,28 @@ input {
 
 .showing {
     display: block;
+}
+
+
+/* album page view */
+
+.album {
+    margin: 0;
+    padding: 0;
+    width: 1366px;
+    height: 768px;
+    display: flex;
+}
+
+.album ul {
+    border: 2px solid blue;
+    height: 768px;
+    width: 200px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.album div {
+    border: 2px solid red;
+    width: 1166px;
 }

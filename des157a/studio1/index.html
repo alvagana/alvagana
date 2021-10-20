@@ -21,13 +21,14 @@
 </head>
 
 <body>
-    <section class="visible">
-        <div id="flex-header">
+    <section class="showing">
+        <div id="flex-header" class="showing">
             <h1>Find yourself in music.</h1>
             <h2>Looking for music? We'll give it to you.</h2>
         </div>
     </section>
-    <section class="visible">
+
+    <section class="showing">
         <div class="form-container">
             <div>
                 <label for="name1">What's your name?</label>
@@ -53,8 +54,27 @@
         </div>
     </section>
 
-    <section class="hidden">
-    </section>
+    <div class="hidden">
+        <div class="album">
+            <ul>
+                <li>Home</li>
+                <li>Search</li>
+                <li>Your Library</li>
+            </ul>
+            <div>
+                <div>
+                    <p>album</p>
+                    <h2>{Album name goes here}</h2>
+                    <p>an album perfect for {something here}</p>
+                </div>
+                <div>{button controls here}</div>
+                <table>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
