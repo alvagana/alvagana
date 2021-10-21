@@ -8,6 +8,10 @@ body {
     flex-direction: column;
 }
 
+.left-main, .right-main {
+    border: 10px solid red;
+}
+
 article {
     display: flex;
     height: 100%;
