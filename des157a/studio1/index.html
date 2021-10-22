@@ -32,10 +32,10 @@
     </section>
 
     <section class="showing">
-        <div class="form-container">
+        <form id="form">
                 <div>
                     <label for="name1">What's your name?</label>
-                    <input id="name1" type="text" placeholder="Type your name here.."required/>
+                    <input id="name1" type="text" placeholder="Type your name here.." required/>
                 </div>
                 <div>
                     <label for="name2">What's your favorite genre?</label>
@@ -58,11 +58,35 @@
                     <label for="name5">Best friend's name?</label>
                     <input id="name5" type="text" placeholder="ex: Alvin" required/>
                 </div>
-                <button id="btn-next" type="button"><span>NEXT</span></button>
-        </div>
+                <input id="btn-next" type="submit" value="NEXT" >
+        </form>
+
+        <form id="form2" class="hidden">
+            <div>
+                <label for="name6">Favorite activity?</label>
+                <input id="name6" type="text" placeholder="ex: Swimming, Dancing, Running..." required/>
+            </div>
+            <div>
+                <label for="name7">Late night snack?</label>
+                <input id="name7" type="text" placeholder="ex: Hot Cheetos, In-N-Out..." required/>
+            </div>
+            <div>
+                <label for="name8">If you had free tickets to see ANYONE, who would it be?</label>
+                <input id="name8" type="text" placeholder="ex: Justin Timberlake, Clairo.." required/>
+            </div>
+            <div>
+                <label for="name9">You just won a million dollars! What's the first thing you buy?</label>
+                <input id="name9" type="text" placeholder="ex: Lamborghini, House, Boba.." required/>
+            </div>
+            <div>
+                <label for="name10">You have a coupon for a free topping on your pizza. What are you rollin' with?</label>
+                <input id="name10" type="text" placeholder="ex: Pepperoni, Pineapple, Bacon..." required/>
+            </div>
+            <input id="btn-submit" type="submit" value="SUBMIT" >
+        </form>
     </section>
 
-    <div class="hidden">
+    <div id="music-page" class="hidden">
         <div class="album">
             <div class="sidebar">
                 <ul>
@@ -95,8 +119,8 @@
                     <div>               
                         <p>ALBUM</p>
                         <h2>{Album name goes here}</h2>
-                        <p>an album perfect for {something here}</p>
-                        <p>2Jeanz</p>
+                        <p>An album perfect for {favorite thing to do} with {favorite animal?}.</p>
+                        <p>2Jeanz • 2021 • 8 songs, 40 min 39 sec</p>
                     </div>
                 </div>
                 <div class="music-info-main">
@@ -189,14 +213,6 @@
         </div>
     </div>
 
-    <script>
-        let nextButton = document.getElementById("btn-next");
-        nextButton.addEventListener("click", function() {
-            console.log("hello");
-            let body = document.querySelector("body");
-            body.style.width = "1466px";
-        })
-    </script>
 
 </body>
 

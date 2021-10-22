@@ -1,4 +1,4 @@
-/* revisit */
+/* FONTS */
 
 @font-face {
     font-family: Gotham-Light;
@@ -86,7 +86,7 @@ section {
 }
 
 /* FORM */
-.form-container {
+form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -95,15 +95,21 @@ section {
     align-items: center;
 }
 
-.form-container div {
+form div {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
 
-.form-container div label {
+form div label {
     color: white;
     font-size: 18px;
+}
+
+#form2 {
+    flex-direction: column;
+    align-items: center;
+    display: none;
 }
 
 select {
@@ -127,7 +133,7 @@ input:focus {
     border-radius: 0px;
 }
 
-#btn-next {
+#btn-next, #btn-submit {
     width: 50%;
     height: 50px;
     letter-spacing: 2px;

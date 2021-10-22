@@ -3,10 +3,24 @@
     'use strict';
     console.log("reading js");
 
-    let nextBtn = document.getElementById("btn-next");
-    nextBtn.addEventListener('click', function() {
+    let form = document.querySelector('#form');
+    let form2 = document.querySelector('#form2');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        form.classList.add("hidden");
+        
+        form2.style.display = "flex";
+    })
+
+    form2.addEventListener('submit', function(event){
+        event.preventDefault();
+
+        let body = document.querySelector("body");
+        body.style.width = "1466px";
+
         let showingElements = document.querySelectorAll(".showing");
-        let hidden = document.querySelector(".hidden");
+        let musicPage = document.querySelector("#music-page");
         let firstSection = document.querySelector("body section:first-of-type");
 
         for (let i = 0; i < showingElements.length; i++) {
@@ -15,7 +29,6 @@
 
         // Won't change in the for loop for some reason? :O
         firstSection.style.display = "none";
-        hidden.classList.replace('hidden', 'showing');
-
+        musicPage.classList.replace('hidden', 'showing');
     })
 })();
