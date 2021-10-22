@@ -31,6 +31,11 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 /* LEFT SIDE */
 section:first-of-type {
     display: flex;
@@ -182,7 +187,7 @@ input:focus {
 .sidebar {
     height: 760px;
     width: 300px;
-    color: white;
+    color: #BABABA;
     font-family: Gotham-Medium;
     font-size: 16px;
 }
@@ -200,6 +205,12 @@ input:focus {
 .sidebar ul li {
     margin-top: 40px;
 }
+
+.sidebar ul li:hover {
+    color: white;
+    cursor: pointer;
+}
+
 
 .music-info {
     width: 1166px;

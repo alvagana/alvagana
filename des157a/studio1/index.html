@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <section class="showing ">
+    <section class="showing">
         <div id="flex-header" class="showing">
             <h1>Find yourself <br> in music.</h1>
             <h2>Looking for music? We'll give it to you.</h2>
@@ -34,12 +34,12 @@
     <section class="showing">
         <form id="form">
                 <div>
-                    <label for="name1">What's your name?</label>
-                    <input id="name1" type="text" placeholder="Type your name here.." required/>
+                    <label for="name">What's your name?</label>
+                    <input id="name" type="text" placeholder="Type your name here.." required/>
                 </div>
                 <div>
-                    <label for="name2">What's your favorite genre?</label>
-                    <select name="name2" id="genre">
+                    <label for="genre">What's your favorite genre?</label>
+                    <select name="genre" id="genre">
                         <option value="hip-hop/rap">Hip-hop/rap</option>
                         <option value="r&b">R&B</option>
                         <option value="rock">Rock</option>
@@ -47,40 +47,40 @@
                     </select>
                 </div>
                 <div>
-                    <label for="name3">Favorite place to visit?</label>
-                    <input id="name3" type="text" placeholder="ex: Japan, Hawaii, Costa Rica.." required/>
+                    <label for="favorite-place">Favorite place to visit?</label>
+                    <input id="favorite-place" type="text" placeholder="ex: Japan, Hawaii, Costa Rica.." required/>
                 </div>
                 <div>
-                    <label for="name4">A reason to be late to class?</label>
-                    <input id="name4" type="text" placeholder="ex: I missed the bus.." required/>
+                    <label for="late-to-class">A reason to be late to class?</label>
+                    <input id="late-to-class" type="text" placeholder="ex: I missed the bus.." required/>
                 </div>
                 <div>
-                    <label for="name5">Best friend's name?</label>
-                    <input id="name5" type="text" placeholder="ex: Alvin" required/>
+                    <label for="best-friend">Best friend's name?</label>
+                    <input id="best-friend" type="text" placeholder="ex: Alvin" required/>
                 </div>
                 <input id="btn-next" type="submit" value="NEXT" >
         </form>
 
         <form id="form2" class="hidden">
             <div>
-                <label for="name6">Favorite activity?</label>
-                <input id="name6" type="text" placeholder="ex: Swimming, Dancing, Running..." required/>
+                <label for="favorite-activity">Favorite activity?</label>
+                <input id="favorite-activity" type="text" placeholder="ex: Swimming, Dancing, Running..." required/>
             </div>
             <div>
-                <label for="name7">Late night snack?</label>
-                <input id="name7" type="text" placeholder="ex: Hot Cheetos, In-N-Out..." required/>
+                <label for="snack">Late night snack?</label>
+                <input id="snack" type="text" placeholder="ex: Hot Cheetos, In-N-Out..." required/>
             </div>
             <div>
-                <label for="name8">If you had free tickets to see ANYONE, who would it be?</label>
-                <input id="name8" type="text" placeholder="ex: Justin Timberlake, Clairo.." required/>
+                <label for="free-ticket-person">If you had free tickets to see ANYONE, who would it be?</label>
+                <input id="free-ticket-person" type="text" placeholder="ex: Justin Timberlake, Clairo.." required/>
             </div>
             <div>
-                <label for="name9">You just won a million dollars! What's the first thing you buy?</label>
-                <input id="name9" type="text" placeholder="ex: Lamborghini, House, Boba.." required/>
+                <label for="million-dollar-buy">You just won a million dollars! What's the first thing you buy?</label>
+                <input id="million-dollar-buy" type="text" placeholder="ex: Lamborghini, House, Boba.." required/>
             </div>
             <div>
-                <label for="name10">You have a coupon for a free topping on your pizza. What are you rollin' with?</label>
-                <input id="name10" type="text" placeholder="ex: Pepperoni, Pineapple, Bacon..." required/>
+                <label for="pizza-topping">You have a coupon for a free topping on your pizza. What are you rollin' with?</label>
+                <input id="pizza-topping" type="text" placeholder="ex: Pepperoni, Pineapple, Bacon..." required/>
             </div>
             <input id="btn-submit" type="submit" value="SUBMIT" >
         </form>
@@ -90,24 +90,24 @@
         <div class="album">
             <div class="sidebar">
                 <ul>
-                    <li>Home</li>
-                    <li>Search</li>
+                    <li id="try-again">Try again!</li>
+                    <li>Search (coming soon..)</li>
                     <li>Your Library</li>
                     <div></div>
                 </ul>
                 <ul>
-                    <li>Going out w friends</li>
-                    <li>Simpin' hour</li>
-                    <li>PARTY ALL DAY BABYYYYY</li>
-                    <li>Work playlist</li>
-                    <li>Lofi chill beats to study to</li>
+                    <li>🌆 Going out w friends</li>
+                    <li>☔️ Simpin' hour</li>
+                    <li>🥳 PARTY ALL DAY BABY</li>
+                    <li>💻 Work playlist</li>
+                    <li>📚 Lofi chill beats to study to</li>
                     <div></div>
                 </ul>
                 <footer>
                     <ul>
-                        <li>Valid HTML</li>
-                        <li>Valid CSS</li>
-                        <li>Email Me</li>
+                        <li><a target="_blank" href="">Valid HTML</a></li>
+                        <li><a target="_blank" href="">Valid CSS</a></li>
+                        <li><a target="_blank" href="mailto:alvagana@ucdavis.edu">Email Me</a></li>
                     </ul>
                 </footer>
             </div>
@@ -119,7 +119,7 @@
                     <div>               
                         <p>ALBUM</p>
                         <h2>{Album name goes here}</h2>
-                        <p>An album perfect for {favorite thing to do} with {favorite animal?}.</p>
+                        <p id="description">An album perfect for {favorite thing to do} with {favorite animal?}.</p>
                         <p>2Jeanz • 2021 • 8 songs, 40 min 39 sec</p>
                     </div>
                 </div>
