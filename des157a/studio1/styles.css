@@ -1,8 +1,13 @@
 /* revisit */
+
+@font-face {
+    font-family: Gotham-Light;
+    src: url(fonts/GothamLight.ttf) format('truetype');
+}
+
 @font-face {
     font-family: Gotham-Book;
     src: url(fonts/GothamBook.ttf) format('truetype');
-    font-style: normal;
 }
 
 @font-face {
@@ -12,7 +17,7 @@
 
 @font-face {
     font-family: Gotham-Bold;
-    src: url(fonts/Gotham-Bold.otf) format('opentype');
+    src: url(fonts/GothamBold.ttf) format('truetype');
 }
 
 body {
@@ -23,6 +28,7 @@ body {
     margin: auto;
     font-family: Gotham-Bold;
     background-color: #191414;
+    overflow-x: hidden;
 }
 
 /* LEFT SIDE */
@@ -163,7 +169,8 @@ input:focus {
     width: 1466px;
     height: 800px;
     display: flex;
-    background: #191414;
+    /* background: #191414; */
+    background: black;
 }
 
 .sidebar {
@@ -191,6 +198,7 @@ input:focus {
 .music-info {
     border: 2px solid red;
     width: 1166px;
+    overflow-y: scroll;
 }
 .music-info-header {
     border: 2px solid blue;
@@ -229,8 +237,33 @@ input:focus {
 }
 
 .fake-button-controls {
-    border: 2px solid white;
     height: 100px;
+    color: white;
+}
+
+.fake-button-controls div {
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+#play-button {
+    width: 60px;
+    height: 60px;
+}
+
+#heart {
+    width: 35px;
+    height: 32.11px;
+}
+
+#dotdotdot {
+    width: 35px;
+    height: 8.75px;
 }
 
 .album table {
@@ -239,16 +272,24 @@ input:focus {
     width: 100%;
     height: 376px;
     color: white;
-    overflow: scroll;
+}
+
+.album table tr th {
+    text-align: left;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 .album table td {
-    border: 2px solid purple;
-    height: 50px;
+    height: 65px;
+    padding-top: 5px;
 }
 
+
+/*
 .scroll {
     overflow-y: auto;
-    height: 376px;
-    width: 1166px;
+    
 }
+*/
