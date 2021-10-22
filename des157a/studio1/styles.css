@@ -196,15 +196,14 @@ input:focus {
 }
 
 .music-info {
-    border: 2px solid red;
     width: 1166px;
     overflow-y: scroll;
 }
 .music-info-header {
-    border: 2px solid blue;
     height: 312px;
     display: flex;
     justify-content: flex-start;
+    background: linear-gradient(180deg, #C2AB6D 0%, #614704 100%);
 }
 
 .album-picture {
@@ -212,11 +211,14 @@ input:focus {
     height: 225px;
     margin-left: 50px;
     margin-top: 44px;
-    border: 2px solid white;
+}
+
+.album-picture img {
+    width: 100%;
+    height: 100%;
 }
 
 .music-info-header div:last-child {
-    border: 2px solid white;
     height: 225px;
     width: 70%;
     margin-left: 22px;
@@ -225,6 +227,7 @@ input:focus {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    font-family: Gotham-Book;
 }
 
 .music-info-header div:last-child h2 {
@@ -234,6 +237,11 @@ input:focus {
 
 .music-info-header div:last-child p {
     line-height: 2px;
+    font-size: 14px;
+}
+
+.music-info-main {
+    background: linear-gradient(180deg, rgba(75, 54, 0, 0.76) 0%, #191414 100%);
 }
 
 .fake-button-controls {
@@ -248,7 +256,7 @@ input:focus {
     align-items: center;
     text-align: center;
     margin-left: 50px;
-    margin-top: 30px;
+    padding-top: 20px;
 }
 
 #play-button {
@@ -267,11 +275,13 @@ input:focus {
 }
 
 .album table {
-    border: 2px solid white;
     height: auto;
-    width: 100%;
+    width: 87.5%;
+    margin-left: 6.25%;
     height: 376px;
     color: white;
+    font-family: Gotham-Light;
+    padding-top: 30px;
 }
 
 .album table tr th {
@@ -281,10 +291,32 @@ input:focus {
     font-weight: 300;
 }
 
+
 .album table td {
     height: 65px;
     padding-top: 5px;
 }
+
+.album table td:nth-child(2) span {
+    font-family: Gotham-Medium;
+}
+
+/*
+.album table th:nth-child(3) {
+    
+}
+
+
+.album table th:nth-child(3) span {
+    
+}
+
+
+.album table td:nth-child(3) span {
+    
+}
+*/
+
 
 
 /*
