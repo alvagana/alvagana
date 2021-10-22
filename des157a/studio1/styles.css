@@ -18,10 +18,11 @@
 body {
     padding: 0;
     display: flex;
-    width: 1450px;
-    height: 780px;
+    width: 1466px;
+    height: 800px;
     margin: auto;
     font-family: Gotham-Bold;
+    background-color: #191414;
 }
 
 /* LEFT SIDE */
@@ -35,7 +36,9 @@ section:first-of-type {
 
 /* RIGHT SIDE */
 section:last-of-type {
-    background-color: #191414;
+    /* background-color: #191414; */
+    background-color: black;
+    
 }
 
 section {
@@ -156,22 +159,40 @@ input:focus {
 /* album page view */
 
 .album {
-    margin: 0;
-    padding: 0;
-    width: 1366px;
-    height: 768px;
+    right: 50px;
+    width: 1466px;
+    height: 800px;
     display: flex;
+    background: #191414;
+}
+.sidebar {
+    height: 760px;
+    width: 300px;
+    color: white;
+    font-family: Gotham-Medium;
+    font-size: 16px;
 }
 
-.album ul {
-    border: 2px solid blue;
-    height: 768px;
-    width: 200px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+.sidebar ul {
+    margin-top: 50px;
 }
 
-.album div {
+.sidebar ul div {
+    border: 0.1px solid #616161;
+    width: 90%;
+    margin-top: 43px;
+}
+
+.sidebar ul li {
+    margin-top: 40px;
+}
+
+.music-info {
     border: 2px solid red;
     width: 1166px;
+}
+
+#abc {
+    border: 2px solid white;
+    width: 100%;
 }

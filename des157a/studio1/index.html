@@ -64,12 +64,30 @@
 
     <div class="hidden">
         <div class="album">
-            <ul>
-                <li>Home</li>
-                <li>Search</li>
-                <li>Your Library</li>
-            </ul>
-            <div>
+            <div class="sidebar">
+                <ul>
+                    <li>Home</li>
+                    <li>Search</li>
+                    <li>Your Library</li>
+                    <div></div>
+                </ul>
+                <ul>
+                    <li>Going out w friends</li>
+                    <li>Simpin' hour</li>
+                    <li>PARTY ALL DAY BABYYYYY</li>
+                    <li>Work playlist</li>
+                    <li>Lofi chill beats to study to</li>
+                    <div></div>
+                </ul>
+                <footer>
+                    <ul>
+                        <li>Valid HTML</li>
+                        <li>Valid CSS</li>
+                        <li>Email Me</li>
+                    </ul>
+                </footer>
+            </div>
+            <div class="music-info">
                 <div>
                     <p>album</p>
                     <h2>{Album name goes here}</h2>
@@ -82,6 +100,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        let nextButton = document.getElementById("btn-next");
+        nextButton.addEventListener("click", function() {
+            console.log("hello");
+            let body = document.querySelector("body");
+            body.style.width = "1466px";
+        })
+    </script>
 
 </body>
 
