@@ -9,7 +9,7 @@
     let tryAgain = document.querySelector('#try-again');
 
     // Form data
-    let name, genre, favoritePlace, lateToClass, bestFriend, favoriteActivity, snack, freeTicketPerson, millionDollarBuy, pizzaTopping;
+    let name, genre, favoritePlace, describeYourself, bestFriend, favoriteActivity, snack, freeTicketPerson, millionDollarBuy, pizzaTopping;
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -20,7 +20,7 @@
         name = document.querySelector("#name").value;
         genre = document.querySelector("#genre").value;
         favoritePlace = document.querySelector("#favorite-place").value;
-        lateToClass = document.querySelector("#late-to-class").value;
+        describeYourself = document.querySelector("#describe-yourself").value;
         bestFriend = document.querySelector("#best-friend").value;
     })
 
@@ -35,7 +35,7 @@
         pizzaTopping = document.querySelector("#pizza-topping").value;
 
         // Setting form values
-        setValues(favoriteActivity, snack, freeTicketPerson, millionDollarBuy, pizzaTopping, name, genre, favoritePlace, lateToClass, bestFriend);
+        setValues(favoriteActivity, snack, freeTicketPerson, millionDollarBuy, pizzaTopping, name, genre, favoritePlace, describeYourself, bestFriend);
 
         // Controlling which screen is being shown
         let body = document.querySelector("body");
@@ -55,9 +55,61 @@
         window.location.reload();
     })
 
-    function setValues(activity, snack, ticketPerson, mdBuy, topping, name, genre, favePlace, lateToClass, friend) {
+    function setValues(activity, snack, ticketPerson, mdBuy, topping, name, genre, favePlace, describe, friend) {
         let activityToLower = activity.toLowerCase();
+        let mdBuyToLower = mdBuy.toLowerCase();
         let desc = document.getElementById("description");
-        desc.textContent = `A ${genre} album perfect for ${activityToLower}.`;
+        let song1 = document.getElementById("song1");
+
+        desc.textContent = `A ${genre} playlist perfect for ${activityToLower} made by your best friend, ${friend}.`;
+        setAlbumCover(genre);
+        setAlbumName(genre, favePlace);
+        setArtist(name);
+        setSongs(genre, describe);
+    }
+
+    function setAlbumCover(g) {
+        let album = document.getElementById("album-cover");
+        if (g == 'rock') {
+            album.src = "rockalbumcover.png";
+        } else if (g == 'pop') {
+            album.src = "popalbumcover.png";
+        } else {
+            album.src = "hiphopcover.png";
+        }
+    }
+
+    function setAlbumName(g, fp) {
+        let albumName = document.getElementById("album-name");
+        if (g == 'rock') {
+            albumName.textContent = "rock album";
+        } else if (g == 'pop') {
+            albumName.textContent = "pop album";
+        } else {
+            albumName.textContent = `Gangsters in ${fp}`;
+        }
+    }
+
+    function setArtist(n) {
+        let artistName = document.getElementById("artist");
+        artistName.textContent = n;
+    }
+
+    function setSongs(g,d) {
+        let rockSongs = [];
+        let hiphopSongs = ['hi', 'hi', 'hi', `Young, Wild, & ${d}`, 'hi', 'In Da Club', '2 KOOL 4 SKOOL', 'Dogz-N-The-Hood'];
+        let popSongs = [];
+        for (let i = 1; i <= 8; i++) {
+            let currentSong = document.getElementById(`song${i}`);
+            currentSong.textContent = hiphopSongs[i-1];
+        }
+
+        if (g == 'rock') {
+            
+        } else if (g == 'pop') {
+            
+        } else {
+            
+        }
     }
 })();

@@ -151,9 +151,11 @@ input:focus {
     transition: 0.5s;
 }
 
-#btn-next:hover {
+#btn-next:hover, #btn-submit:hover {
     background:#1db954;
 }
+
+
 
 #btn-next span {
     position: relative;

@@ -38,21 +38,20 @@
                     <input id="name" type="text" placeholder="Type your name here.." required/>
                 </div>
                 <div>
-                    <label for="genre">What's your favorite genre?</label>
+                    <label for="genre">Out of these three genres, what one do you like the most?</label>
                     <select name="genre" id="genre">
                         <option value="hip-hop/rap">Hip-hop/rap</option>
-                        <option value="r&b">R&B</option>
                         <option value="rock">Rock</option>
                         <option value="pop">Pop</option>
                     </select>
                 </div>
                 <div>
-                    <label for="favorite-place">Favorite place to visit?</label>
+                    <label for="favorite-place">Favorite place to have a vacation?</label>
                     <input id="favorite-place" type="text" placeholder="ex: Japan, Hawaii, Costa Rica.." required/>
                 </div>
                 <div>
-                    <label for="late-to-class">A reason to be late to class?</label>
-                    <input id="late-to-class" type="text" placeholder="ex: I missed the bus.." required/>
+                    <label for="describe-yourself">How would you describe yourself?</label>
+                    <input id="describe-yourself" type="text" placeholder="ex: Adventurous, Quiet, Spontaneous.." required/>
                 </div>
                 <div>
                     <label for="best-friend">Best friend's name?</label>
@@ -114,13 +113,13 @@
             <div class="music-info scroll">
                 <div class="music-info-header">
                     <div class="album-picture">
-                        <img src="lola.png" alt="lola, the pitbull, is licking my face"/>
+                        <img id="album-cover" src="rockalbumcover.png" alt="lola, the pitbull, is licking my face"/>
                     </div>
                     <div>               
-                        <p>ALBUM</p>
-                        <h2>{Album name goes here}</h2>
+                        <p>PLAYLIST</p>
+                        <h2 id="album-name"></h2>
                         <p id="description">An album perfect for {favorite thing to do} with {favorite animal?}.</p>
-                        <p>2Jeanz • 2021 • 8 songs, 40 min 39 sec</p>
+                        <p><span id="artist">2Jeanz</span> • 2021 • 8 songs, 40 min 39 sec</p>
                     </div>
                 </div>
                 <div class="music-info-main">
@@ -143,8 +142,8 @@
                             <tr>
                                 <td>1</td>
                                 <td>
-                                    <p><span>SONG NAME</span> <br/>
-                                        2Jeanz
+                                    <p><span id="song1">SONG NAME</span> <br/>
+                                        Kanye East
                                     </p>
                                 </td>
                                 <td><span>4,234,916</span></td>
@@ -152,56 +151,56 @@
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td><p><span>SONG NAME</span> <br/>
-                                    2Jeanz
+                                <td><p><span id="song2">SONG NAME</span> <br/>
+                                    J. Cold
                                 </p></td>
                                 <td><span>2,345,678</span></td>
                                 <td>4:20</td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td><p><span>SONG NAME</span> <br/>
-                                    2Jeanz
+                                <td><p><span id="song3">SONG NAME</span> <br/>
+                                    Big Wayne
                                 </p></td>
                                 <td><span>9,177,859</span></td>
                                 <td>4:20</td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td><p><span>SONG NAME</span> <br/>
-                                    2Jeanz
+                                <td><p><span id="song4">Young, Wild, & Free</span> <br/>
+                                    Snooze Dogg
                                 </p></td>
                                 <td><span>2,999,8212</span></td>
                                 <td>4:20</td>
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td><p><span>SONG NAME</span> <br/>
-                                    2Jeanz
+                                <td><p><span id="song5">SONG NAME</span> <br/>
+                                    Travis Hop Scotch
                                 </p></td>
                                 <td><span>2,000,123</span></td>
                                 <td>4:20</td>
                             </tr>
                             <tr>
                                 <td>6</td>
-                                <td><p><span>SONG NAME</span> <br/>
-                                    2Jeanz
+                                <td><p><span id="song6">In da Club</span> <br/>
+                                    Yung Old
                                 </p></td>
                                 <td><span>4,102,112</span></td>
                                 <td>4:20</td>
                             </tr>
                             <tr>
                                 <td>7</td>
-                                <td><p><span>SONG NAME</span> <br/>
-                                    2Jeanz
+                                <td><p><span id="song7">2 KOOL 4 SKOOL</span> <br/>
+                                    21 Lil' A$AP Young Money Dawg
                                 </p></td>
                                 <td><span>5,601,954</span></td>
                                 <td>4:20</td>
                             </tr>
                             <tr>
                                 <td>8</td>
-                                <td><p><span>SONG NAME</span> <br/>
-                                    2Jeanz
+                                <td><p><span id="song8">Dogz-N-The-Hood</span> <br/>
+                                    Eazy-F
                                 </p></td>
                                 <td><span>7,321,940</span></td>
                                 <td>4:20</td>
