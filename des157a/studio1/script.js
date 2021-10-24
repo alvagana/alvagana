@@ -56,10 +56,7 @@
     })
 
     function setValues(activity, snack, ticketPerson, mdBuy, amazing, name, genre, favePlace, describe, talkAbout) {
-        // used: activity, genre, name, friend, describe, mdBuy
-        // unused: 
         let activityToLower = activity.toLowerCase();
-        let mdBuyToLower = mdBuy.toLowerCase();
         let amazingAllCaps = amazing.toUpperCase();
 
         setDescription(genre, activityToLower);
@@ -67,7 +64,8 @@
         setAlbumName(genre, favePlace);
         setUser(name);
         setArtists(genre)
-        setSongs(genre, describe, mdBuyToLower, amazingAllCaps, talkAbout, snack, ticketPerson, activity, name, favoritePlace);
+        setSongs(genre, describe, mdBuy, amazingAllCaps, talkAbout, snack, ticketPerson, activity, name, favoritePlace);
+        setGradient(genre);
     }
 
 
@@ -75,11 +73,11 @@
     function setAlbumCover(g) {
         let album = document.getElementById("album-cover");
         if (g == 'rock') {
-            album.src = "rockalbumcover.png";
+            album.src = "./images/rockalbumcover.png";
         } else if (g == 'pop') {
-            album.src = "popalbumcover.png";
+            album.src = "./images/popalbumcover.png";
         } else {
-            album.src = "hiphopcover.png";
+            album.src = "./images/hiphopcover.png";
         }
     }
 
@@ -100,8 +98,8 @@
     }
 
     function setSongs(g,d,md,a,ta,s,tp, act, name, fp) {
-        let rockSongs = [`Hey ${name}`, `Paint My ${md} Black`, `Highway to ${fp}`, `Where the Streets are ${a}`, `Another One Bites the ${s}`, `The Ballad of ${tp}`, `${d} Head Smashing`, 'Davis California'];
-        let hiphopSongs = [`Million Dolla ${md}`, `${ta} Freestyle`, `Beatz n' ${s} (feat. ${tp})`, `Young, Wild, & ${d}`, `${a}O MODE`, 'In Da Club', 'Dogz-N-The-Hood', '2 KOOL 4 SKOOL'];
+        let rockSongs = [`Hey ${name}`, `Paint My ${md} Black`, `Highway to ${fp}`, `Where The Streets Are ${a}`, `Another One Bites the ${s}`, `The Ballad of ${tp}`, `${d} Head Smashing`, 'Davis California'];
+        let hiphopSongs = [`Cash Money ${md}`, `${ta} Freestyle`, `Beatz n' ${s} (feat. ${tp})`, `Young, Wild & ${d}`, `${a}O MODE`, 'In Da Club', 'Dogz-N-The-Hood', '2 KOOL 4 SKOOL'];
         let popSongs = [`I Love U, ${ta}`,`Where is the ${s}?`,`Locked Out Of My House`,`pretty & ${d.toLowerCase()}`, `Friday Night and Life is ${a}`,`We Are Never Ever ${act} Together`,"Save Your Tears, It's only Monday",`${md} in Hawaii`];
         let currentSongs;
 
@@ -147,6 +145,21 @@
             desc.textContent = `Whether you're with friends or you're ${activity}, this ${genre} playlist is all about you having a good time.`;
         } else {
             desc.textContent = `A rappin', snazzy ${genre} playlist perfect for ${activity} made just for you.`;
+        }
+    }
+
+    function setGradient(genre){
+        let header = document.querySelector('.music-info-header');
+        let main = document.querySelector('.music-info-main');
+
+        if (genre == 'rock') {
+            header.style.background = "linear-gradient(180deg, #5A82D0 0%, #303030 100%)";
+            main.style.background = "linear-gradient(180deg, #121824 0%, #000000 100%)";
+        } else if (genre == 'pop') {
+            header.style.background = "linear-gradient(180deg, #FF8C8C 0%, #7B5317 100%)";
+            main.style.background = "linear-gradient(180deg, #603A02 0%, #191414 100%)";
+        } else {
+            
         }
     }
 })();
