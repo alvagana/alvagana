@@ -61,7 +61,7 @@
 
         setDescription(genre, activityToLower);
         setAlbumCover(genre);
-        setAlbumName(genre, favePlace);
+        setAlbumName(genre, favePlace, mdBuy);
         setUser(name);
         setArtists(genre)
         setSongs(genre, describe, mdBuy, amazingAllCaps, talkAbout, snack, ticketPerson, activity, name, favoritePlace);
@@ -81,14 +81,14 @@
         }
     }
 
-    function setAlbumName(g, fp) {
+    function setAlbumName(g, fp, md) {
         let albumName = document.getElementById("album-name");
         if (g == 'rock') {
-            albumName.textContent = `Head Smashin' in ${fp} III`;
+            albumName.textContent = `Smashin' ${md}s`;
         } else if (g == 'pop') {
             albumName.textContent = `Party Up In ${fp}`;
         } else {
-            albumName.textContent = `DJ's & Beatz of ${fp}`;
+            albumName.textContent = `Cash Money ${md}`;
         }
     }
 
@@ -98,8 +98,8 @@
     }
 
     function setSongs(g,d,md,a,ta,s,tp, act, name, fp) {
-        let rockSongs = [`Hey ${name}`, `Paint My ${md} Black`, `Highway to ${fp}`, `Where The Streets Are ${a}`, `Another One Bites the ${s}`, `The Ballad of ${tp}`, `${d} Head Smashing`, 'Davis California'];
-        let hiphopSongs = [`Cash Money ${md}`, `${ta} Freestyle`, `Beatz n' ${s} (feat. ${tp})`, `Young, Wild & ${d}`, `${a}O MODE`, 'In Da Club', 'Dogz-N-The-Hood', '2 KOOL 4 SKOOL'];
+        let rockSongs = [`Hey ${name}`, `Paint My ${md} Black`, `Highway to ${fp}`, `Where The Streets Are ${a}`, `Another One Bites the ${s}`, `The Ballad of ${tp}`, `${d} Head Banging`, 'Davis California'];
+        let hiphopSongs = [`${fp} Beatz`, `${ta} Freestyle`, `Beatz n' ${s} (feat. ${tp})`, `Young, Wild & ${d}`, `${a}O MODE`, 'In Da Club', "Fo' Shizzle", '2 KOOL 4 SKOOL'];
         let popSongs = [`I Love U, ${ta}`,`Where is the ${s}?`,`Locked Out Of My House`,`pretty & ${d.toLowerCase()}`, `Friday Night and Life is ${a}`,`We Are Never Ever ${act} Together`,"Save Your Tears, It's only Monday",`${md} in Hawaii`];
         let currentSongs;
 
@@ -119,7 +119,7 @@
 
     function setArtists(g) {
         let rockArtists = ['The Dungbeetles','The Rolling Pebbles','AB/CD','ME2','King','Panic! At San Francisco','Vampire Weekday','Red Hot Chili Flakes'];
-        let hiphopArtists = ['Kanye East','J. Cold', 'Big Wayne', 'Snooze Dogg','Travis Hop Scotch', 'Yung Old',"21 Lil' A$AP Young Money Dawg",'Eazy-F']
+        let hiphopArtists = ['Kanye East','J. Cold', 'Big Wayne', 'Snooze Dogg','Travis Scotch', 'Yung Old',"21 Lil' A$AP Young Money Dawg",'Eazy-F']
         let popArtists = ['Rustin Bieber', 'Black Eyed Fleas', 'Bruno Stars', 'Ariana Venti', 'Burgundy 5', 'Taylor Fast', 'The Weekdy', 'Katy Fairy'];
         let currentArtists;
 
