@@ -303,12 +303,14 @@ a:hover {
 
 .album table {
     height: auto;
-    width: 87.5%;
-    margin-left: 6.25%;
+    width: 90%;
+    margin-left: 5%;
     height: 376px;
     color: white;
     font-family: Gotham-Light;
     padding-top: 30px;
+    padding-left: 20px;
+    border-collapse: collapse;
 }
 
 .album table tr th {
@@ -324,10 +326,47 @@ a:hover {
     padding-top: 5px;
 }
 
+.album table tr {
+    margin-right: 15px;
+}
+
+.album table thead tr:hover {
+    background-color: rgba(0,0,0,0);
+}
+
+.album table tr:hover {
+    background-color: rgba(61,61,61,0.5);
+}
+
+.album table thead tr th:nth-child(1) {
+    position: relative;
+    left: 10px;
+}
+
+.album table tr td:nth-child(1) {
+    padding-left: 10px;
+}
+
 .album table td:nth-child(2) span {
     font-family: Gotham-Medium;
 }
 
 .album table td:nth-child(2) p span:last-child {
     font-family: Gotham-Light;
+}
+
+/* scroll bar */
+/* SOURCE: https://www.digitalocean.com/community/tutorials/css-scrollbars */
+.music-info::-webkit-scrollbar {
+    width: 12px;
+}
+  
+.music-info::-webkit-scrollbar-track {
+    background: #191414;
+}
+  
+.music-info::-webkit-scrollbar-thumb {
+    background-color: #616161;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 2px solid #191414;
 }
