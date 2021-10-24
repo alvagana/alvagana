@@ -6,6 +6,7 @@
     // Query Selectors
     let form = document.querySelector('#form');
     let form2 = document.querySelector('#form2');
+    let goBack = document.querySelector('#btn-back');
     let tryAgain = document.querySelector('#try-again');
 
     // Form data
@@ -22,7 +23,7 @@
         favoritePlace = document.querySelector("#favorite-place").value;
         describeYourself = document.querySelector("#describe-yourself").value;
         talkAbout = document.querySelector("#talk-about").value;
-    })
+    });
 
     form2.addEventListener('submit', function(event){
         event.preventDefault();
