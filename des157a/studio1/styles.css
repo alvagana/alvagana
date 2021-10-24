@@ -250,13 +250,20 @@ input:focus {
 }
 
 .music-info-header div:last-child h2 {
-    font-size: 48px;
-    line-height: 2px;
+    font-size: 60px;
+    letter-spacing: -4px;
+    position: relative;
+    top: 65px;
 }
 
 .music-info-header div:last-child p {
     line-height: 2px;
     font-size: 14px;
+}
+
+.music-info-header div:last-child p:first-child {
+    position: relative;
+    top: 100px;
 }
 
 .music-info-main {

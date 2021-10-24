@@ -60,17 +60,17 @@
         // unused: 
         let activityToLower = activity.toLowerCase();
         let mdBuyToLower = mdBuy.toLowerCase();
-        let desc = document.getElementById("description");
-        let song1 = document.getElementById("song1");
         let amazingAllCaps = amazing.toUpperCase();
 
-        desc.textContent = `A ${genre} playlist perfect for ${activityToLower} made just for you.`;
+        setDescription(genre, activityToLower);
         setAlbumCover(genre);
         setAlbumName(genre, favePlace);
         setUser(name);
         setArtists(genre)
-        setSongs(genre, describe, mdBuyToLower, amazingAllCaps, talkAbout, snack, ticketPerson);
+        setSongs(genre, describe, mdBuyToLower, amazingAllCaps, talkAbout, snack, ticketPerson, activity, name, favoritePlace);
     }
+
+
 
     function setAlbumCover(g) {
         let album = document.getElementById("album-cover");
@@ -86,11 +86,11 @@
     function setAlbumName(g, fp) {
         let albumName = document.getElementById("album-name");
         if (g == 'rock') {
-            albumName.textContent = `Head smashin' in ${fp} IV`;
+            albumName.textContent = `Head Smashin' in ${fp} III`;
         } else if (g == 'pop') {
-            albumName.textContent = `Party up in ${fp}`;
+            albumName.textContent = `Party Up In ${fp}`;
         } else {
-            albumName.textContent = `Gangster$ of ${fp}`;
+            albumName.textContent = `DJ's & Beatz of ${fp}`;
         }
     }
 
@@ -99,28 +99,30 @@
         userName.textContent = n;
     }
 
-    function setSongs(g,d,md,a,ta,s,tp) {
-        let rockSongs = [];
+    function setSongs(g,d,md,a,ta,s,tp, act, name, fp) {
+        let rockSongs = [`Hey ${name}`, `Paint My ${md} Black`, `Highway to ${fp}`, `Where the Streets are ${a}`, `Another One Bites the ${s}`, `The Ballad of ${tp}`, `${d} Head Smashing`, 'Davis California'];
         let hiphopSongs = [`Million Dolla ${md}`, `${ta} Freestyle`, `Beatz n' ${s} (feat. ${tp})`, `Young, Wild, & ${d}`, `${a}O MODE`, 'In Da Club', 'Dogz-N-The-Hood', '2 KOOL 4 SKOOL'];
-        let popSongs = ['',`Where is the ${s}?`,'','','','','',''];
-        for (let i = 1; i <= 8; i++) {
-            let currentSong = document.getElementById(`song${i}`);
-            currentSong.textContent = hiphopSongs[i-1];
-        }
+        let popSongs = [`I Love U, ${ta}`,`Where is the ${s}?`,`Locked Out Of My House`,`pretty & ${d.toLowerCase()}`, `Friday Night and Life is ${a}`,`We Are Never Ever ${act} Together`,"Save Your Tears, It's only Monday",`${md} in Hawaii`];
+        let currentSongs;
 
         if (g == 'rock') {
-            
+            currentSongs = rockSongs;
         } else if (g == 'pop') {
-            
+            currentSongs = popSongs;
         } else {
-            
+            currentSongs = hiphopSongs;
+        }
+
+        for (let i = 1; i <= 8; i++) {
+            let currentSong = document.getElementById(`song${i}`);
+            currentSong.textContent = currentSongs[i-1];
         }
     }
 
     function setArtists(g) {
-        let rockArtists = ['The Ladybugs','The Rolling Pebbles','AB/CD','ME2','King','Panic! At San Francisco','Vampire Weekday','BananaRepublic'];
+        let rockArtists = ['The Dungbeetles','The Rolling Pebbles','AB/CD','ME2','King','Panic! At San Francisco','Vampire Weekday','Red Hot Chili Flakes'];
         let hiphopArtists = ['Kanye East','J. Cold', 'Big Wayne', 'Snooze Dogg','Travis Hop Scotch', 'Yung Old',"21 Lil' A$AP Young Money Dawg",'Eazy-F']
-        let popArtists = ['Rustin Bieber', 'Whited Eyed Carrots', 'Bruno Stars', 'Ariana Venti', 'Burgundy 5', 'Michael Bubble', 'The Weekdy', 'Una Lipa'];
+        let popArtists = ['Rustin Bieber', 'Black Eyed Fleas', 'Bruno Stars', 'Ariana Venti', 'Burgundy 5', 'Taylor Fast', 'The Weekdy', 'Katy Fairy'];
         let currentArtists;
 
         if (g == 'rock') {
@@ -134,6 +136,17 @@
         for (let i = 1; i <= 8; i++) {
             let currentArtist = document.getElementById(`artist${i}`);
             currentArtist.textContent = currentArtists[i-1];
+        }
+    }
+
+    function setDescription(genre, activity) {
+        let desc = document.getElementById("description");
+        if (genre == 'rock') {
+            desc.textContent = `Rock out to heavy drums and electric guitars while you go ${activity} with this ${genre} playlist made just for you.`;
+        } else if (genre == 'pop') {
+            desc.textContent = `Whether you're with friends or you're ${activity}, this ${genre} playlist is all about you having a good time.`;
+        } else {
+            desc.textContent = `A rappin', snazzy ${genre} playlist perfect for ${activity} made just for you.`;
         }
     }
 })();
