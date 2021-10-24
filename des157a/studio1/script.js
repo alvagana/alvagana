@@ -9,7 +9,7 @@
     let tryAgain = document.querySelector('#try-again');
 
     // Form data
-    let name, genre, favoritePlace, describeYourself, bestFriend, favoriteActivity, snack, freeTicketPerson, millionDollarBuy, pizzaTopping;
+    let name, genre, favoritePlace, describeYourself, talkAbout, favoriteActivity, snack, freeTicketPerson, millionDollarBuy, amazing;
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -21,7 +21,7 @@
         genre = document.querySelector("#genre").value;
         favoritePlace = document.querySelector("#favorite-place").value;
         describeYourself = document.querySelector("#describe-yourself").value;
-        bestFriend = document.querySelector("#best-friend").value;
+        talkAbout = document.querySelector("#talk-about").value;
     })
 
     form2.addEventListener('submit', function(event){
@@ -32,10 +32,10 @@
         snack = document.querySelector("#snack").value;
         freeTicketPerson = document.querySelector("#free-ticket-person").value;
         millionDollarBuy = document.querySelector("#million-dollar-buy").value;
-        pizzaTopping = document.querySelector("#pizza-topping").value;
+        amazing = document.querySelector("#amazing").value;
 
         // Setting form values
-        setValues(favoriteActivity, snack, freeTicketPerson, millionDollarBuy, pizzaTopping, name, genre, favoritePlace, describeYourself, bestFriend);
+        setValues(favoriteActivity, snack, freeTicketPerson, millionDollarBuy, amazing, name, genre, favoritePlace, describeYourself, talkAbout);
 
         // Controlling which screen is being shown
         let body = document.querySelector("body");
@@ -55,17 +55,21 @@
         window.location.reload();
     })
 
-    function setValues(activity, snack, ticketPerson, mdBuy, topping, name, genre, favePlace, describe, friend) {
+    function setValues(activity, snack, ticketPerson, mdBuy, amazing, name, genre, favePlace, describe, talkAbout) {
+        // used: activity, genre, name, friend, describe, mdBuy
+        // unused: 
         let activityToLower = activity.toLowerCase();
         let mdBuyToLower = mdBuy.toLowerCase();
         let desc = document.getElementById("description");
         let song1 = document.getElementById("song1");
+        let amazingAllCaps = amazing.toUpperCase();
 
-        desc.textContent = `A ${genre} playlist perfect for ${activityToLower} made by your best friend, ${friend}.`;
+        desc.textContent = `A ${genre} playlist perfect for ${activityToLower} made just for you.`;
         setAlbumCover(genre);
         setAlbumName(genre, favePlace);
-        setArtist(name);
-        setSongs(genre, describe);
+        setUser(name);
+        setArtists(genre)
+        setSongs(genre, describe, mdBuyToLower, amazingAllCaps, talkAbout, snack, ticketPerson);
     }
 
     function setAlbumCover(g) {
@@ -82,23 +86,23 @@
     function setAlbumName(g, fp) {
         let albumName = document.getElementById("album-name");
         if (g == 'rock') {
-            albumName.textContent = "rock album";
+            albumName.textContent = `Head smashin' in ${fp} IV`;
         } else if (g == 'pop') {
-            albumName.textContent = "pop album";
+            albumName.textContent = `Party up in ${fp}`;
         } else {
-            albumName.textContent = `Gangsters in ${fp}`;
+            albumName.textContent = `Gangster$ of ${fp}`;
         }
     }
 
-    function setArtist(n) {
-        let artistName = document.getElementById("artist");
-        artistName.textContent = n;
+    function setUser(n) {
+        let userName = document.getElementById("user");
+        userName.textContent = n;
     }
 
-    function setSongs(g,d) {
+    function setSongs(g,d,md,a,ta,s,tp) {
         let rockSongs = [];
-        let hiphopSongs = ['hi', 'hi', 'hi', `Young, Wild, & ${d}`, 'hi', 'In Da Club', '2 KOOL 4 SKOOL', 'Dogz-N-The-Hood'];
-        let popSongs = [];
+        let hiphopSongs = [`Million Dolla ${md}`, `${ta} Freestyle`, `Beatz n' ${s} (feat. ${tp})`, `Young, Wild, & ${d}`, `${a}O MODE`, 'In Da Club', 'Dogz-N-The-Hood', '2 KOOL 4 SKOOL'];
+        let popSongs = ['',`Where is the ${s}?`,'','','','','',''];
         for (let i = 1; i <= 8; i++) {
             let currentSong = document.getElementById(`song${i}`);
             currentSong.textContent = hiphopSongs[i-1];
@@ -110,6 +114,26 @@
             
         } else {
             
+        }
+    }
+
+    function setArtists(g) {
+        let rockArtists = ['The Ladybugs','The Rolling Pebbles','AB/CD','ME2','King','Panic! At San Francisco','Vampire Weekday','BananaRepublic'];
+        let hiphopArtists = ['Kanye East','J. Cold', 'Big Wayne', 'Snooze Dogg','Travis Hop Scotch', 'Yung Old',"21 Lil' A$AP Young Money Dawg",'Eazy-F']
+        let popArtists = ['Rustin Bieber', 'Whited Eyed Carrots', 'Bruno Stars', 'Ariana Venti', 'Burgundy 5', 'Michael Bubble', 'The Weekdy', 'Una Lipa'];
+        let currentArtists;
+
+        if (g == 'rock') {
+            currentArtists = rockArtists;
+        } else if (g == 'pop') {
+            currentArtists = popArtists;
+        } else {
+            currentArtists = hiphopArtists;
+        }
+
+        for (let i = 1; i <= 8; i++) {
+            let currentArtist = document.getElementById(`artist${i}`);
+            currentArtist.textContent = currentArtists[i-1];
         }
     }
 })();

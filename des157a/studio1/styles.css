@@ -320,6 +320,11 @@ input:focus {
     font-family: Gotham-Medium;
 }
 
+.album table td:nth-child(2) p span:last-child {
+    font-family: Gotham-Light;
+}
+
+
 /*
 .album table th:nth-child(3) {
     
