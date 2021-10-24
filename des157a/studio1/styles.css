@@ -188,7 +188,7 @@ input:focus {
 }
 
 .sidebar ul div {
-    border: 0.1px solid #616161;
+    border: 0.1px solid rgba(186, 186, 186, 0.2);
     width: 90%;
     margin-top: 43px;
 }
@@ -206,14 +206,6 @@ a {
 a:hover {
     color: white;
 }
-
-/*
-.sidebar ul li:hover {
-    color: white;
-    cursor: pointer;
-}
-*/
-
 
 .music-info {
     width: 1166px;
@@ -389,6 +381,14 @@ a:hover {
 
 .album table tr:hover {
     background-color: rgba(61,61,61,0.5);
+}
+
+.album table thead tr {
+    border-bottom: 0.1px solid rgba(186, 186, 186, 0.5);
+}
+
+.album table thead tr th {
+    padding-bottom: 10px;
 }
 
 .album table thead tr th:nth-child(1) {
