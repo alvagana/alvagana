@@ -19,16 +19,26 @@
     font-family: Gotham-Bold;
     src: url(fonts/GothamBold.ttf) format('truetype');
 }
-
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid black;
+    background: #2941ab;
+    backdrop-filter: brightness(50%);
+}
+
+#body-container {
     padding: 0;
     display: flex;
     width: 1466px;
     height: 800px;
-    margin: auto;
     font-family: Gotham-Bold;
     background-color: #191414;
     overflow-x: hidden;
+    box-shadow: 0px 0px 4px 1px #191414;
 }
 
 /* LEFT SIDE */
@@ -299,6 +309,11 @@ a:hover {
     animation-delay: 1.5s;
 }
 
+.fake-button-controls img {
+    cursor: pointer;
+}
+
+
 @keyframes slide-down {
     0% {
         top: -100px;
@@ -307,6 +322,7 @@ a:hover {
         top: 0px;
     }
 }
+
 
 .fake-button-controls div {
     width: 220px;

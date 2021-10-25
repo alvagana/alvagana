@@ -39,21 +39,14 @@
         setValues(favoriteActivity, snack, freeTicketPerson, millionDollarBuy, amazing, name, genre, favoritePlace, describeYourself, talkAbout);
 
         // Controlling which screen is being shown
-        let body = document.querySelector("body");
         let showingElements = document.querySelectorAll(".showing");
         let musicPage = document.querySelector("#music-page");
         let firstSection = document.querySelector("body section:first-of-type");
-        body.style.width = "1466px";
         for (let i = 0; i < showingElements.length; i++) {
             showingElements[i].classList.replace('showing', 'hidden');
         }
         firstSection.style.display = "none";
         musicPage.classList.replace('hidden', 'showing');
-    })
-
-    // If user clicks try again, refresh the page to go back to the beginning
-    tryAgain.addEventListener('click', function() {
-        window.location.reload();
     })
 
     function setValues(activity, snack, ticketPerson, mdBuy, amazing, name, genre, favePlace, describe, talkAbout) {
@@ -67,6 +60,7 @@
         setArtists(genre)
         setSongs(genre, describe, mdBuy, amazingAllCaps, talkAbout, snack, ticketPerson, activity, name, favoritePlace);
         setGradient(genre);
+        setBackgroundColor(genre);
     }
 
 
@@ -160,7 +154,18 @@
             header.style.background = "linear-gradient(180deg, #FF8C8C 0%, #7B5317 100%)";
             main.style.background = "linear-gradient(180deg, #603A02 0%, #191414 100%)";
         } else {
-            
+            // Do nothing
+        }
+    }
+
+    function setBackgroundColor(genre) {
+        let body = document.querySelector('body');
+        if (genre == 'rock') {
+            body.style.background = "linear-gradient(180deg, #5A82D0 0%, #303030 100%)";
+        } else if (genre == 'pop') {
+            body.style.background = "linear-gradient(180deg, #FF8C8C 0%, #7B5317 100%)";
+        } else {
+            body.style.background = "linear-gradient(180deg, rgba(75, 54, 0, 0.76) 0%, #191414 100%)";
         }
     }
 })();

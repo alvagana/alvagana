@@ -23,199 +23,201 @@
 </head>
 
 <body>
-    <!-- Left section of form page -->
-    <section class="showing">
-        <div id="flex-header" class="showing">
-            <h1>Find yourself <br> in music.</h1>
-            <h2>Looking for music? We'll give it to you.*<br/><br/><span>*These songs may or may not be 100% fictional.</span></h2>
-        </div>
-        <div class="circle"></div>
-    </section>
+    <div id="body-container">
+        <!-- Left section of form page -->
+        <section class="showing">
+            <div id="flex-header" class="showing">
+                <h1>Find yourself <br> in music.</h1>
+                <h2>Looking for music? We'll give it to you.*<br/><br/><span>*These songs may or may not be 100% fictional.</span></h2>
+            </div>
+            <div class="circle"></div>
+        </section>
 
-    <!-- Right section of form page -->
-    <section class="showing">
-        <form id="form">
-                <div>
-                    <label for="name">What's your name?</label>
-                    <input id="name" type="text" placeholder="Type your name here.." required/>
-                </div>
-                <div>
-                    <label for="genre">Out of these three genres, what one do you like the most?</label>
-                    <select name="genre" id="genre">
-                        <option value="hip-hop/rap">Hip-hop/rap</option>
-                        <option value="rock">Rock</option>
-                        <option value="pop">Pop</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="favorite-place">Favorite place to have a vacation?</label>
-                    <input id="favorite-place" type="text" placeholder="ex: Japan, Hawaii, Costa Rica.." required/>
-                </div>
-                <div>
-                    <label for="describe-yourself">How would you describe yourself?</label>
-                    <input id="describe-yourself" type="text" placeholder="ex: Adventurous, Quiet, Spontaneous.." required/>
-                </div>
-                <div>
-                    <label for="talk-about">What's something you can talk about for hours?</label>
-                    <input id="talk-about" type="text" placeholder="ex: Basketball, Kickboxing, Dessert.." required/>
-                </div>
-                <input id="btn-next" type="submit" value="NEXT" >
-        </form>
+        <!-- Right section of form page -->
+        <section class="showing">
+            <form id="form">
+                    <div>
+                        <label for="name">What's your name?</label>
+                        <input id="name" type="text" placeholder="Type your name here.." required/>
+                    </div>
+                    <div>
+                        <label for="genre">Out of these three genres, what one do you like the most?</label>
+                        <select name="genre" id="genre">
+                            <option value="hip-hop/rap">Hip-hop/rap</option>
+                            <option value="rock">Rock</option>
+                            <option value="pop">Pop</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="favorite-place">Favorite place to have a vacation?</label>
+                        <input id="favorite-place" type="text" placeholder="ex: Japan, Hawaii, Costa Rica.." required/>
+                    </div>
+                    <div>
+                        <label for="describe-yourself">How would you describe yourself?</label>
+                        <input id="describe-yourself" type="text" placeholder="ex: Adventurous, Quiet, Spontaneous.." required/>
+                    </div>
+                    <div>
+                        <label for="talk-about">What's something you can talk about for hours?</label>
+                        <input id="talk-about" type="text" placeholder="ex: Basketball, Kickboxing, Dessert.." required/>
+                    </div>
+                    <input id="btn-next" type="submit" value="NEXT" >
+            </form>
 
-        <form id="form2" class="hidden">
-            <div>
-                <label for="favorite-activity">Favorite activity?</label>
-                <input id="favorite-activity" type="text" placeholder="ex: Swimming, Dancing, Running..." required/>
-            </div>
-            <div>
-                <label for="snack">Late night snack?</label>
-                <input id="snack" type="text" placeholder="ex: Hot Cheetos, In-N-Out..." required/>
-            </div>
-            <div>
-                <label for="free-ticket-person">If you had free tickets to see ANYONE, who would it be?</label>
-                <input id="free-ticket-person" type="text" placeholder="ex: Justin Timberlake, Clairo.." required/>
-            </div>
-            <div>
-                <label for="million-dollar-buy">You just won a million dollars! What's the first thing you buy?</label>
-                <input id="million-dollar-buy" type="text" placeholder="ex: Lamborghini, House, Boba.." required/>
-            </div>
-            <div>
-                <label for="amazing">Give me an adjective!</label>
-                <input id="amazing" type="text" placeholder="ex: Awesome, Wicked, Fantastic..." required/>
-            </div>
-            <input id="btn-submit" type="submit" value="SUBMIT" >
-        </form>
-    </section>
+            <form id="form2" class="hidden">
+                <div>
+                    <label for="favorite-activity">Favorite activity?</label>
+                    <input id="favorite-activity" type="text" placeholder="ex: Swimming, Dancing, Running..." required/>
+                </div>
+                <div>
+                    <label for="snack">Late night snack?</label>
+                    <input id="snack" type="text" placeholder="ex: Hot Cheetos, In-N-Out..." required/>
+                </div>
+                <div>
+                    <label for="free-ticket-person">If you had free tickets to see ANYONE, who would it be?</label>
+                    <input id="free-ticket-person" type="text" placeholder="ex: Justin Timberlake, Clairo.." required/>
+                </div>
+                <div>
+                    <label for="million-dollar-buy">You just won a million dollars! What's the first thing you buy?</label>
+                    <input id="million-dollar-buy" type="text" placeholder="ex: Lamborghini, House, Boba.." required/>
+                </div>
+                <div>
+                    <label for="amazing">Give me an adjective!</label>
+                    <input id="amazing" type="text" placeholder="ex: Awesome, Wicked, Fantastic..." required/>
+                </div>
+                <input id="btn-submit" type="submit" value="SUBMIT" >
+            </form>
+        </section>
 
 
-    <!-- Spotify music page -->
-    <div id="music-page" class="hidden">
-        <div class="album">
-            <!-- SIDEBAR-->
-            <div class="sidebar">
-                <ul>
-                    <li><a href="https://alvagana.github.io/des157a/studio1/">Try again :)</a></li>
-                    <li>Search (coming soon..)</li>
-                    <li><a target="_blank" href="https://open.spotify.com/user/heeeyalvin?si=1ecb25cd1fb249c5">Library</a></li>
-                    <li><div></div></li>
-                </ul>
-                <ul>
-                    <li><a target="_blank" href="https://open.spotify.com/playlist/185BinhJfXbYnElltizdFj?si=f25ef964cef84947">Going out w friends🌆</a></li>
-                    <li><a target="_blank" href="https://open.spotify.com/playlist/38BAFacbwA5kGf7iqcW7Wj?si=0850b9c8d67d4ea8">☔️ Simpin' hour</a></li>
-                    <li><a target="_blank" href="https://open.spotify.com/playlist/5xS3Gi0fA3Uo6RScucyct6?si=26e1cae1b8a74dee">🥳 PARTY ALL DAY BABY</a></li>
-                    <li><a target="_blank" href="https://open.spotify.com/playlist/24z1XUBp9APJHD2EKYH5u9?si=dfdf6c5502544713">💻 Work playlist</a></li>
-                    <li><a target="_blank" href="https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn?si=8416f0f94e144300">📚 Lofi chill beats to study to</a></li>
-                    <li><div></div></li>
-                </ul>
-                <footer>
+        <!-- Spotify music page -->
+        <div id="music-page" class="hidden">
+            <div class="album">
+                <!-- SIDEBAR-->
+                <div class="sidebar">
                     <ul>
-                        <li><a target="_blank" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Falvagana.github.io%2Fdes157a%2Fstudio1%2F">Valid HTML</a></li>
-                        <li><a target="_blank" href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Falvagana.github.io%2Fdes157a%2Fstudio1%2Fstyles.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">Valid CSS</a></li>
-                        <li><a target="_blank" href="mailto:alvagana@ucdavis.edu">Email Me</a></li>
+                        <li><a href="https://alvagana.github.io/des157a/studio1/">Try again :)</a></li>
+                        <li>Search (coming soon..)</li>
+                        <li><a target="_blank" href="https://open.spotify.com/user/heeeyalvin?si=1ecb25cd1fb249c5">Library</a></li>
+                        <li><div></div></li>
                     </ul>
-                </footer>
-            </div>
-
-            <div class="music-info scroll">
-                <!-- MUSIC PAGE HEADER -->
-                <div class="music-info-header">
-                    <div class="album-picture">
-                        <img id="album-cover" src="./images/rockalbumcover.png" alt="picture of a rock"/>
-                    </div>
-                    <div>               
-                        <p>PLAYLIST</p>
-                        <h2 id="album-name">album name here</h2>
-                        <p id="description"></p>
-                        <p><span id="user"></span> • 2021 • 8 songs, 30 min 34 sec</p>
-                    </div>
+                    <ul>
+                        <li><a target="_blank" href="https://open.spotify.com/playlist/185BinhJfXbYnElltizdFj?si=f25ef964cef84947">Going out w friends🌆</a></li>
+                        <li><a target="_blank" href="https://open.spotify.com/playlist/38BAFacbwA5kGf7iqcW7Wj?si=0850b9c8d67d4ea8">☔️ Simpin' hour</a></li>
+                        <li><a target="_blank" href="https://open.spotify.com/playlist/5xS3Gi0fA3Uo6RScucyct6?si=26e1cae1b8a74dee">🥳 PARTY ALL DAY BABY</a></li>
+                        <li><a target="_blank" href="https://open.spotify.com/playlist/24z1XUBp9APJHD2EKYH5u9?si=dfdf6c5502544713">💻 Work playlist</a></li>
+                        <li><a target="_blank" href="https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn?si=8416f0f94e144300">📚 Lofi chill beats to study to</a></li>
+                        <li><div></div></li>
+                    </ul>
+                    <footer>
+                        <ul>
+                            <li><a target="_blank" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Falvagana.github.io%2Fdes157a%2Fstudio1%2F">Valid HTML</a></li>
+                            <li><a target="_blank" href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Falvagana.github.io%2Fdes157a%2Fstudio1%2Fstyles.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">Valid CSS</a></li>
+                            <li><a target="_blank" href="mailto:alvagana@ucdavis.edu">Email Me</a></li>
+                        </ul>
+                    </footer>
                 </div>
-                <div class="music-info-main">
-                    <!-- FAKE BUTTON CONTROLS (PLAY BUTTON)-->
-                    <div class="fake-button-controls">
-                        <div>
-                            <img src="./images/playbutton.png" id="play-button" alt="green play button"/>
-                            <img src="./images/heart.png" id="heart" alt="heart"/>
-                            <img src="./images/dotdotdot.png" id="dotdotdot" alt="three dots"/>
+
+                <div class="music-info scroll">
+                    <!-- MUSIC PAGE HEADER -->
+                    <div class="music-info-header">
+                        <div class="album-picture">
+                            <img id="album-cover" src="./images/rockalbumcover.png" alt="picture of a rock"/>
+                        </div>
+                        <div>               
+                            <p>PLAYLIST</p>
+                            <h2 id="album-name">album name here</h2>
+                            <p id="description"></p>
+                            <p><span id="user"></span> • 2021 • 8 songs, 30 min 34 sec</p>
                         </div>
                     </div>
+                    <div class="music-info-main">
+                        <!-- FAKE BUTTON CONTROLS (PLAY BUTTON)-->
+                        <div class="fake-button-controls">
+                            <div>
+                                <img src="./images/playbutton.png" id="play-button" alt="green play button"/>
+                                <img src="./images/heart.png" id="heart" alt="heart"/>
+                                <img src="./images/dotdotdot.png" id="dotdotdot" alt="three dots"/>
+                            </div>
+                        </div>
 
-                    <!-- SONGS TABLE -->
-                    <table>
-                            <thead>
+                        <!-- SONGS TABLE -->
+                        <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>TITLE</th>
+                                        <th><span>PLAYS</span></th>
+                                        <th>TIME</th>
+                                    </tr>
+                                </thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>TITLE</th>
-                                    <th><span>PLAYS</span></th>
-                                    <th>TIME</th>
+                                    <td>1</td>
+                                    <td>
+                                        <p><span id="song1"></span> <br/>
+                                            <span id="artist1"></span>
+                                        </p>
+                                    </td>
+                                    <td><span>4,234,916</span></td>
+                                    <td>4:20</td>
                                 </tr>
-                            </thead>
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    <p><span id="song1"></span> <br/>
-                                        <span id="artist1"></span>
-                                    </p>
-                                </td>
-                                <td><span>4,234,916</span></td>
-                                <td>4:20</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><p><span id="song2"></span> <br/>
-                                    <span id="artist2"></span>
-                                </p></td>
-                                <td><span>2,345,678</span></td>
-                                <td>3:42</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><p><span id="song3"></span> <br/>
-                                    <span id="artist3"></span>
-                                </p></td>
-                                <td><span>9,177,859</span></td>
-                                <td>3:21</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td><p><span id="song4"></span> <br/>
-                                    <span id="artist4"></span>
-                                </p></td>
-                                <td><span>2,999,8212</span></td>
-                                <td>4:07</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td><p><span id="song5"></span> <br/>
-                                    <span id="artist5"></span>
-                                </p></td>
-                                <td><span>2,000,123</span></td>
-                                <td>3:09</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td><p><span id="song6"></span> <br/>
-                                    <span id="artist6"></span>
-                                </p></td>
-                                <td><span>4,102,112</span></td>
-                                <td>4:16</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td><p><span id="song7"></span> <br/>
-                                    <span id="artist7"></span>
-                                </p></td>
-                                <td><span>5,601,954</span></td>
-                                <td>4:01</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td><p><span id="song8"></span> <br/>
-                                    <span id="artist8"></span>
-                                </p></td>
-                                <td><span>7,321,940</span></td>
-                                <td>3:38</td>
-                            </tr>
-                    </table>
+                                <tr>
+                                    <td>2</td>
+                                    <td><p><span id="song2"></span> <br/>
+                                        <span id="artist2"></span>
+                                    </p></td>
+                                    <td><span>2,345,678</span></td>
+                                    <td>3:42</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><p><span id="song3"></span> <br/>
+                                        <span id="artist3"></span>
+                                    </p></td>
+                                    <td><span>9,177,859</span></td>
+                                    <td>3:21</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><p><span id="song4"></span> <br/>
+                                        <span id="artist4"></span>
+                                    </p></td>
+                                    <td><span>2,999,8212</span></td>
+                                    <td>4:07</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><p><span id="song5"></span> <br/>
+                                        <span id="artist5"></span>
+                                    </p></td>
+                                    <td><span>2,000,123</span></td>
+                                    <td>3:09</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td><p><span id="song6"></span> <br/>
+                                        <span id="artist6"></span>
+                                    </p></td>
+                                    <td><span>4,102,112</span></td>
+                                    <td>4:16</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td><p><span id="song7"></span> <br/>
+                                        <span id="artist7"></span>
+                                    </p></td>
+                                    <td><span>5,601,954</span></td>
+                                    <td>4:01</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td><p><span id="song8"></span> <br/>
+                                        <span id="artist8"></span>
+                                    </p></td>
+                                    <td><span>7,321,940</span></td>
+                                    <td>3:38</td>
+                                </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
