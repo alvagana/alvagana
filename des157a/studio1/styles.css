@@ -2,22 +2,22 @@
 
 @font-face {
     font-family: Gotham-Light;
-    src: url(fonts/GothamLight.ttf) format('truetype');
+    src: url(./fonts/Gotham-Font/GothamLight.ttf) format('truetype');
 }
 
 @font-face {
     font-family: Gotham-Book;
-    src: url(fonts/GothamBook.ttf) format('truetype');
+    src: url(./fonts/Gotham-Font/GothamBook.ttf) format('truetype');
 }
 
 @font-face {
     font-family: Gotham-Medium;
-    src: url(fonts/GothamMedium.ttf) format('truetype');
+    src: url(./fonts/Gotham-Font/GothamMedium.ttf) format('truetype');
 }
 
 @font-face {
     font-family: Gotham-Bold;
-    src: url(fonts/GothamBold.ttf) format('truetype');
+    src: url(./fonts/Gotham-Font/GothamBold.ttf) format('truetype');
 }
 body {
     display: flex;
@@ -35,7 +35,7 @@ body {
     display: flex;
     width: 1466px;
     height: 800px;
-    font-family: Gotham-Bold;
+    font-family: Gotham-Bold, Montserrat;
     background-color: #191414;
     overflow-x: hidden;
     box-shadow: 0px 0px 4px 1px #191414;
@@ -71,13 +71,13 @@ section {
     color: #1db954;
     letter-spacing: -3px;
     font-size: 80px;
-    font-family: Gotham-Bold;
+    font-family: Gotham-Bold, Montserrat;
 
 }
 
 #flex-header h2 {
     color: white;
-    font-family: Gotham-Medium;
+    font-family: Gotham-Medium, Montserrat;
     position: relative;
     bottom: 50px;
     font-size: 18px;
@@ -188,7 +188,7 @@ input:focus {
     height: 760px;
     width: 300px;
     color: #BABABA;
-    font-family: Gotham-Medium;
+    font-family: Gotham-Medium, Montserrat;
     font-size: 16px;
 }
 
@@ -262,7 +262,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    font-family: Gotham-Book;
+    font-family: Gotham-Book, Montserrat;
     position: relative;
     left: 1000px;
     animation: slide-right 1s forwards;
@@ -355,7 +355,7 @@ a:hover {
     margin-left: 5%;
     height: 376px;
     color: white;
-    font-family: Gotham-Light;
+    font-family: Gotham-Light, Montserrat;
     padding-top: 30px;
     padding-left: 20px;
     border-collapse: collapse;
@@ -417,11 +417,11 @@ a:hover {
 }
 
 .album table td:nth-child(2) span {
-    font-family: Gotham-Medium;
+    font-family: Gotham-Medium, Montserrat;
 }
 
 .album table td:nth-child(2) p span:last-child {
-    font-family: Gotham-Light;
+    font-family: Gotham-Light, Montserrat;
 }
 
 /* scroll bar */
