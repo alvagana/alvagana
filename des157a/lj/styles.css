@@ -8,20 +8,17 @@ body {
     flex-direction: column;
 }
 
-.left-main, .right-main {
-    border: 10px solid red;
-}
-
 article {
     display: flex;
     height: 100%;
     margin-top: 20px;
 }
 
-#journal1, #journal2 {
+#journal1, #journal2, #journal3 {
     display: flex;
+    height: 768px;
+    margin-bottom: 50px;
 }
-
 h1 {
     font-size: 48px;
     font-weight: normal;
@@ -85,12 +82,12 @@ section:first-child {
     display: flex;
 }
 
-#img1, #img3 {
+#img1, #img3, #img5 {
     width: 285px; 
     height: 350px;
 }
 
-#img2, #img4 {
+#img2, #img4, #img6{
     width: 225px; 
     height: 300px; 
     margin-bottom: 100px;
