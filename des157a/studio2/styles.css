@@ -1,0 +1,67 @@
+body {
+    height: 4000px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+main div {
+    position: fixed;
+    top: 0px;
+}
+
+main div:nth-child(1) {
+    position: fixed;
+    top: 0px;
+    left: 1500px;
+}
+
+.hidden {
+    position: fixed;
+    left: 1500px;
+}
+
+
+/* progress bar bottom */
+
+#progress {
+    width: 0px;
+    border: 2px solid black;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+}
+
+
+/* animation */
+
+.slide-right-end {
+    animation: slide-right-end 1.5s forwards;
+}
+
+.slide-right-begin {
+    animation: slide-right-begin 1.5s forwards;
+}
+
+@keyframes slide-right-begin {
+    0% {
+        left: 1500px;
+    }
+    100% {
+        left: 550px;
+    }
+}
+
+@keyframes slide-right-end {
+    0% {
+        left: 550px;
+    }
+    100% {
+        left: -500px;
+    }
+}
