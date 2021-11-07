@@ -12,19 +12,50 @@
     pointer-events: none;
 }
 
+
 body {
     margin: 0;
     padding: 0;   
     width: 100vw;
-    height: 750px;
     background-color: #99D4E9;
-    
+    height: 750px;
     font-family: Playfair Display, serif;
 
 }
 
+/* overlay */
+#overlay {
+    z-index: 5;
+    width: 90vw;
+    margin: auto;
+    position: absolute;
+    background-color: #CAFFBF;
+    margin-left: 5vw;
+    height: 90vh;
+    transform: rotateX(90deg);
+    transition: transform 0.5s;
+    border-radius: 10px;
+}
+
+#back-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    letter-spacing: 1px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
 main {
     text-align: center;
+    background-color: #99D4E9;
 }
 
 main p {
@@ -38,12 +69,13 @@ main p {
     overflow-x: scroll;
     scroll-behavior: smooth;
     width: 100vw;
-    margin-top: 30px;
 }
-
 .image-slider::-webkit-scrollbar {
     display: none;
 }
+
+/*
+*/
 
 body::-webkit-scrollbar {
     display: none;
@@ -71,6 +103,24 @@ body::-webkit-scrollbar {
     font-weight: bold;
 }
 
+.image div {
+    position: absolute;
+    bottom: 2.5%;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 5px;
+    border: 2px solid white;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    transform: scale(0);
+}
+
 img {
     height: 100%;
     width: 100%;
@@ -88,7 +138,7 @@ img:hover {
 
 /* header */
 header{
-    height: 200px;
+    height: 210px;
 }
 
 header, footer {
@@ -102,8 +152,8 @@ h1 {
     line-height: 0.1;
     letter-spacing: 4px;
     position: relative;
-    left: 250px;
-    top: 70px;
+    top: 50px;
+    left: -100px;
 }
 
 h2 {
@@ -112,8 +162,8 @@ h2 {
     line-height: 0.5;
     letter-spacing: 3px;
     position: relative;
-    left: 500px;
-    top: 70px;
+    top: 50px;
+    left: 200px;
 }
 
 /* footer */
