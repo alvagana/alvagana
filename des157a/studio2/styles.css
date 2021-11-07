@@ -1,0 +1,156 @@
+/* cursor */
+#cursor {
+    position: fixed;
+    z-index: 10;
+    transition: all .15s;
+    transition: height width 0.5s;
+    transform: translateX(-50%) translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #CAFFBF;
+    pointer-events: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;   
+    width: 100vw;
+    height: 750px;
+    background-color: #99D4E9;
+    
+    font-family: Playfair Display, serif;
+
+}
+
+main {
+    text-align: center;
+}
+
+main p {
+    position: relative;
+    top: 10px;
+}
+
+/* https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
+.image-slider {
+    height: 400px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    width: 100vw;
+    margin-top: 30px;
+}
+
+.image-slider::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.images {
+    display: flex;
+    width: 3800px;
+    height: 400px;
+}
+
+.image {
+    padding-left: 20px;
+    position: relative;
+}
+
+.image p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotateX(90deg) translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    filter: brightness(60%);
+    transition: filter 1s;
+}
+
+
+/*
+img:hover {
+    transition: filter 1s;
+}
+*/
+
+/* header */
+header{
+    height: 200px;
+}
+
+header, footer {
+    background-color: #99D4E9;
+}
+
+
+h1 {
+    font-weight: bold;
+    font-size: 84px;
+    line-height: 0.1;
+    letter-spacing: 4px;
+    position: relative;
+    left: 250px;
+    top: 70px;
+}
+
+h2 {
+    font-size: 64px;
+    color: white;
+    line-height: 0.5;
+    letter-spacing: 3px;
+    position: relative;
+    left: 500px;
+    top: 70px;
+}
+
+/* footer */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+}
+
+footer, 
+footer nav, 
+footer nav ul {
+    display: flex;
+}
+
+footer, 
+footer nav {
+    justify-content: center;
+}
+
+footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+footer nav ul {
+    justify-content: space-around;
+    width: 300px;
+}
