@@ -3,7 +3,6 @@
     position: fixed;
     z-index: 10;
     transition: all .15s;
-    transition: height width 0.5s;
     transform: translateX(-50%) translateY(-50%);
     width: 20px;
     height: 20px;
