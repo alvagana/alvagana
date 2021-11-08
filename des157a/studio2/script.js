@@ -133,7 +133,11 @@
 
     // Setting overlay content
     function setOverlay(i) {
-        overlayImage.src = `./images/img${i+1}.jpg`;
+        if (i + 1 > 3) {
+            overlayImage.src = `./images/img${i+1}.JPG`;
+        } else {
+            overlayImage.src = `./images/img${i+1}.jpg`;       
+        }
         title.textContent = `(${i+1}) ${titles[i]}`;
         paragraph.textContent = paragraphs[i];
     }
