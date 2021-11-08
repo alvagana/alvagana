@@ -147,15 +147,50 @@
     let lastNode = imagesArr[imagesArr.length - 1];
     let cloneArr = [];
 
-    function appendNodes() {
-        cloneArr.forEach(function(temp, index) {
-            tempIndex = index + 8 * multiplier;
-            temp.addEventListener("mouseover", handleMouseover(tempIndex));
-            temp.addEventListener("mouseout", handleMouseout(tempIndex));
-            temp.addEventListener("click", handleImageClick(tempIndex));
-            images.appendChild(temp);
+    function cloneNodes() {
+        imagesArr.forEach(function(img, index) {
+            let clone = img.cloneNode(true);
+            let tempIndex = images.children.length - 1
+
+            images.appendChild(clone);
+            let lastImg = images.children[tempIndex];
+            pArr = document.querySelectorAll(".image p");
+            circleArr = document.querySelectorAll(".image div");
+
+            lastImg.addEventListener("mouseover", function() {
+                cursor.style.width = "10px";
+                cursor.style.height = "10px";
+
+                pArr[tempIndex].style.transform = "rotateX(0deg) translate(-50%, -50%)";
+                pArr[tempIndex].style.transition = "transform 0.5s";
+                circleArr[tempIndex].style.transform = "scale(1)";
+                circleArr[tempIndex].style.transition = "transform 0.5s";
+            });
+            lastImg.addEventListener("mouseout", function() {
+                cursor.style.width = "30px";
+                cursor.style.height = "30px";
+                pArr[tempIndex].style.transform = "rotateX(90deg) translate(-50%, -50%)";
+                pArr[tempIndex].style.transition = "transform 0.5s";
+                circleArr[tempIndex].style.transform = "scale(0)";
+            });
+            lastImg.addEventListener("click", function () {
+                let main = document.querySelector("main");
+                let overlay = document.querySelector("#overlay");
+        
+                main.style.filter = "blur(5px)";
+                main.style.transition = "filter 0.5s";
+                overlay.style.transform = "rotateX(0deg)";
+                overlay.style.transition = "transform 0.5s";
+        
+                cursor.style.backgroundColor = "black";
+        
+                setOverlay(index % 8 - 1);
+            });
         })
     }
+
+    //cloneNodes();
+
 
     // Event listeners
     // Scrolling
@@ -163,14 +198,15 @@
         //event.preventDefault();
         let y = imageSlider.scrollLeft;
         imageSlider.scrollLeft += event.deltaY * 1.5;
+        lastNode = imagesArr[imagesArr.length - 1];
 
+        console.log(lastNode.getBoundingClientRect().left);
         if (lastNode.getBoundingClientRect().left <= boundary) {
-            //appendNodes();
+            cloneNodes();
             imagesArr = document.querySelectorAll(".image");
-            lastNode = imagesArr[imagesArr.length - 1];
             multiplier += 1;
-            images.style.width = `${3800 * multiplier}px`;
-            boundary += 2400;
+            images.style.width = `${5000 * multiplier}px`;
+            //boundary += 2400;
         }
     });
 
@@ -199,38 +235,6 @@
         cursor.style.width = "30px";
         cursor.style.height = "30px";
     })
-
-    function handleMouseover(index) {
-        cursor.style.width = "10px";
-        cursor.style.height = "10px";
-
-        pArr[index].style.transform = "rotateX(0deg) translate(-50%, -50%)";
-        pArr[index].style.transition = "transform 0.5s";
-        circleArr[index].style.transform = "scale(1)";
-        circleArr[index].style.transition = "transform 0.5s";
-    }
-
-    function handleMouseout(index) {
-        cursor.style.width = "30px";
-        cursor.style.height = "30px";
-        pArr[index].style.transform = "rotateX(90deg) translate(-50%, -50%)";
-        pArr[index].style.transition = "transform 0.5s";
-        circleArr[index].style.transform = "scale(0)";
-    }
-
-    function handleImageClick(index) {
-        let main = document.querySelector("main");
-        let overlay = document.querySelector("#overlay");
-
-        main.style.filter = "blur(5px)";
-        main.style.transition = "filter 0.5s";
-        overlay.style.transform = "rotateX(0deg)";
-        overlay.style.transition = "transform 0.5s";
-
-        cursor.style.backgroundColor = "black";
-
-        setOverlay(index);
-    }
 
     imagesArr.forEach(function(image, index) {
         image.addEventListener("mouseover", function() {
