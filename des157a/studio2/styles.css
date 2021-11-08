@@ -27,13 +27,12 @@ body {
 #overlay {
     z-index: 5;
     width: 90vw;
-    margin: auto;
+    height: 90vh;
     position: absolute;
     background-color: #CAFFBF;
     margin-left: 5vw;
-    height: 90vh;
+    margin-top: 5vh;
     transform: rotateX(90deg);
-    transition: transform 0.5s;
     border-radius: 10px;
 }
 
@@ -52,6 +51,43 @@ body {
     align-items: center;
     cursor: pointer;
 }
+
+.content {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content div {
+
+}
+
+.content section {
+    width: 60%;
+    margin-left: 15px;
+    position: relative;
+    top: 50px;
+}
+
+.content section span {
+    font-weight: bold;
+    font-size: 64px;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.content section p {
+    font-size: 20px;
+    color: black;
+    letter-spacing: 1px;
+}
+
+
 
 main {
     text-align: center;
@@ -83,7 +119,7 @@ body::-webkit-scrollbar {
 
 .images {
     display: flex;
-    width: 3800px;
+    width: 3200px;
     height: 400px;
 }
 
@@ -121,7 +157,7 @@ body::-webkit-scrollbar {
     transform: scale(0);
 }
 
-img {
+main img {
     height: 100%;
     width: 100%;
     cursor: pointer;
@@ -141,6 +177,24 @@ header{
     height: 210px;
 }
 
+header div {
+    position: relative;
+    display: flex;
+    left: 25px;
+    top: 30px;
+    width: 280px;
+    justify-content: space-between;
+}
+
+header div .square {
+    border: 1px solid black;
+    background-color: #CAFFBF;
+    width: 20px;
+    height: 20px;
+}
+
+
+
 header, footer {
     background-color: #99D4E9;
 }
@@ -153,7 +207,7 @@ h1 {
     letter-spacing: 4px;
     position: relative;
     top: 50px;
-    left: -100px;
+    left: -225px;
 }
 
 h2 {
@@ -162,9 +216,11 @@ h2 {
     line-height: 0.5;
     letter-spacing: 3px;
     position: relative;
-    top: 50px;
+    top: 55px;
     left: 200px;
 }
+
+
 
 /* footer */
 ul {
