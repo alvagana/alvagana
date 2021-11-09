@@ -12,47 +12,6 @@
     let pArr = document.querySelectorAll(".image p");
     let circleArr = document.querySelectorAll(".image div");
     let backBtn = document.querySelector("#back-btn");
-    let innerHTML = `
-    <div class="image">
-        <img src="./images/img1.jpg"/>
-        <p>(1) <br/> hello</p>
-        <div class="circle">click</div>
-    </div>
-    <div class="image">
-        <img src="./images/img2.jpg"/>
-        <p>(2) <br/>snickerdoodles</p>
-        <div class="circle">click</div>
-    </div>
-    <div class="image">
-        <img src="./images/img3.jpg"/>
-        <p>(3) <br/>tea top</p>
-        <div class="circle">click</div>
-    </div>
-    <div class="image">
-        <img src="./images/img4.jpg"/>
-        <p>(4) <br/>korean food</p>
-        <div class="circle">click</div>
-    </div>
-    <div class="image">
-        <img src="./images/img5.jpg"/>
-        <p>(5) <br/>suju's</p>
-        <div class="circle">click</div>
-    </div>
-    <div class="image">
-        <img src="./images/img6.jpg"/>
-        <p>(6) <br/>explorations</p>
-        <div class="circle">click</div>
-    </div>
-    <div class="image">
-        <img src="./images/img7.jpg"/>
-        <p>(7) <br/>finals</p>
-        <div class="circle">click</div>
-    </div>
-    <div class="image">
-        <img src="./images/img8.jpg"/>
-        <p>(8) <br/>singing</p>
-        <div class="circle">click</div>
-    </div>`
 
     let overlayImage = document.querySelector(`#overlay-img`);
     let title = document.querySelector("#overlay .content section span");
@@ -120,16 +79,6 @@
         "spend a little time" by steven fiore and took some pictures. i'm glad you were my partner for that class, and i'm glad you're
         my partner for everything that life throws at us.`
     ];
-    
-
-    /*
-    Trying something out here..
-    overlayImage.addEventListener("mouseover", function(event) {
-        let x = event.pageX - overlayImage.offsetLeft;
-        let y = event.pageY - overlayImage.offsetTop;
-        //temp.textContent = `x: ${x}, y: ${y}`;
-    })
-    */
 
     // Setting overlay content
     function setOverlay(i) {
@@ -184,7 +133,7 @@
         
                 cursor.style.backgroundColor = "black";
         
-                setOverlay(index % 8 - 1);
+                setOverlay(tempIndex % 8);
             });
         })
     }
@@ -204,8 +153,8 @@
         if (lastNode.getBoundingClientRect().left <= boundary) {
             cloneNodes();
             imagesArr = document.querySelectorAll(".image");
-            multiplier += 1;
-            images.style.width = `${5000 * multiplier}px`;
+            multiplier += 2;
+            images.style.width = `${6800 * multiplier}px`;
             //boundary += 2400;
         }
     });

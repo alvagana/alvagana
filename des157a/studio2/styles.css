@@ -18,8 +18,8 @@ body {
     width: 100vw;
     background-color: #99D4E9;
     height: 750px;
+    overflow-x: hidden;
     font-family: Playfair Display, serif;
-
 }
 
 /* overlay */
