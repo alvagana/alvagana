@@ -10,6 +10,7 @@ body {
     font-family: Monda;
 }
 
+
 button { 
     padding: 10px;
 }
@@ -19,8 +20,23 @@ button {
     background-color: aliceblue;
 }
 
+#gamecontrol p {
+    color: white;
+}
+#gamecontrol h2 {
+    color: white;
+}
+
 #game {
-    background-color:#eaeaea;
+    background-color:black;
+    border-radius: 10px;
+    opacity: 0.8;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 50%;
+    margin-left: 25%;
 }
 
 main div:first-child {
@@ -96,6 +112,22 @@ main div img {
     transform: scale(0);
     position: relative;
     top: 75%;
+    text-shadow: 3px 5px #FF3E3E;
+}
+
+#roll-1 {
+    position: relative;
+    top: 25%;
+    display: inline-block;
+    transform: scale(0);
+    text-shadow: 3px 5px #2697FF;
+}
+
+#roll-2 {
+    position: relative;
+    display: inline-block;
+    transform: scale(0);
+    top: 40%;
     text-shadow: 3px 5px #FF3E3E;
 }
 

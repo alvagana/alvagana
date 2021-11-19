@@ -20,14 +20,19 @@
 <body>
     <div id="gamecontrol">
         <h2>Battle Cats</h2>
+        <p>This is game of battle cats! This is a 2 player game where you must defeat the other
+            <br/> player to remain the superior cat of Alvin's household.<br/>
+            You can scratch and challenge your opponent with your sharp claws, <br/>
+            or use them to defend and heal back some health! 
+        </p>
         <button id="startgame">BEGIN</button>
     </div>
 
     <main>
         <div>
             <img src="./images/BasicCat.png" alt="cat"></img>
-            <div class="action-text"><span id="action-text-1">SCRATCH</span></div>
-            <div class="action-text"><span id="action-text-2">DEFEND</span></div>
+            <div class="action-text"><span id="action-text-1">SCRATCH</span><span id="roll-1">hello</span></div>
+            <div class="action-text"><span id="action-text-2">DEFEND</span><span id="roll-2" >hello</span></div>
             <img src="./images/BasicCatReverse.png" alt="cat"></img>
         </div>
     </main>
@@ -36,7 +41,7 @@
     <!-- Health bar + actions menu -->
     <div id="player-info">
         <div class="health-bar-flex">
-            <span>HP (50/50)</span>
+            <span>HP (30/30)</span>
             <div class="health-bar">
                 <div id="bar1" class="bar"></div>
             </div>
@@ -47,7 +52,7 @@
             <div class="health-bar">
                 <div id="bar2" class="bar"></div>
             </div>
-            <span>(50/50) HP</span>
+            <span>(30/30) HP</span>
         </div>
     </div>
 
