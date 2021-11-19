@@ -33,12 +33,26 @@
 
     startGame.addEventListener("click", function() {
         //gameData.index = Math.round(Math.random());
+        playAudio("alvinSinging");
 
         gameControl.innerHTML = '<h2>Meoooowwwww!!!!</h2>';
         gameControl.innerHTML += '<button id="quit">Quit?</button>';
         playerInfo.style.display = "flex";
         catImages.forEach(function(img) {
             img.style.display = "block";
+            let down = false;
+            setInterval(function() {
+                console.log(img.getAttribute("transform"));
+                if (down) {
+                    img.style.transform = "scaleY(1)";
+                    down = !down;
+                    img.style.top = "0px";
+                } else {
+                    img.style.transform = "scaleY(0.9)";
+                    down = !down;
+                    img.style.top = "12.5px";
+                }
+            }, 400);
         });
 
         document.getElementById('quit').addEventListener("click", function() {
@@ -151,7 +165,7 @@
         if (player == 'A') {
             health1.style.width = `${100 * (Math.max(gameData.score[0], 0)/30)}%`;
             let healthSpan = document.querySelector('#player-info .health-bar-flex span:first-child');
-            healthSpan.textContent = `HP (${Math.max(0, gameData.score[0])}/30)`;
+            healthSpan.textContent = `HP (${Math.max(0, gameData.score[0])}/30) HP`;
         } else {
             health2.style.width = `${100 * (Math.max(gameData.score[1], 0)/30)}%`;
             let healthSpan = document.querySelector('#player-info .health-bar-flex span:last-child');
@@ -183,7 +197,7 @@
         if (winner == 'A') {
             gameData.actionA == "scratch" ? gameData.score[1] -= gameData.rollSumA : gameData.score[0] = Math.min(gameData.rollSumA + gameData.score[0], 30);
         } else if (winner == 'B') {
-            gameData.actionB == "scratch" ? gameData.score[0] -= gameData.rollSumB : gameData.score[1] += Math.min(gameData.rollSumB + gameData.score[0], 30);
+            gameData.actionB == "scratch" ? gameData.score[0] -= gameData.rollSumB : gameData.score[1] = Math.min(gameData.rollSumB + gameData.score[0], 30);
         }
 
         updateHealthBar('A');

@@ -41,13 +41,21 @@ button {
 
 main div:first-child {
     display: flex;
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    height: 325px;
+    margin-left: 5%;
     justify-content: space-between;
 }
 
+main div {
+}
+
 main div img {
+    position: relative;
     display: none;
+}
+
+main div img:last-child {
 }
 
 /* Action buttons */
