@@ -3,23 +3,141 @@ body {
     color: #333;
     padding: 50px;
     line-height: 1.5em;
+    background-image: url('./images/Background2.png');
+    width: 1366px;
+    height: 768px;
+    overflow-y: hidden;
+    font-family: Monda;
 }
 
 button { 
     padding: 10px;
 }
 
-div {
-    padding: 20px;
-}
 
-#gamecontrol, #score {
+#score {
     background-color: aliceblue;
 }
 
 #game {
     background-color:#eaeaea;
 }
+
+main div:first-child {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    justify-content: space-between;
+}
+
+main div img {
+    display: none;
+}
+
+/* Action buttons */
+#startgame {
+    background-color: #A736FF;
+}
 #actions {
-    background-color: silver;
+    text-align: center;
+}
+#actions button, #startgame {
+    width: 80px;
+    height: 80px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#actions button:hover, #startgame:hover {
+    opacity: 0.8;
+}
+
+#actions button:first-child {
+    margin-right: 20px; 
+    background-color: #FF3E3E;
+}
+
+#actions button:last-child {
+    background-color: #0E8BFF;
+}
+
+/* action text */
+.action-text {
+    color: white;
+    width: 300px;
+    position: relative;
+}
+
+.action-text:first-of-type {
+    text-align: left;
+}
+
+.action-text:last-of-type {
+    text-align: right;
+}
+
+.action-text span {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+#action-text-1 {
+    display: inline-block;
+    transform: scale(0);
+    position: relative;
+    top: 15%;
+    text-shadow: 3px 5px #2697FF;
+}
+
+#action-text-2 {
+    display: inline-block;
+    transform: scale(0);
+    position: relative;
+    top: 75%;
+    text-shadow: 3px 5px #FF3E3E;
+}
+
+#player-info {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.health-bar {
+    width: 400px;
+    height: 15px;
+    border-radius: 5px;
+    border: 4px solid white;
+}
+
+
+.bar {
+    background-color: #00FF29;
+    width: 100%;
+    height: 100%;
+}
+
+#bar1, #bar2 {
+    transition: 0.6s;
+}
+
+.health-bar-flex {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.health-bar-flex:first-of-type span {
+    margin-right: 10px;
+}
+
+.health-bar-flex:last-of-type span {
+    margin-left: 10px;
+}
+
+.health-bar-flex span {
+    color: white;
 }

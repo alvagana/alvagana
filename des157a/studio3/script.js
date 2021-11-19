@@ -6,6 +6,12 @@
     const game = document.getElementById('game');
     const score = document.getElementById('score');
     const actionArea = document.getElementById('actions');
+    const playerInfo = document.getElementById('player-info');
+    const catImages = document.querySelectorAll('main div img');
+    let health1 = document.getElementById('bar1');
+    let health2 = document.getElementById('bar2');
+    let actionText1 = document.getElementById('action-text-1');
+    let actionText2 = document.getElementById('action-text-2');
 
     var gameData = {
         dice: ['./images/1die.jpg', './images/2die.jpg', './images/3die.jpg', './images/4die.jpg', './images/5die.jpg', './images/6die.jpg'],
@@ -28,28 +34,28 @@
 
         gameControl.innerHTML = '<h2>The Game Has Started</h2>';
         gameControl.innerHTML += '<button id="quit">Wanna Quit?</button>';
+        playerInfo.style.display = "flex";
+        catImages.forEach(function(img) {
+            img.style.display = "block";
+        });
 
         document.getElementById('quit').addEventListener("click", function() {
             location.reload();
         })
-
-        score.innerHTML = `<p>The score is currently <br/><strong>${gameData.players[0]}: ${gameData.score[0]}</strong>
-                 <br/><strong>${gameData.players[1]}:${gameData.score[1]}</strong></p>`;
 
         // setting up turn
         setUpTurn();
     })
 
     function setUpTurn() {
-        game.textContent = `Player 1 has ${gameData.score[0]} health, Player 2 has ${gameData.score[1]} health.`;
-        game.textContent += ` It is currently ${gameData.players[gameData.currentTurn]}'s turn.`;
+        game.textContent = ` It is currently ${gameData.players[gameData.currentTurn]}'s turn.`;
 
         actionArea.innerHTML = '<button id="scratch">Scratch</button><button id="defend">Defend</button>';
 
         // Clicked scratch
         document.getElementById('scratch').addEventListener('click', function() {
             gameData.currentTurn ? gameData.actionB = "scratch" : gameData.actionA = "scratch";
-
+            setTimeout(showActionText(), 2000);
             gameData.currentTurn = gameData.currentTurn ? 0 : 1;
             checkTurnPhase();
             setUpTurn();
@@ -57,10 +63,18 @@
 
         document.getElementById('defend').addEventListener('click', function() {
             gameData.currentTurn ? gameData.actionB = "defend" : gameData.actionA = "defend";
+            setTimeout(showActionText(), 2000);
             gameData.currentTurn = gameData.currentTurn ? 0 : 1;
             checkTurnPhase();
             setUpTurn();
         })
+    }
+
+    function showActionText() {
+        actionText1.textContent = gameData.actionA.toUpperCase();
+        actionText2.textContent = gameData.actionB.toUpperCase();
+        gameData.currentTurn ? actionText2.style.transform = "scaleY(100%) rotate(-5deg)" : actionText1.style.transform = "scaleY(100%) rotate(-5deg)";
+        gameData.currentTurn ? actionText2.style.transition = "transform 0.5s" : actionText1.style.transition = "transform 0.5s";
     }
 
     function checkTurnPhase() {
@@ -80,21 +94,16 @@
         let scoreA = gameData.rollSumA;
         let scoreB = gameData.rollSumB;
 
-        console.log(`${gameData.actionA} ${gameData.actionB}`);
         let winner = getDiceWinner();
-        if (winner != 'TIE') {
-            performAction(winner);
-            score.innerHTML = `<p>The score is currently <br/><strong>${gameData.players[0]}: ${gameData.score[0]}</strong>
-            <br/><strong>${gameData.players[1]}: ${gameData.score[1]}</strong></p>`;
-            gameData.actionA == gameData.actionB && gameData.actionA == "defend" ? 
-            score.innerHTML += `<p>Turn ${gameData.turnCount}: Both defended! Nothing happened!</p>` : 
-            score.innerHTML += `<p>Turn ${gameData.turnCount}: Player ${winner} wins the turn. </p>`;
+        if (gameData.actionA == 'defend' && gameData.actionB == 'defend') {
+            score.innerHTML = `<p>Turn ${gameData.turnCount}: Both defended! Nothing happened!</p>`
         } else {
-            score.innerHTML = `<p>The score is currently <br/><strong>${gameData.players[0]}: ${gameData.score[0]}</strong>
-            <br/><strong>${gameData.players[1]}: ${gameData.score[1]}</strong></p>`;
-            gameData.actionA == gameData.actionB && gameData.actionA == "defend" ? 
-            score.innerHTML += `<p>Turn ${gameData.turnCount}: Both defended! Nothing happened!</p>` : 
-            score.innerHTML += `<p>Turn ${gameData.turnCount}: It was a TIE! </p>`;
+            if (winner != 'TIE') {
+                performAction(winner);
+                score.innerHTML = `<p>Turn ${gameData.turnCount}: Player 1 rolled a ${gameData.rollSumA} and Player 2 rolled a ${gameData.rollSumB}. Player ${winner} wins the turn. </p>`;
+            } else {
+                score.innerHTML = `<p>Turn ${gameData.turnCount}: It was a TIE! </p>`;
+            }
         }
 
         // Turn count increment.
@@ -104,30 +113,47 @@
         checkWinningCondition();
     }
 
+    function updateHealthBar(player) {
+        if (player == 'A') {
+            health1.style.width = `${100 * (Math.max(gameData.score[0], 0)/50)}%`;
+            let healthSpan = document.querySelector('#player-info .health-bar-flex span:first-child');
+            healthSpan.textContent = `HP (${Math.max(0, gameData.score[0])}/50)`;
+        } else {
+            health2.style.width = `${100 * (Math.max(gameData.score[1], 0)/50)}%`;
+            let healthSpan = document.querySelector('#player-info .health-bar-flex span:last-child');
+            healthSpan.textContent = `(${Math.max(0, gameData.score[1])}/50) HP`;
+        }
+    }
+
     function getDiceWinner() {
         let rollA = gameData.rollSumA;
         let rollB = gameData.rollSumB;
        // Determining who wins the turn
         if (rollA == rollB) {
             return 'TIE';
-            //winnerMsg = "It's a draw!!"
         } else if (rollA > rollB) {
             return 'A';
-            //winnerMsg = `Player 1 beats Player 2 this turn with a scratch of ${scoreA}!`;
-            //gameData.score[1] -= scoreA;
         } else {
             return 'B';
-            //winnerMsg = `Player 2 beats Player 1 this turn with a scratch of ${scoreB}!`;
-            //gameData.score[0] -= scoreB;
         }
     }
 
     function performAction(winner) {
+        let score1 = gameData.score[0];
+        let score2 = gameData.score[1];
+        let roll1 = gameData.rollSumA;
+        let roll2 = gameData.rollSumA;
+        let act1 = gameData.actionA;
+        let act2 = gameData.actionA;
+
         if (winner == 'A') {
             gameData.actionA == "scratch" ? gameData.score[1] -= gameData.rollSumA : gameData.score[0] += (gameData.rollSumA - gameData.rollSumB);
         } else if (winner == 'B') {
             gameData.actionB == "scratch" ? gameData.score[0] -= gameData.rollSumB : gameData.score[1] += (gameData.rollSumB - gameData.rollSumA);
         }
+
+        updateHealthBar('A');
+        updateHealthBar('B');
     }
 
 

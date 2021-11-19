@@ -4,20 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game of PIG</title>
+    <title>Game of CAT</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
+
+
     <link href="styles.css" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
 <body>
     <div id="gamecontrol">
-        <h2>Start a Game</h2>
-        <button id="startgame">Randomly Pick the First Player, and Start the Game</button>
+        <h2>Battle Cats</h2>
+        <button id="startgame">BEGIN</button>
     </div>
 
+    <main>
+        <div>
+            <img src="./images/BasicCat.png" alt="cat"></img>
+            <div class="action-text"><span id="action-text-1">SCRATCH</span></div>
+            <div class="action-text"><span id="action-text-2">DEFEND</span></div>
+            <img src="./images/BasicCatReverse.png" alt="cat"></img>
+        </div>
+    </main>
     <div id="game"></div>
-    <div id="actions"></div>
+
+    <!-- Health bar + actions menu -->
+    <div id="player-info">
+        <div class="health-bar-flex">
+            <span>HP (50/50)</span>
+            <div class="health-bar">
+                <div id="bar1" class="bar"></div>
+            </div>
+        </div>
+        
+        <div id="actions"></div>
+        <div class="health-bar-flex">
+            <div class="health-bar">
+                <div id="bar2" class="bar"></div>
+            </div>
+            <span>(50/50) HP</span>
+        </div>
+    </div>
+
     <div id="score"></div>
 </body>
 
