@@ -8,6 +8,7 @@ body {
     height: 768px;
     overflow-y: hidden;
     font-family: Monda;
+    overflow-x: hidden;
 }
 
 #sliding-window {
