@@ -237,3 +237,46 @@ main div img:last-child {
 .health-bar-flex span {
     color: white;
 }
+
+
+/* footer */
+footer, 
+footer nav, 
+footer nav ul {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+}
+
+footer, 
+footer nav {
+    justify-content: center;
+}
+
+footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+footer nav ul {
+    justify-content: space-around;
+    width: 300px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+}
