@@ -16,15 +16,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
 
 
+    <!-- Stylesheet -->
     <link href="styles.css" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
 <body>
+    <!-- The sliding window that holds the special effects text -->
     <div id="sliding-window">
         <span>Player 1:</span><br/>
         <span id="special-text">DOUBLES!</span>
     </div>
+
+    <!-- The container that holds the play, quit, new game button-->
     <div id="gamecontrol">
         <h2>Battle Cats</h2>
         <p>This is game of battle cats! This is a 2 player game where you must defeat the other
@@ -38,9 +42,9 @@
             If you roll 9, well, cats have 9 lives. The cat gods give you +1 to your score! <br/>
         </p>
         <button id="startgame">BEGIN</button>
-        <!-- <button id="testing">testing</button> -->
     </div>
 
+    <!-- The cats and action! -->
     <main>
         <div>
             <img src="./images/BasicCat.png" alt="cat">
@@ -49,6 +53,8 @@
             <img src="./images/BasicCatReverse.png" alt="cat">
         </div>
     </main>
+
+    <!-- Container for describing who's turn it is -->
     <div id="game"></div>
 
     <!-- Health bar + actions menu -->
@@ -69,7 +75,7 @@
         </div>
     </div>
 
-    <div id="score"></div>
+    <!-- footer -->
     <footer>
         <nav>
             <ul>

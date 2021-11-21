@@ -1,10 +1,11 @@
 (function() {
     'use strict';
     console.log("reading js...");
+
+
     const startGame = document.getElementById('startgame');
     const gameControl = document.getElementById('gamecontrol');
     const game = document.getElementById('game');
-    const score = document.getElementById('score');
     const actionArea = document.getElementById('actions');
     const playerInfo = document.getElementById('player-info');
     const catImages = document.querySelectorAll('main div img');
@@ -18,6 +19,8 @@
     let sw = document.querySelector("#sliding-window");
     let stPlayer = document.querySelector("#sliding-window span:first-child");
 
+
+    // Game data
     var gameData = {
         players: ['Player 1', 'Player 2'],
         score: [30, 30],
@@ -39,22 +42,13 @@
         gameEnd: 0
     }
 
-
-    // testing
-    /*
-    let testButton = document.getElementById("testing");
-    testButton.addEventListener("click", function() {
-
-    })
-    */
-
     startGame.addEventListener("click", function() {
-        //gameData.index = Math.round(Math.random());
-        //playAudio("alvinSinging");
-
         gameControl.innerHTML = '<h2>Meoooowwwww!!!!</h2>';
         gameControl.innerHTML += '<button id="quit">Quit?</button>';
         playerInfo.style.display = "flex";
+
+        // Setting each image to loop
+        // Creating the up and down character effect
         catImages.forEach(function(img) {
             img.style.display = "block";
             let down = false;
@@ -71,17 +65,19 @@
             }, 400);
         });
 
+        // Initializing click listener for quit button
         document.getElementById('quit').addEventListener("click", function() {
             location.reload();
         })
 
-        // setting up turn
+        // Setting up turn
         setUpTurn();
     })
 
+    // function that sets up turn
     function setUpTurn() {
+        // Initializing text for who's turn it is + action buttons
         game.textContent = `${gameData.players[gameData.currentTurn]}, what is your move?`;
-        
         actionArea.innerHTML = '<button id="scratch">Scratch</button><button id="defend">Defend</button>';
 
         // Clicked scratch
@@ -94,6 +90,7 @@
             setUpTurn();
         })
 
+        // Clicked defend
         document.getElementById('defend').addEventListener('click', function() {
             gameData.currentTurn ? gameData.actionB = "defend" : gameData.actionA = "defend";
             showActionText();
@@ -104,12 +101,14 @@
         })
     }
 
+    // Function for playing audio
     function playAudio(audio) {
         let meow = new Audio(`./media/${audio}.m4a`);
         meow.volume = 0.05;
         meow.play();
     }
 
+    // Showing the action text
     function showActionText() {
         actionText1.textContent = gameData.actionA.toUpperCase();
         actionText2.textContent = gameData.actionB.toUpperCase();
@@ -117,6 +116,7 @@
         gameData.currentTurn ? actionText2.style.transition = "transform 0.5s" : actionText1.style.transition = "transform 0.5s";
     }
 
+    // Checking who's turn it is
     function checkTurnPhase() {
         if (gameData.turnPhase == 0) {
             gameData.turnPhase += 1;
@@ -126,6 +126,7 @@
         }
     }
 
+    // Showing the roll numbers text
     function showRollText() {
         gameData.bonusRollA == 0 ? rollText1.textContent = `${gameData.rollA1} + ${gameData.rollA2}` : rollText1.textContent = `${gameData.rollA1} + ${gameData.rollA2} + ${gameData.bonusRollA}`;
         gameData.bonusRollB == 0 ? rollText2.textContent = `${gameData.rollB1} + ${gameData.rollB2}` : rollText2.textContent = `${gameData.rollB1} + ${gameData.rollB2} + ${gameData.bonusRollB}`;
@@ -137,13 +138,17 @@
         }, 1000);
     }
 
+    // Executing the turn. Where the action happens!
     function executeTurn() {
+        // rolling the dice first
         rollDice();
         showRollText();
 
+        // getting the sums for both
         let scoreA = gameData.rollSumA;
         let scoreB = gameData.rollSumB;
 
+        // determing dice winner
         let winner = getDiceWinner();
         game.textContent = "ACTION!";
         if (gameData.actionA == 'defend' && gameData.actionB == 'defend') {
@@ -159,7 +164,7 @@
         // Turn count increment.
         gameData.turnCount += 1;
 
-        // Check winning condition
+        // Check winning condition, reset to beginning of a turn phase
         setTimeout(function() {
             rollText1.style.transform = "scale(0)";
             rollText2.style.transform = "scale(0)";
@@ -173,6 +178,7 @@
         }, 2000);
     }
 
+    // rolling dice functionality
     function rollDice() {
         gameData.rollA1 = Math.floor(Math.random() * 6) + 1;
         gameData.rollA2 = Math.floor(Math.random() * 6) + 1;
@@ -184,6 +190,7 @@
         checkSpecial(2);
     }
 
+    // Checking for any special dice rolls (snake eyes, doubles, 9 lives)
     function checkSpecial(player) {
         let roll1;
         let roll2;
@@ -218,6 +225,7 @@
         }
     }
 
+    // Health bar animation 
     function updateHealthBar(player) {
         if (player == 'A') {
             health1.style.width = `${100 * (Math.max(gameData.score[0], 0)/30)}%`;
@@ -230,6 +238,7 @@
         }
     }
 
+    // Determing which cat has the higher roll
     function getDiceWinner() {
         let rollA = gameData.rollSumA;
         let rollB = gameData.rollSumB;
@@ -244,6 +253,7 @@
         }
     }
 
+    // Determining how the health bars change (defend = heal self, scrctach = attack other)
     function performAction(winner) {
         let score1 = gameData.score[0];
         let score2 = gameData.score[1];
@@ -262,6 +272,7 @@
         updateHealthBar('B');
     }
 
+    // Checking winning condition after each turn
     function checkWinningCondition() {
         if (gameData.score[0] <= 0 || gameData.score[1] <= 0) {
             if (gameData.score[1] <= gameData.score[0]) {
