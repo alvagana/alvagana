@@ -19,7 +19,6 @@
     let stPlayer = document.querySelector("#sliding-window span:first-child");
 
     var gameData = {
-        dice: ['./images/1die.jpg', './images/2die.jpg', './images/3die.jpg', './images/4die.jpg', './images/5die.jpg', './images/6die.jpg'],
         players: ['Player 1', 'Player 2'],
         score: [30, 30],
         rollA1: 0,
@@ -106,7 +105,7 @@
     }
 
     function playAudio(audio) {
-        let meow = new Audio(`./audio/${audio}.m4a`);
+        let meow = new Audio(`./media/${audio}.m4a`);
         meow.volume = 0.05;
         meow.play();
     }
@@ -154,9 +153,6 @@
                 setTimeout(function() {
                     performAction(winner)
                 }, 1750);
-                //game.textContent = `Turn ${gameData.turnCount}: Player 1 rolled a ${gameData.rollSumA} and Player 2 rolled a ${gameData.rollSumB}. Player ${winner} wins the turn.`;
-            } else {
-                //game.textContent = `Turn ${gameData.turnCount}: It was a TIE!`;
             }
         }
 
@@ -182,7 +178,6 @@
         gameData.rollA2 = Math.floor(Math.random() * 6) + 1;
         gameData.rollSumA = gameData.rollA1 + gameData.rollA2;
         checkSpecial(1);
-
         gameData.rollB1 = Math.floor(Math.random() * 6) + 1;
         gameData.rollB2 = Math.floor(Math.random() * 6) + 1;
         gameData.rollSumB = gameData.rollB1 + gameData.rollB2;
@@ -196,12 +191,12 @@
         if (player == 1) {
             roll1 = gameData.rollA1;
             roll2 = gameData.rollA2;
+            stPlayer.textContent = `Player 1:`;
         } else {
             roll1 = gameData.rollB1;
             roll2 = gameData.rollB2;
+            stPlayer.textContent = `Player 2:`;
         }
-
-        player == 1 ? stPlayer.textContent = `Player 1:` : stPlayer.textContent = `Player 2:`;
        
         if (roll1 == roll2 && roll1 != 1) {
             st.textContent = "DOUBLES";
@@ -227,7 +222,7 @@
         if (player == 'A') {
             health1.style.width = `${100 * (Math.max(gameData.score[0], 0)/30)}%`;
             let healthSpan = document.querySelector('#player-info .health-bar-flex span:first-child');
-            healthSpan.textContent = `HP (${Math.max(0, gameData.score[0])}/30) HP`;
+            healthSpan.textContent = `HP (${Math.max(0, gameData.score[0])}/30)`;
         } else {
             health2.style.width = `${100 * (Math.max(gameData.score[1], 0)/30)}%`;
             let healthSpan = document.querySelector('#player-info .health-bar-flex span:last-child');
@@ -238,6 +233,7 @@
     function getDiceWinner() {
         let rollA = gameData.rollSumA;
         let rollB = gameData.rollSumB;
+
        // Determining who wins the turn
         if (rollA == rollB) {
             return 'TIE';
@@ -266,15 +262,6 @@
         updateHealthBar('B');
     }
 
-
-    /*
-    function changeDiceImages() {
-        //game.innerHTML = `<p>${gameData.players[gameData.index]}, what's your move?</p>`;
-        game.innerHTML += `<img src="${gameData.dice[gameData.roll1-1]}">`;
-        game.innerHTML += `<img src="${gameData.dice[gameData.roll2-1]}">`;
-    }
-    */
-
     function checkWinningCondition() {
         if (gameData.score[0] <= 0 || gameData.score[1] <= 0) {
             if (gameData.score[1] <= gameData.score[0]) {
@@ -282,7 +269,6 @@
             } else {
                 game.textContent = `Player 2 wins!`;
             }
-            //game.textContent = `Game over!`;
             actionArea.innerHTML = '';
             document.getElementById('quit').innerHTML = "Start a New Game?";
         }
