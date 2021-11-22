@@ -198,26 +198,27 @@
         if (player == 1) {
             roll1 = gameData.rollA1;
             roll2 = gameData.rollA2;
-            stPlayer.textContent = `Player 1:`;
         } else {
             roll1 = gameData.rollB1;
             roll2 = gameData.rollB2;
-            stPlayer.textContent = `Player 2:`;
         }
        
         if (roll1 == roll2 && roll1 != 1) {
+            stPlayer.textContent = `Extra roll!`;
             st.textContent = "DOUBLES";
             sw.style.animation = "slide 2s";
             let rand = Math.floor(Math.random() * 6) + 1;
             player == 1 ? gameData.bonusRollA = rand : gameData.bonusRollB = rand;
             player == 1 ? gameData.rollSumA += gameData.bonusRollA : gameData.rollSumB += gameData.bonusRollB;
         } else if (roll1 == 1 && roll2 == 1) {
+            stPlayer.textContent = `Zeroed out!`;
             st.textContent = "MOUSE!!";
             sw.style.animation = "slide 2s";
             player == 1 ? gameData.rollA1 = 0 : gameData.rollB1 = 0;
             player == 1 ? gameData.rollA2 = 0 : gameData.rollB2 = 0;
             player == 1 ? gameData.rollSumA = 0 : gameData.rollSumB = 0;
         } else if (roll1 + roll2 == 9) {
+            stPlayer.textContent = `Plus one!`;
             st.textContent = "9 LIVES";
             sw.style.animation = "slide 2s";
             player == 1 ? gameData.bonusRollA = 1 : gameData.bonusRollB = 1;
