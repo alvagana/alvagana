@@ -21,6 +21,11 @@
     let st = document.querySelector("#special-text");
     let sw = document.querySelector("#sliding-window");
     let stPlayer = document.querySelector("#sliding-window span:first-child");
+    let mute = document.querySelector("header nav ul li:first-child");
+    let howTo = document.querySelector("header nav ul li:last-child");
+    let howToPlay = document.querySelector("#how-to-play");
+    let readyButton = document.querySelector("#how-to-play button");
+    let muted = false;
 
     cat1.style.right = "0px";
     cat1.style.transition = "right 0.7s";
@@ -49,27 +54,44 @@
         gameEnd: 0
     }
 
+    mute.addEventListener("click", function() {
+        mute.textContent == "Music ON" ? mute.textContent = "Music OFF" : mute.textContent = "Music ON";
+        muted = !muted;
+    })
+
+    howTo.addEventListener("click", function() {
+        howToPlay.style.display = "block";
+    })
+
+    readyButton.addEventListener("click", function() {
+        howToPlay.style.display = "none";
+    })
+
+
     startGame.addEventListener("click", function() {
         gameControl.innerHTML = '<h2>Meoooowwwww!!!!</h2>';
         gameControl.innerHTML += '<button id="quit">Quit?</button>';
         playerInfo.style.display = "flex";
-
+        
         // Setting each image to loop
         // Creating the up and down character effect
         catImages.forEach(function(img) {
-            img.style.display = "block";
-            let down = false;
-            setInterval(function() {
-                if (down) {
-                    img.style.transform = "scaleY(1)";
-                    down = !down;
-                    img.style.top = "0px";
-                } else {
-                    img.style.transform = "scaleY(0.9)";
-                    down = !down;
-                    img.style.top = "12.5px";
-                }
-            }, 400);
+            console.log(img.src)
+            if (img.getAttribute("src") != "./images/Bush.png") {
+                img.style.display = "block";
+                let down = false;
+                setInterval(function() {
+                    if (down) {
+                        img.style.transform = "scaleY(1)";
+                        down = !down;
+                        img.style.top = "0px";
+                    } else {
+                        img.style.transform = "scaleY(0.9)";
+                        down = !down;
+                        img.style.top = "12.5px";
+                    }
+                }, 400);
+            }
         });
 
         // Initializing click listener for quit button
@@ -111,9 +133,11 @@
 
     // Function for playing audio
     function playAudio(audio) {
-        let meow = new Audio(`./media/${audio}.m4a`);
-        meow.volume = 0.05;
-        meow.play();
+        if (!muted) {
+            let meow = new Audio(`./media/${audio}.m4a`);
+            meow.volume = 0.05;
+            meow.play();
+        }
     }
 
     // Showing the action text

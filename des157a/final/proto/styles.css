@@ -4,6 +4,7 @@ body {
     padding: 50px;
     line-height: 1.5em;
     background-image: url('./images/Background2.png');
+    background-repeat: no-repeat;
     width: 1366px;
     height: 768px;
     overflow-y: hidden;
@@ -107,8 +108,13 @@ main div img {
     display: none;
 }
 
-main div img:last-child {
+/*
+main div img:first-child, main div img:last-child {
+    border: 2px solid white;
+    height: 50px;
+    bottom: 0;
 }
+*/
 
 /* Action buttons */
 #startgame {
@@ -280,4 +286,44 @@ a {
     text-decoration: none;
     color: white;
     font-weight: 300;
+}
+
+/* */
+header nav ul {
+    display: flex;
+    width: 220px;
+    justify-content: space-between;
+    color: white;
+}
+
+header nav ul li {
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.5s;
+    border-radius: 5px;
+}
+
+header nav ul li:hover {
+    color: black;
+    background-color: white;
+}
+
+header nav {
+    position: absolute;
+    top: 0;
+    right: 50px;
+}
+
+#how-to-play {
+    display: none;
+    text-align: center;
+    position: absolute;
+    border: 5px solid white;
+    width: 50%;
+    margin-left: 22.5%;
+    padding: 10px;
+    top: 25%;
+    color: white;
+    background-color: #2697FF;
+    z-index: 10;
 }
