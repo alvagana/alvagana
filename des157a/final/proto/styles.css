@@ -1,0 +1,283 @@
+body {
+    font-family: Arial;
+    color: #333;
+    padding: 50px;
+    line-height: 1.5em;
+    background-image: url('./images/Background2.png');
+    width: 1366px;
+    height: 768px;
+    overflow-y: hidden;
+    font-family: Monda;
+    overflow-x: hidden;
+}
+
+#sliding-window {
+    position: absolute;
+    left: -50%;
+    top: 37.5%;
+    color: white;
+    font-size: 64px;
+    transform: rotate(-5deg);
+    text-shadow: 3px 5px #A736FF;
+    /* animation: slide 2s;*/
+}
+
+#sliding-window span:first-child {
+    font-size: 24px;
+    position: relative;
+    bottom: 20px;
+}
+
+@keyframes slide {
+    0% {
+        left: -50%;
+    }
+    20% {
+        left: 41.5%;
+    }
+    60% {
+        left: 41.5%;
+    }
+    100% {
+        left: 150%;
+    }
+}   
+
+button { 
+    padding: 10px;
+}
+
+#quit {
+    opacity: 0.5;
+    cursor: pointer;
+    color: white;
+    background-color: #A736FF;
+    border: none;
+    border-radius: 10px;
+}
+
+#quit:hover {
+    opacity: 1;
+}
+
+
+#score {
+    background-color: aliceblue;
+}
+
+#gamecontrol {
+    opacity: 0.9;
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+}
+
+#gamecontrol p {
+    color: white;
+}
+#gamecontrol h2 {
+    color: white;
+}
+
+#game {
+    background-color:black;
+    border-radius: 10px;
+    opacity: 0.8;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 25%;
+    margin-left: 37.5%;
+}
+
+main div:first-child {
+    display: flex;
+    width: 100%;
+    height: 325px;
+    justify-content: space-between;
+}
+
+main div {
+
+}
+
+main div img {
+    position: relative;
+    display: none;
+}
+
+main div img:last-child {
+}
+
+/* Action buttons */
+#startgame {
+    background-color: #A736FF;
+}
+#actions {
+    text-align: center;
+}
+#actions button, #startgame {
+    width: 80px;
+    height: 80px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    opacity: 0.7;
+}
+
+#actions button:hover, #startgame:hover {
+    opacity: 1;
+}
+
+#actions button:first-child {
+    margin-right: 20px; 
+    background-color: #FF3E3E;
+}
+
+#actions button:last-child {
+    background-color: #0E8BFF;
+}
+
+/* action text */
+.action-text {
+    color: white;
+    width: 400px;
+    position: relative;
+}
+
+.action-text:first-of-type {
+    text-align: left;
+}
+
+.action-text:last-of-type {
+    text-align: right;
+}
+
+.action-text span {
+    font-size: 58px;
+    font-weight: bold;
+}
+
+#action-text-1 {
+    display: inline-block;
+    transform: scale(0);
+    position: relative;
+    top: 15%;
+    text-shadow: 3px 5px #2697FF;
+}
+
+#action-text-2 {
+    display: inline-block;
+    transform: scale(0);
+    position: relative;
+    top: 75%;
+    text-shadow: 3px 5px #FF3E3E;
+}
+
+#roll-1, #roll-2 {
+    font-size: 48px;
+}
+
+#roll-1 {
+    position: relative;
+    top: 25%;
+    display: inline-block;
+    transform: scale(0);
+    text-shadow: 3px 5px #2697FF;
+}
+
+#roll-2 {
+    position: relative;
+    display: inline-block;
+    transform: scale(0);
+    top: 40%;
+    text-shadow: 3px 5px #FF3E3E;
+}
+
+#player-info {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.health-bar {
+    width: 400px;
+    height: 15px;
+    border-radius: 5px;
+    border: 4px solid white;
+}
+
+
+.bar {
+    background-color: #00FF29;
+    width: 100%;
+    height: 100%;
+}
+
+#bar1, #bar2 {
+    transition: 0.6s;
+}
+
+.health-bar-flex {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.health-bar-flex:first-of-type span {
+    margin-right: 10px;
+}
+
+.health-bar-flex:last-of-type span {
+    margin-left: 10px;
+}
+
+.health-bar-flex span {
+    color: white;
+}
+
+
+/* footer */
+footer, 
+footer nav, 
+footer nav ul {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+}
+
+footer, 
+footer nav {
+    justify-content: center;
+}
+
+footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+footer nav ul {
+    justify-content: space-around;
+    width: 300px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+}
