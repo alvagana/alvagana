@@ -11,6 +11,7 @@
     const catImages = document.querySelectorAll('main div img');
     const cat1 = document.getElementById("cat1");
     const cat2 = document.getElementById("cat2");
+    const playerNames = document.querySelectorAll(".names");
 
     let health1 = document.getElementById('bar1');
     let health2 = document.getElementById('bar2');
@@ -25,6 +26,7 @@
     let howTo = document.querySelector("header nav ul li:last-child");
     let howToPlay = document.querySelector("#how-to-play");
     let readyButton = document.querySelector("#how-to-play button");
+    let form = document.querySelector("form");
     let muted = false;
 
     cat1.style.right = "0px";
@@ -68,7 +70,11 @@
     })
 
 
-    startGame.addEventListener("click", function() {
+    startGame.addEventListener("click", function(event) {
+        event.preventDefault();
+        playerNames[0].textContent = form.name1.value;
+        playerNames[1].textContent = form.name2.value;
+        
         gameControl.innerHTML = '<h2>Meoooowwwww!!!!</h2>';
         gameControl.innerHTML += '<button id="quit">Quit?</button>';
         playerInfo.style.display = "flex";
@@ -76,7 +82,6 @@
         // Setting each image to loop
         // Creating the up and down character effect
         catImages.forEach(function(img) {
-            console.log(img.src)
             if (img.getAttribute("src") != "./images/Bush.png") {
                 img.style.display = "block";
                 let down = false;
@@ -99,7 +104,6 @@
             location.reload();
         })
 
-        // Setting up turn
         setUpTurn();
     })
 

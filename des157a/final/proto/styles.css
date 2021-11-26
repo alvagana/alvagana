@@ -1,12 +1,12 @@
 body {
     font-family: Arial;
     color: #333;
-    padding: 50px;
     line-height: 1.5em;
-    background-image: url('./images/Background2.png');
     background-repeat: no-repeat;
-    width: 1366px;
-    height: 768px;
+    background-size: 100% 100%;
+    background-image: url('./images/Background2.png');
+    width: 100vw;
+    height: 100vh;
     overflow-y: hidden;
     font-family: Monda;
     overflow-x: hidden;
@@ -34,10 +34,10 @@ body {
         left: -50%;
     }
     20% {
-        left: 41.5%;
+        left: 40%;
     }
     60% {
-        left: 41.5%;
+        left: 40%;
     }
     100% {
         left: 150%;
@@ -66,12 +66,14 @@ button {
     background-color: aliceblue;
 }
 
+
 #gamecontrol {
     opacity: 0.9;
     border-radius: 10px;
     padding: 10px;
     width: auto;
 }
+
 
 #gamecontrol p {
     color: white;
@@ -94,13 +96,11 @@ button {
 
 main div:first-child {
     display: flex;
-    width: 100%;
+    margin-left: 2.5%;
+    margin-top: 40px;
+    width: 95%;
     height: 325px;
     justify-content: space-between;
-}
-
-main div {
-
 }
 
 main div img {
@@ -209,12 +209,21 @@ main div img:first-child, main div img:last-child {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding-bottom: 80px;
-    padding-top: 10px;
+    padding-bottom: 70px;
+    padding-top: 20px;
     background-color: #BE9A70;
     left: 0;
 }
 
+
+#player-info section {
+    text-align: center;
+    color: white;
+}
+
+.names {
+    font-weight: bold;
+}
 
 .health-bar {
     width: 400px;
@@ -254,7 +263,6 @@ main div img:first-child, main div img:last-child {
 
 /* section */
 section {
-    border: 2px solid white;
 }
 
 /* footer */
@@ -310,6 +318,7 @@ header nav ul {
 
 header nav ul li {
     cursor: pointer;
+    z-index: 2;
     padding: 5px;
     transition: all 0.5s;
     border-radius: 5px;
@@ -377,4 +386,17 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+form label {
+    color: white;
+}
+
+form input {
+    width: 200px;
 }

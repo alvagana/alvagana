@@ -32,6 +32,7 @@
         </nav>
     </header>
 
+    <!-- How to play -->
     <div id="how-to-play">
         <h3><span>BATTLE</span><br/><span>CATS</span></h3>
         <div>
@@ -57,20 +58,16 @@
         <span id="special-text">DOUBLES!</span>
     </div>
 
-    <!-- The container that holds the play, quit, new game button-->
+    <!-- The container that holds the play, quit, new game button -->
     <div id="gamecontrol">
         <h2>Battle Cats</h2>
-        <p>This is game of battle cats! This is a 2 player game where you must defeat the other
-            <br/> player to remain the superior cat of Alvin's household.<br/>
-            You can scratch and challenge your opponent with your sharp claws, <br/>
-            or use them to defend and heal back some health! 
-            <br/>
-            There are three special rules: <br/>
-            If you roll two 1's, the cat will become distracted. Your turn becomes 0. <br/>
-            If you roll doubles, you'll get a THIRD roll! <br/>
-            If you roll 9, well, cats have 9 lives. The cat gods give you +1 to your score! <br/>
-        </p>
-        <button id="startgame">BEGIN</button>
+        <form action="">
+            <label for="name1">Name 1</label>
+            <input type="text" placeholder="Enter your name here..." name="name1" required >
+            <label for="name2">Name 2</label>
+            <input type="text" placeholder="Enter your name here..." name="name2" required >
+            <button id="startgame" type="submit">BEGIN</button>
+        </form>
     </div>
 
     <!-- The cats and action! -->
@@ -88,20 +85,26 @@
 
     <!-- Health bar + actions menu -->
     <div id="player-info">
-        <div class="health-bar-flex">
-            <span>HP (30/30)</span>
-            <div class="health-bar">
-                <div id="bar1" class="bar"></div>
+        <section>
+            <div class="health-bar-flex">
+                <span>HP (30/30)</span>
+                <div class="health-bar">
+                    <div id="bar1" class="bar"></div>
+                </div>
             </div>
-        </div>
+            <span class="names">Alvin</span>
+        </section>
         
         <div id="actions"></div>
-        <div class="health-bar-flex">
-            <div class="health-bar">
-                <div id="bar2" class="bar"></div>
+        <section>
+            <div class="health-bar-flex">
+                <div class="health-bar">
+                    <div id="bar2" class="bar"></div>
+                </div>
+                <span>(30/30) HP</span>
             </div>
-            <span>(30/30) HP</span>
-        </div>
+            <span class="names">Divjeet</span>
+        </section>
     </div>
 
     <!-- footer -->
