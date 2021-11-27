@@ -75,8 +75,7 @@
         playerNames[0].textContent = form.name1.value;
         playerNames[1].textContent = form.name2.value;
         
-        gameControl.innerHTML = '<h2>Meoooowwwww!!!!</h2>';
-        gameControl.innerHTML += '<button id="quit">Quit?</button>';
+        gameControl.style.display = "none";
         playerInfo.style.display = "flex";
         
         // Setting each image to loop
@@ -100,9 +99,11 @@
         });
 
         // Initializing click listener for quit button
+        /*
         document.getElementById('quit').addEventListener("click", function() {
             location.reload();
         })
+        */
 
         setUpTurn();
     })
@@ -112,7 +113,7 @@
         // Initializing text for who's turn it is + action buttons
         game.textContent = `${gameData.players[gameData.currentTurn]}, what is your move?`;
         actionArea.innerHTML = '<button id="scratch">Scratch</button><button id="defend">Defend</button>';
-
+        console.log(actionArea);
         // Clicked scratch
         document.getElementById('scratch').addEventListener('click', function() {
             gameData.currentTurn ? gameData.actionB = "scratch" : gameData.actionA = "scratch";
