@@ -14,12 +14,13 @@ body {
 
 #sliding-window {
     position: absolute;
-    left: -50%;
-    top: 37.5%;
+    left: -52%;
+    top: 42.5%;
     color: white;
-    font-size: 56px;
+    font-size: 50px;
     transform: rotate(-5deg);
     text-shadow: 3px 5px #A736FF;
+    z-index: 10;
     /* animation: slide 2s;*/
 }
 
@@ -71,7 +72,6 @@ button {
     border-radius: 10px;
     padding: 10px;
     width: 50%;
-    border: 10px solid white;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -104,9 +104,9 @@ button {
 
 main div:first-child {
     display: flex;
-    margin-left: 2.5%;
+    /* margin-left: 2.5%; */
     margin-top: 40px;
-    width: 95%;
+    /* width: 95%; */
     height: 325px;
     justify-content: space-between;
     position: relative;
@@ -159,7 +159,7 @@ main div img:first-child, main div img:last-child {
 /* action text */
 .action-text {
     color: white;
-    width: 400px;
+    width: 300px;
     position: relative;
 }
 
@@ -409,4 +409,10 @@ form label {
 
 form input {
     width: 200px;
+}
+
+form button {
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
