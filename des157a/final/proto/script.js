@@ -28,6 +28,9 @@
     let readyButton = document.querySelector("#how-to-play button");
     let form = document.querySelector("form");
     let muted = false;
+    let meow;
+    let bg;
+    let def;
 
     cat1.style.right = "0px";
     cat1.style.transition = "right 0.7s";
@@ -59,6 +62,7 @@
     mute.addEventListener("click", function() {
         mute.textContent == "Music ON" ? mute.textContent = "Music OFF" : mute.textContent = "Music ON";
         muted = !muted;
+        playBackground("Background");
     })
 
     howTo.addEventListener("click", function() {
@@ -105,6 +109,7 @@
         })
         */
 
+        playBackground("Background");
         setUpTurn();
     })
 
@@ -119,7 +124,7 @@
         document.getElementById('scratch').addEventListener('click', function() {
             gameData.currentTurn ? gameData.actionB = "scratch" : gameData.actionA = "scratch";
             showActionText();
-            playAudio("meow");
+            playMeow("meow");
             gameData.currentTurn = gameData.currentTurn ? 0 : 1;
             checkTurnPhase();
             setUpTurn();
@@ -130,7 +135,7 @@
             gameData.currentTurn ? gameData.actionB = "defend" : gameData.actionA = "defend";
             gameData.currentTurn ? cat2.style.left = "130px" : cat1.style.right = "130px";
             showActionText();
-            playAudio("defend");
+            playDefend("defend");
             gameData.currentTurn = gameData.currentTurn ? 0 : 1;
             checkTurnPhase();
             setUpTurn();
@@ -143,7 +148,7 @@
             if (gameData.currentTurn == 0 && event.key == 'a' || gameData.currentTurn == 1 && event.key == 'k') {
                 gameData.currentTurn ? gameData.actionB = "scratch" : gameData.actionA = "scratch";
                 showActionText();
-                playAudio("meow");
+                playMeow("meow");
                 gameData.currentTurn = gameData.currentTurn ? 0 : 1;
                 checkTurnPhase();
                 setUpTurn();
@@ -151,7 +156,7 @@
                 gameData.currentTurn ? gameData.actionB = "defend" : gameData.actionA = "defend";
                 gameData.currentTurn ? cat2.style.left = "130px" : cat1.style.right = "130px";
                 showActionText();
-                playAudio("defend");
+                playDefend("defend");
                 gameData.currentTurn = gameData.currentTurn ? 0 : 1;
                 checkTurnPhase();
                 setUpTurn();
@@ -159,14 +164,38 @@
         })
     }
 
-    // Function for playing audio
-    function playAudio(audio) {
+    // Function for playing bg
+    function playBackground(audio) {
         if (!muted) {
-            let meow = new Audio(`./media/${audio}.m4a`);
+            bg = new Audio(`./media/${audio}.m4a`);
+            bg.volume = 0.05;
+            bg.loop = true;
+            bg.play();
+        } else {
+            bg.pause();
+        }
+    }
+
+    // Function for playing bg
+    function playMeow(audio) {
+        if (!muted) {
+            meow = new Audio(`./media/${audio}.m4a`);
             meow.volume = 0.05;
             meow.play();
         }
     }
+
+    function playDefend(audio) {
+        if (!muted) {
+            def = new Audio(`./media/${audio}.m4a`);
+            def.volume = 0.05;
+            if (audio == "Background") {
+                def.loop = true;
+            }
+            def.play();
+        }
+    }
+    
 
     // Showing the action text
     function showActionText() {
