@@ -114,6 +114,7 @@
         game.textContent = `${gameData.players[gameData.currentTurn]}, what is your move?`;
         actionArea.innerHTML = '<button id="scratch">Scratch</button><button id="defend">Defend</button>';
         console.log(actionArea);
+        setUpKeyboardMoves();
         // Clicked scratch
         document.getElementById('scratch').addEventListener('click', function() {
             gameData.currentTurn ? gameData.actionB = "scratch" : gameData.actionA = "scratch";
@@ -133,6 +134,28 @@
             gameData.currentTurn = gameData.currentTurn ? 0 : 1;
             checkTurnPhase();
             setUpTurn();
+        })
+    }
+
+    function setUpKeyboardMoves() {
+        // Clicked scratch
+        document.addEventListener('keydown', function(event) {
+            if (gameData.currentTurn == 0 && event.key == 'a' || gameData.currentTurn == 1 && event.key == 'k') {
+                gameData.currentTurn ? gameData.actionB = "scratch" : gameData.actionA = "scratch";
+                showActionText();
+                playAudio("meow");
+                gameData.currentTurn = gameData.currentTurn ? 0 : 1;
+                checkTurnPhase();
+                setUpTurn();
+            } else if (gameData.currentTurn == 0 && event.key == 's' || gameData.currentTurn == 1 && event.key == 'l') {
+                gameData.currentTurn ? gameData.actionB = "defend" : gameData.actionA = "defend";
+                gameData.currentTurn ? cat2.style.left = "130px" : cat1.style.right = "130px";
+                showActionText();
+                playAudio("defend");
+                gameData.currentTurn = gameData.currentTurn ? 0 : 1;
+                checkTurnPhase();
+                setUpTurn();
+            }
         })
     }
 
