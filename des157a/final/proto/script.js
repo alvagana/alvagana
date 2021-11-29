@@ -26,6 +26,7 @@
     let howTo = document.querySelector("header nav ul li:last-child");
     let howToPlay = document.querySelector("#how-to-play");
     let readyButton = document.querySelector("#how-to-play button");
+    let quitButton = document.querySelector("header button");
     let form = document.querySelector("form");
     let muted = false;
     let meow;
@@ -73,11 +74,22 @@
         howToPlay.style.display = "none";
     })
 
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+    })
+
+    quitButton.addEventListener("click", function() {
+        location.reload();
+    })
 
     startGame.addEventListener("click", function(event) {
-        event.preventDefault();
+        quitButton.disabled = false;
+
+
         playerNames[0].textContent = form.name1.value;
         playerNames[1].textContent = form.name2.value;
+        gameData.players[0] = form.name1.value;
+        gameData.players[1] = form.name2.value;
         
         gameControl.style.display = "none";
         playerInfo.style.display = "flex";
@@ -116,7 +128,7 @@
     // function that sets up turn
     function setUpTurn() {
         // Initializing text for who's turn it is + action buttons
-        game.textContent = `${gameData.players[gameData.currentTurn]}, what is your move?`;
+        gameData.currentTurn ? game.textContent = `${gameData.players[1]}, what is your move?` : `${gameData.players[0]}, what is your move?`;
         actionArea.innerHTML = '<button id="scratch">Scratch</button><button id="defend">Defend</button>';
         console.log(actionArea);
         setUpKeyboardMoves();
