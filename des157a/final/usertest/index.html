@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of CAT</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Normalize-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Mute btn + how to play -->
+    <header>
+        <nav>
+            <ul>
+                <li>Music ON</li>
+                <li>How to play</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- How to play -->
+    <div id="how-to-play">
+        <h3><span>BATTLE</span><br/><span>CATS</span></h3>
+        <div>
+            <img src="./images/BasicCat.png" alt="small cat">
+            <p>
+                This is a game of battle cats! This is a 2 player game where you must defeat the other
+                player to remain the superior cat of Alvin's household.<br/>
+                You can <strong>scratch</strong> your opponent with your sharp claws, <br/>
+                or use them to <strong>defend</strong> and heal back some health! At each turn, the higher roll wins!
+                <br/>
+                There are three special rules: <br/>
+                - Roll two 1's, the cat becomes distracted. Your roll is ZEROED OUT! <br/>
+                - Roll doubles, you'll get a THIRD roll! <br/>
+                - Roll 9, then the cat gods give you +1 to your score! <br/>
+                
+                Keyboard Controls:<br/>
+                Player 1: A to SCRATCH, S to DEFEND.<br/>
+                Player 2: K to SCRATCH, L to DEFEND.
+            </p>
+        </div>
+        <button>I'M READY!</button>
+    </div>
+
+    <!-- The sliding window that holds the special effects text -->
+    <div id="sliding-window">
+        <span>Player 1:</span><br/>
+        <span id="special-text">DOUBLES!</span>
+    </div>
+
+    <!-- The container that holds the play, quit, new game button -->
+    <div id="gamecontrol">
+        <h3><span>BATTLE</span><br/><span>CATS</span></h3>
+        <form action="">
+            <label for="name1">Player 1</label>
+            <input type="text" placeholder="Enter your name here..." name="name1" required >
+            <label for="name2">Player 2</label>
+            <input type="text" placeholder="Enter your name here..." name="name2" required >
+            <button id="startgame" type="submit">BEGIN</button>
+        </form>
+    </div>
+
+    <!-- The cats and action! -->
+    <main>
+        <div>
+            <img src="./images/BasicCat.png" alt="cat" id="cat1">
+            <div class="action-text"><span id="action-text-1">SCRATCH</span><br/><span id="roll-1">6 + 4</span></div>
+            <div class="action-text"><span id="action-text-2">DEFEND</span><br/><span id="roll-2" >1 + 3</span></div>
+            <img src="./images/BasicCatReverse.png" alt="cat" id="cat2">
+        </div>
+    </main>
+
+    <!-- Container for describing who's turn it is -->
+    <div id="game"></div>
+
+    <!-- Health bar + actions menu -->
+    <div id="player-info">
+        <section>
+            <div class="health-bar-flex">
+                <span>HP (30/30)</span>
+                <div class="health-bar">
+                    <div id="bar1" class="bar"></div>
+                </div>
+            </div>
+            <span class="names">Alvin</span>
+        </section>
+        
+        <div id="actions"></div>
+        <section>
+            <div class="health-bar-flex">
+                <div class="health-bar">
+                    <div id="bar2" class="bar"></div>
+                </div>
+                <span>(30/30) HP</span>
+            </div>
+            <span class="names">Divjeet</span>
+        </section>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <nav>
+            <ul>
+                <li><a target="_blank" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Falvagana.github.io%2Fdes157a%2Fstudio3%2Findex.html">valid html</a></li>
+                <li><a target="_blank" href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Falvagana.github.io%2Fdes157a%2Fstudio3%2Fstyles.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">valid css</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
