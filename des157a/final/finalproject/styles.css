@@ -85,8 +85,9 @@ button {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 400px;
-    margin-top: 12.5%;
+    text-align: center;
+    height: 500px;
+    margin-top: 7.5%;
     margin-left: 25%;
     background: #BE9A70;
     position: relative;
@@ -430,14 +431,30 @@ form {
 }
 form label {
     color: white;
+    text-align: left;
 }
 
 form input {
-    width: 200px;
+    width: 300px;
+    padding: 10px;
 }
 
 form button {
     align-self: center;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+#play-again {
+    display: none;
+    position: relative;
+    top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#how-to-start {
+    border-radius: 5px;
+    cursor: pointer;
 }

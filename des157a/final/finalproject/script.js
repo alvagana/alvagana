@@ -12,6 +12,7 @@
     const cat2 = document.getElementById("cat2");
     const playerNames = document.querySelectorAll(".names");
 
+    let playAgain = document.getElementById("play-again");
     let health1 = document.getElementById('bar1');
     let health2 = document.getElementById('bar2');
     let actionText1 = document.getElementById('action-text-1');
@@ -24,9 +25,11 @@
     let mute = document.querySelector("header nav ul li:first-child");
     let howTo = document.querySelector("header nav ul li:last-child");
     let howToPlay = document.querySelector("#how-to-play");
+    let howToStart = document.querySelector("#how-to-start");
     let readyButton = document.querySelector("#how-to-play button");
     let quitButton = document.querySelector("header button");
     let form = document.querySelector("form");
+    let gameHasStarted = false;
     let muted = false;
     let meow;
     let bg;
@@ -60,12 +63,18 @@
     }
 
     mute.addEventListener("click", function() {
-        mute.textContent == "Music ON" ? mute.textContent = "Music OFF" : mute.textContent = "Music ON";
-        muted = !muted;
-        playBackground("Background");
+        if (gameHasStarted) {
+            mute.textContent == "Music ON" ? mute.textContent = "Music OFF" : mute.textContent = "Music ON";
+            muted = !muted;
+            playBackground("Background");
+        }
     })
 
     howTo.addEventListener("click", function() {
+        howToPlay.style.display = "block";
+    })
+
+    howToStart.addEventListener("click", function() {
         howToPlay.style.display = "block";
     })
 
@@ -83,6 +92,7 @@
 
     startGame.addEventListener("click", function(event) {
         quitButton.disabled = false;
+        gameHasStarted = true;
 
 
         playerNames[0].textContent = form.name1.value;
@@ -331,10 +341,20 @@
     // Health bar animation 
     function updateHealthBar(player) {
         if (player == 'A') {
+            if (gameData.score[0] <= 20 && gameData.score[0] > 10) {
+                health1.style.backgroundColor = "yellow";
+            } else if (gameData.score[0] <= 10) {
+                health1.style.backgroundColor = "#FF3E3E";
+            }
             health1.style.width = `${100 * (Math.max(gameData.score[0], 0)/30)}%`;
             let healthSpan = document.querySelector('#player-info .health-bar-flex span:first-child');
             healthSpan.textContent = `HP (${Math.max(0, gameData.score[0])}/30)`;
         } else {
+            if (gameData.score[1] <= 20 && gameData.score[1] > 10) {
+                health2.style.backgroundColor = "yellow";
+            } else if (gameData.score[1] <= 10) {
+                health2.style.backgroundColor = "#FF3E3E";
+            }
             health2.style.width = `${100 * (Math.max(gameData.score[1], 0)/30)}%`;
             let healthSpan = document.querySelector('#player-info .health-bar-flex span:last-child');
             healthSpan.textContent = `(${Math.max(0, gameData.score[1])}/30) HP`;
@@ -385,7 +405,6 @@
                 sw.textContent = `${gameData.players[1].toUpperCase()} WINS!`;
             }
             actionArea.innerHTML = '';
-            document.getElementById('quit').innerHTML = "Start a New Game?";
         }
     }
 })();
