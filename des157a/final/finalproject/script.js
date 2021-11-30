@@ -12,7 +12,7 @@
     const cat2 = document.getElementById("cat2");
     const playerNames = document.querySelectorAll(".names");
 
-    let playAgain = document.getElementById("play-again");
+    let playAgain = document.querySelector("#play-again");
     let health1 = document.getElementById('bar1');
     let health2 = document.getElementById('bar2');
     let actionText1 = document.getElementById('action-text-1');
@@ -341,7 +341,9 @@
     // Health bar animation 
     function updateHealthBar(player) {
         if (player == 'A') {
-            if (gameData.score[0] <= 20 && gameData.score[0] > 10) {
+            if (gameData.score[0] > 20) {
+                health1.style.backgroundColor = "#00FF29";
+            } else if (gameData.score[0] <= 20 && gameData.score[0] > 10) {
                 health1.style.backgroundColor = "yellow";
             } else if (gameData.score[0] <= 10) {
                 health1.style.backgroundColor = "#FF3E3E";
@@ -350,7 +352,9 @@
             let healthSpan = document.querySelector('#player-info .health-bar-flex span:first-child');
             healthSpan.textContent = `HP (${Math.max(0, gameData.score[0])}/30)`;
         } else {
-            if (gameData.score[1] <= 20 && gameData.score[1] > 10) {
+            if (gameData.score[1] > 20) {
+                health2.style.backgroundColor = "#00FF29";
+            } else if (gameData.score[1] <= 20 && gameData.score[1] > 10) {
                 health2.style.backgroundColor = "yellow";
             } else if (gameData.score[1] <= 10) {
                 health2.style.backgroundColor = "#FF3E3E";
@@ -398,13 +402,19 @@
     // Checking winning condition after each turn
     function checkWinningCondition() {
         if (gameData.score[0] <= 0 || gameData.score[1] <= 0) {
+            sw.style.transform = "rotate(0deg)";
             sw.style.animation = "finish 0.5s forwards";
+            sw.style.textAlign = "center";
             if (gameData.score[1] <= gameData.score[0]) {
                 sw.textContent = `${gameData.players[0].toUpperCase()} WINS!`;
+                cat2.src = "./images/CatLoseReverse.png";
             } else {
+                cat1.src = "./images/CatLose.png";
                 sw.textContent = `${gameData.players[1].toUpperCase()} WINS!`;
             }
+            sw.innerHTML += `<br/><button style="position: relative; cursor: pointer; top: 50px; font-size: 20px; border: none; border-radius: 5px;" onclick="location.reload()">Play again?</button>`
             actionArea.innerHTML = '';
+            game.innerHTML = '';
         }
     }
 })();
