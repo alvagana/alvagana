@@ -122,14 +122,6 @@
                 }, 400);
             }
         });
-
-        // Initializing click listener for quit button
-        /*
-        document.getElementById('quit').addEventListener("click", function() {
-            location.reload();
-        })
-        */
-
         playBackground("Background");
         setUpTurn();
     })
@@ -139,8 +131,8 @@
         // Initializing text for who's turn it is + action buttons
         gameData.currentTurn ? game.textContent = `${gameData.players[1]}, what is your move?` : `${gameData.players[0]}, what is your move?`;
         actionArea.innerHTML = '<button id="scratch">Scratch</button><button id="defend">Defend</button>';
-        console.log(actionArea);
         setUpKeyboardMoves();
+
         // Clicked scratch
         document.getElementById('scratch').addEventListener('click', function() {
             gameData.currentTurn ? gameData.actionB = "scratch" : gameData.actionA = "scratch";
