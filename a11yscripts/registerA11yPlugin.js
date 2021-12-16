@@ -1,5 +1,11 @@
-//import '../styles/index.scss';
-import registerPlugin from './plugin';
+const registerPlugin = () => {
+  CKEDITOR.plugins.addExternal('a11ychecker', './a11ychecker/plugin.js');
+
+  if (CKEDITOR.config.extraPlugins.length === 0)
+    CKEDITOR.config.extraPlugins += 'a11ychecker';
+  else
+    CKEDITOR.config.extraPlugins += ',a11ychecker';
+};
 
 // Adds this plugin to the LibreEditor for later activation
 // this will ensure that `registerPlugin()` be called after
