@@ -54,6 +54,7 @@ body.switch {
     padding: 0 20px;
     background-color: white;
     box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
+    transition: background-color 1s, color 1s;
 }
 
 #switch-container h1 {
@@ -105,6 +106,7 @@ main section {
     background-color: white;
     margin: 0 .25em;
     padding: 1em;
+    transition: background-color 1s;
 }
 
 a {
@@ -116,6 +118,11 @@ ul {
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
+}
+
+main section.switch {
+    background-color: black;
+    opacity: 0.8;
 }
 
 section a {
@@ -133,7 +140,7 @@ section a:hover {
 }
 
 section.switch a {
-    color: #333;
+    color: white;
 }
 
 section.switch a:hover {
@@ -152,18 +159,17 @@ button {
 }
 
 button:hover {
-    background-color: coral;
+    background-color: #00a7c7;
     cursor: pointer;
 }
 
 button.switch {
-    background-color: rgb(235, 235, 235);
-    border-color: #333;
+    background-color: #00a7c7;
 }
 
 button.switch:hover {
-    background-color: #333;
-    color: rgb(235, 235, 235)
+    background-color: #BBDED6;
+    color: white;
 }
 
 #banner {
@@ -205,4 +211,115 @@ button.switch:hover {
 
 h3 {
     color: #00a7c7;
+}
+
+#stars-container {
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    top: -800px;
+}
+
+@keyframes slide-down-stars {
+    0% {
+        top: -800px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+@keyframes slide-up-stars {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: -800px;
+    }
+}
+
+.star {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: #FFFCAE;
+    position: relative;
+    box-shadow: 1px 1px 10px 7px #FFFCAE;
+}
+
+.star.a {
+    top: 200px;
+    left: 200px;
+}
+
+.star.b {
+    top: 100px;
+    left: 70px;
+}
+
+.star.c {
+    top: 60px;
+    left: 250px;
+}
+
+.star.d {
+    top: 120px;
+    left: 360px;
+}
+
+.star.e {
+    top: 120px;
+    left: 1360px;
+}
+
+.star.f {
+    top: 110px;
+    left: 1100px;
+}
+
+.star.g {
+    top: 80px;
+    left: 1234px;
+}
+
+.star.h {
+    top: 20px;
+    left: 1400px;
+}
+
+.star.i {
+    top: 10px;
+    left: 1150px;
+}
+
+.star.j {
+    top: 5px;
+    left: 160px;
+}
+
+.star.k {
+    top: 140px;
+    left: 1280px;
+}
+
+.star.l {
+    top: 150px;
+    left: 50px;
+}
+
+#banner span {
+    position: absolute;
+    bottom: 0;
+    right: 200px;
+    padding: 5px;
+    background-color: white;
+}
+
+#switch-container.switch {
+    background-color: black;
+    opacity: 0.8;
+}
+
+#switch-container.switch h1 {
+    color: white;
 }
