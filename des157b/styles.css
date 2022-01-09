@@ -188,6 +188,19 @@ button.switch:hover {
     box-shadow: 0px 0px 15px 15px #FFFCAE;
     top: 40px;
     left: 40px;
+    animation: spin 3s infinite;
+}
+
+@keyframes spin {
+    0% {
+        box-shadow: 0px 0px 10px 10px #FFFCAE;
+    }
+    50% {
+        box-shadow: 0px 0px 15px 15px #FFFCAE;
+    }
+    100% {
+        box-shadow: 0px 0px 10px 10px #FFFCAE;
+    }
 }
 
 @keyframes slide-down-sun {
@@ -322,4 +335,50 @@ h3 {
 
 #switch-container.switch h1 {
     color: white;
+}
+
+#banner img:nth-child(1) {
+    position: absolute;
+    top: -200px;
+}
+
+#banner img:nth-child(2) {
+    position: absolute;
+    top: 0px;
+}
+
+@keyframes hide-bottom {
+    0% {
+        top: 0px;
+    } 
+    100% {
+        top: 200px;
+    }
+}
+
+@keyframes show-top {
+    0% {
+        top: -200px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+@keyframes hide-top {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: -200px;
+    }
+}
+
+@keyframes show-bottom {
+    0% {
+        top: 200px;
+    }
+    100% {
+        top: 0px;
+    }
 }
