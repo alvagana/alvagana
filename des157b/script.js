@@ -30,6 +30,7 @@
                 section.className = 'switch';
             }
             mode = 'light';
+            button.textContent = "☾ switch ☾";
         } else {
             body.removeAttribute('class');
             banner.removeAttribute('class');
@@ -47,6 +48,7 @@
                 section.removeAttribute('class');
             }
             mode = 'dark'
+            button.textContent = "☼ switch ☼";
         }
     })
 })()

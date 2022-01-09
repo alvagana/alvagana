@@ -329,7 +329,7 @@ h3 {
 }
 
 #switch-container.switch {
-    background-color: black;
+    background-color: transparent;
     opacity: 0.8;
 }
 
