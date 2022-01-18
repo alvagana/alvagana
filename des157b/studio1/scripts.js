@@ -18,6 +18,7 @@
 
 
     video.addEventListener('playing', function() {
+        main.style.display = "none";
         text.style.display = "block";
         video.style.display = "block";
         const intervalID = setInterval(checkTime, 1000);
