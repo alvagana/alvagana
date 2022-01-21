@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio 2</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>How fast can Alvin solve Sudoku puzzles?</h1>
+        <p id="desc">Click on the empty cells to find out!</p>
+        <section>
+        <table>
+                <tr>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td class="empty-cell" id="two"></td> <!-- Sudoku game 2 -->
+                    <td>6</td>
+                    <td>9</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>9</td>
+                    <td class="empty-cell" id="three"></td> <!-- Sudoku game 3 -->
+                </tr>
+                <tr>
+                    <td class="empty-cell" id="one"></td> <!-- Sudoku game 1 -->
+                    <td>9</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>9</td>
+                    <td>5</td> 
+                    <td>3</td>
+                    <td>4</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>7</td>
+                    <td class="empty-cell" id="four"></td> <!-- Sudoku game 4 -->
+                    <td>6</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>9</td>
+                    <td>1</td>
+                    <td class="empty-cell" id="five"></td> <!-- Sudoku game 5 -->
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>7</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td class="empty-cell" id="eight"></td> <!-- Sudoku game 8 -->
+                    <td>7</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td class="empty-cell" id="seven"></td> <!-- Sudoku game 7 -->
+                    <td>1</td>
+                    <td>3</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td class="empty-cell" id="six"></td> <!-- Sudoku game 6 -->
+                    <td>3</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>9</td>
+                </tr>
+        </table>
+        <div id="stats">
+            <!--
+            <p>Alvin completed puzzle #4 in:
+                <br/><span id="game-time"> 5:30</span>
+            </p>.
+            <p>Average time to solve a sudoku puzzle: 
+                <br/><span id="average-time">5:30</span>
+            </p>
+            -->
+        </div>
+    </section>
+    </main>
+</body>
+</html>
