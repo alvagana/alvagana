@@ -37,11 +37,17 @@
             <p>Average time to solve a sudoku puzzle: 
                 <br/><span id="average-time">5:30</span>
             </p>
+            <p>Fun fact: During this puzzle, a golden retriever can run about <span id="miles"></span> miles <span id="dogs"></span>
             `
             statsAreShowing = true;
         }
         let gameTime = document.getElementById('game-time');
         let averageTimeSpan = document.getElementById('average-time');
+        let miles = document.getElementById('miles');
+        let dogs = document.getElementById('dogs');
+        dogs.textContent = "";
+        let mileCount = 0;
+        
 
         timeCount += 1;
         averageTimes.push(data.games[i.toString()]);
@@ -49,6 +55,14 @@
 
         let time = calculateTime(data.games[i.toString()]);
         let avgTime = calculateTime(averageTime);
+        mileCount = Math.floor(time[0] / 2);
+        miles.textContent = mileCount;
+
+        for (let i = 0; i < mileCount; i++) {
+            dogs.textContent += "🐶";
+        }
+
+
 
         gameTime.textContent = `${time[0]}:${time[1]}`;
         averageTimeSpan.textContent = `${avgTime[0]}:${avgTime[1]}`;
