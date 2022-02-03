@@ -42,6 +42,13 @@ section .text {
 
 .polaroid.p-three {
     bottom: 50px;
+    position: relative;
+}
+
+.polaroid.p-three span {
+    position: absolute;
+    left: 0px;
+    top: 100px;
 }
 
 .polaroid .gray {
@@ -62,6 +69,10 @@ section .text {
     top: -10px;
 }
 
+.handwriting {
+    font-family: 'Caveat', handwriting;
+}
+
 .image-section {
     display: flex;
     width: 800px;
@@ -79,6 +90,16 @@ section .text {
 
 section.col {
     flex-direction: column;
+}
+
+#button-cover-text {
+    position: absolute;
+    left: 150px;
+    top: 130px;
+}
+
+#button-page {
+    position: relative;
 }
 
 footer {
@@ -119,4 +140,24 @@ footer {
 
 .peach {
     background-color: #fde4cf;
+}
+
+
+.ml13 {
+    font-size: 3em;
+    letter-spacing: 0.5em;
+    font-weight: 600;
+  }
+  
+  .ml13 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.dont-give-up {
+    text-align: center;
 }
