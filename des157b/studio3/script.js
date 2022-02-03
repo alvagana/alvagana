@@ -28,7 +28,7 @@ function handleKey(event) {
 
 function getRight() {
     if (slideCount == 9) {
-        slideCount = 0;
+        location.reload();
     } else {
         slideCount += 1;
     }
@@ -43,8 +43,12 @@ function checkBaffle() {
         secOneTextBaffle.stop();
     }
 }
-/*
+
 function checkBackground() {
-    if (slideCount >)
+    if (slideCount == 6) {
+        body.style.backgroundColor = "#FFFDD0";
+        body.style.transition = "5s background-color"
+        body.style.transition = "0.5s right, 4s background-color"
+    }
 }
-*/
+
