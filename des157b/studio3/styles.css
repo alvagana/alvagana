@@ -27,6 +27,7 @@ section .text {
     box-shadow: -0.5px 0.5px 5px 0.1px #545454;
     padding: 10px;
     position: relative;
+    background-color: #fcfbfa;
 }
 
 .polaroid.p-one {
@@ -84,6 +85,19 @@ footer {
     position: fixed;
     bottom: 10px;
     left: 42vw;
+    animation: fade-in-out 3s infinite;
+}
+ 
+@keyframes fade-in-out {
+    0% {
+        opacity: 0.45;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0.45;
+    }
 }
 
 /* colors */

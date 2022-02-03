@@ -42,6 +42,10 @@ function checkBaffle() {
     if (slideCount != 0) {
         secOneTextBaffle.stop();
     }
+
+    if (slideCount == 6) {
+        noReveal.stop();
+    }
 }
 
 function checkBackground() {
