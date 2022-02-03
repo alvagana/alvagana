@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 14400px;
+    display: flex;
+    right: 0;
+    position: relative;
+    overflow-x: hidden;
+    transition: right 0.5s;
+    background: #ececec;
+    font-family: 'Courier Prime', Courier, monospace;
+}
+
+section {
+    width: 1440px;
+    height: 100vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+section .text {
+    text-align: center; 
+}
+
+.polaroid {
+    box-shadow: -0.5px 0.5px 5px 0.1px #545454;
+    padding: 10px;
+    position: relative;
+}
+
+.polaroid.p-one {
+    bottom: 50px;
+    transform: rotateZ(-1deg);
+}
+
+.polaroid.p-two {
+    bottom: 50px;
+    transform: rotateZ(2deg);
+}
+
+.polaroid.p-three {
+    bottom: 50px;
+}
+
+.polaroid .gray {
+    width: 100%;
+    height: 50px;
+    background-color: #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.polaroid .tape {
+    width: 60px;
+    height: 40px;
+    opacity: 0.6;
+    position: absolute;
+    left: 42.5%;
+    top: -10px;
+}
+
+.image-section {
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
+}
+
+.grayscale {
+    filter: grayscale(100);
+}
+
+.tape.grayscale {
+    background-color: blue;
+    opacity: 0.4;
+}
+
+section.col {
+    flex-direction: column;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: 40vw;
+}
+
+/* colors */
+.purple {
+    background-color: #cfbaf0;
+}
+
+.blue {
+    background-color: #90dbf4;
+}
+
+.green {
+    background-color: #98f5e1;
+}
+
+.yellow {
+    background-color: #fbf8cc;
+}
+
+.peach {
+    background-color: #fde4cf;
+}
