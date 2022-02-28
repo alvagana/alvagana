@@ -36,16 +36,50 @@ main section {
     width: 50%;
 }
 
+main section div {
+    margin-top: 20px;
+    width: 175px;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.75;
+    color: gray;
+}
+
+main section a {
+    text-decoration: none;
+    color: gray;
+}
+
+main section div:hover {
+    opacity: 1;
+}
+
+
 main section:first-child {
     position: relative;
     animation: fadeUp 1s forwards;
 }
 
+main section:first-child p span.orange {
+    background-color: #FFD580;
+}
+
+main section:first-child p span.green {
+    background-color: #C1E1C1;
+}
+
+main section:first-child p span.yellow {
+    background-color: #FDFD96;
+}
+
+main section:first-child p span.blue {
+    background-color: #AFC9CF;
+}
 main section:last-child {
     text-align: center;
 }
 
-main section:last-child span {
+main section:last-child p {
     position: relative;
     bottom: 110px;
     left: 20px;
@@ -64,6 +98,8 @@ footer {
 h1 {
     line-height: 16px;
 }
+
+
 @keyframes fadeUp {
     0% {
       opacity: 0;
