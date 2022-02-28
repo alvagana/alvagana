@@ -40,7 +40,7 @@ const storyGifList = [
     "",
     "",
     "",
-    "",
+    "./images/people.gif",
     "./images/together.gif",
     "./images/texting.gif",
     "",
@@ -78,7 +78,7 @@ function setGIFStyles(i) {
     }
 
 
-    if (i == 3) {
+    if (i == 3 || i == 7) {
         storyGIF.style.top = "100px";
         storyGIF.style.right = "0px";  
     } else if (i == 8) {
