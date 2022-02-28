@@ -5,6 +5,7 @@ body {
     height: 100vh;
     border: 5px solid black;
     text-align: center;
+    font-family: 'Nanum Brush Script', cursive;
 }
 
 nav {
@@ -21,7 +22,11 @@ nav button {
     width: 200px;
     height: 50px;
     cursor: pointer;
-
+    font-family: 'Nanum Brush Script', cursive;
+    border: none;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 5px;
 }
 
 section {
