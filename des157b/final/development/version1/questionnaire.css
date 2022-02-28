@@ -39,7 +39,6 @@ main {
 }
 
 #note {
-    background-color: #00A5E3;
     width: 300px;
     overflow-wrap: break-word;
     inline-size: 250px;
@@ -75,6 +74,17 @@ main {
     text-align: left;
 }
 
+#name-input {
+    border: none;
+    border-bottom: 2px solid black;
+    font-family: 'Caveat';
+    font-size: 20px;
+}
+
+#name-input:focus, textarea:focus {
+    outline: none;
+}
+
 textarea {
     width: 500px;
     height: 200px;
@@ -84,12 +94,21 @@ textarea {
 }
 
 .tape {
+
+}
+
+.tape-option, .note-option {
     width: 60px;
     height: 30px;
     background-color: pink;
     margin-right: 11px;
     cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    font-size: 15px;
+    text-align: center;
+    line-height: 30px;
 }
+
 
 main button {
     border: none;
@@ -109,41 +128,46 @@ main button:hover {
 
 /* COLORS */
 .tape-color-1 {
-    background-color: #000000;
+    background-color: #E8DFF5;
 }
 
 .tape-color-2 {
-    background-color: #000000;
+    background-color: #FCE1E4;
 }
 
 .tape-color-3 {
-    background-color: #000000;
+    background-color: #FCF4DD;
 }
 
 .tape-color-4 {
-    background-color: #000000;
+    background-color: #DDEDEA;
 }
 
 .tape-color-5 {
-    background-color: #000000;
+    background-color: #DAEAF6;
 }
 
 .note-color-1 {
-    background-color: #000000;
+    background-color: #00A5E3;
 }
 
 .note-color-2 {
-    background-color: #000000;
+    background-color: #8DD7BF;
 }
 
 .note-color-3 {
-    background-color: #000000;
+    background-color: #FF96C5;
 }
 
 .note-color-4 {
-    background-color: #000000;
+    background-color: #FF5768;
 }
 
 .note-color-5 {
-    background-color: #000000;
+    background-color: #FFBF65;
 }
+
+.tape-color-1, .tape-color-2, .tape-color-3, .tape-color-4, .tape-color-5,
+.note-color-1, .note-color-2, .note-color-3, .note-color-4, .note-color-5 {
+    transition: background-color 0.25s;
+} 
