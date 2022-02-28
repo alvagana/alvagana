@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: 'Nanum Brush Script', cursive;
+    overflow: hidden;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    font-size: 24px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    opacity: 0.5;
+    color: gray;
+}
+
+nav ul li a:hover {
+    opacity: 1;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid pink;
+}
+
+/* GIF portion */
+#gif {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+#gif img {
+    position: relative;
+}
+
+/* Text portfion */
+#story-text {
+    font-size: 40px;
+    text-align: center;
+    width: 75%;
+    margin-left: 12.5%;
+    height: 25%;
+}
+
+#story-text span {
+    position: relative;
+}
+
+.fadeUp {
+    animation: fadeUp 1s forwards;
+}
+
+.fadeUp-dummy {
+    animation: fadeUp-dummy 1s forwards;
+}
+
+@keyframes fadeUp {
+    0% {
+      opacity: 0;
+      top: 20px;
+    }
+    100% {
+      opacity: 1;
+      top: 0px;
+    }
+}
+
+@keyframes fadeUp-dummy {
+    0% {
+      opacity: 0;
+      top: 20px;
+    }
+    100% {
+      opacity: 1;
+      top: 0px;
+    }
+}
