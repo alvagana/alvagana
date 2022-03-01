@@ -30,8 +30,9 @@
     <!-- Input pt. 1-->
     <section class="input-1">
       <!-- Post it note and tape -->
-      <div>
-        <div id="note" class="tape-color-1">
+      <div class="note-tape-container">
+        <div id="tape" class="tape-color-1"></div>
+        <div id="note" class="note-color-1">
           <span id="note-content">i'm always rooting for you</span>
           <br/>
           -<span id="name">name</span></div>
@@ -72,8 +73,8 @@
     <!-- Input pt. 2-->
     <section class="input-2">
       <label>message</label>
-      <textarea></textarea>
-      <span>Word count: 0/100</span>
+      <textarea maxlength="200"></textarea>
+      <span>Character count: <span id="char-count">0</span>/200</span>
     </section>
 
     <button>Submit</button>
