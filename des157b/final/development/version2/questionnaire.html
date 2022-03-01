@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questionnaire</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="questionnaire.css" />
+    <script src="questionnaire.js" defer></script>
+</head>
+<body>
+  <nav>
+    <ul>
+        <li><a href="./index.html">go back home</a></li>
+    </ul>
+  </nav>
+  <main>
+
+    <!-- Question-->
+    <h1>What words of encouragement would you give to <br>
+    someone who is currently struggling with mental illness?</h1>
+
+
+    <!-- Input pt. 1-->
+    <section class="input-1">
+      <!-- Post it note and tape -->
+      <div>
+        <div id="note" class="tape-color-1">
+          <span id="note-content">i'm always rooting for you</span>
+          <br/>
+          -<span id="name">name</span></div>
+      </div>
+
+      <!-- Color picker, name form -->
+      <div>
+        <ul>
+          <li>
+            note color
+            <div class="color-picker">
+              <div class="note-option note-color-1"></div>
+              <div class="note-option note-color-2"></div>
+              <div class="note-option note-color-3"></div>
+              <div class="note-option note-color-4"></div>
+              <div class="note-option note-color-5"></div>
+            </div>
+
+          </li>
+          <li>
+            tape color
+            <div class="color-picker">
+              <div class="tape-option tape-color-1"></div>
+              <div class="tape-option tape-color-2"></div>
+              <div class="tape-option tape-color-3"></div>
+              <div class="tape-option tape-color-4"></div>
+              <div class="tape-option tape-color-5"></div>
+            </div>
+          </li>
+          <li>
+            name
+            <input id="name-input" type="text" placeholder="leave blank if anonymous" maxlength="24">
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Input pt. 2-->
+    <section class="input-2">
+      <label>message</label>
+      <textarea></textarea>
+      <span>Word count: 0/100</span>
+    </section>
+
+    <button>Submit</button>
+  </main>
+</body>
+</html>
