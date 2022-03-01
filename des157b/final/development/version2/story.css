@@ -59,6 +59,26 @@ main {
     text-shadow: 2px 2px rgba(0,0,0,0.25);
 }
 
+#tip {
+    text-align: center;
+    width: 100%;
+    font-size: 22px;
+    color: gray;
+    animation: fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 0.75;
+    }
+}
+
 .fadeUp {
     animation: fadeUp 1s forwards;
 }
