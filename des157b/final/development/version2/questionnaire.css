@@ -2,8 +2,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Nanum Brush Script', cursive;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
-
+h1 {
+    text-shadow: 2px 2px rgba(0,0,0,0.1);
+}
 nav {
     position: sticky;
     width: 100%;
@@ -90,7 +94,7 @@ main {
 
 textarea {
     width: 500px;
-    height: 200px;
+    height: 100px;
     font-family: Caveat;
     font-size: 18px;
     border: 2px solid black;
@@ -197,9 +201,15 @@ main button:hover {
 
 /* MASONRY GRID PORTION */
 .grid {
-    width: 100px;
+    width: 900px;
+    margin-bottom: 100px;
 }
 
-.grid-item {
-    width: 300px;
+.bottom-fade {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 30%, rgba(0,0,0,0) 100%);  
 }
