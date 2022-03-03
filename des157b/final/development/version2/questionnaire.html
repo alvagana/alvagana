@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,71 +14,84 @@
 
     <link rel="stylesheet" href="questionnaire.css" />
     <script src="questionnaire.js" defer></script>
+
+    <!-- B4A -->
+    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    <script type="text/javascript" type="text/javascript">
+        Parse.initialize("rCf7j7XS2KWPGNj6kuCORf8r3V3IGj38AeI1UOSk", "hSN6TF0rQePCWGKtlHYLxjgynFNih9dHF2H1DLwI"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+        Parse.serverURL = 'https://parseapi.back4app.com/'
+    </script>
 </head>
+
 <body>
-  <nav>
-    <ul>
-        <li><a href="./index.html">go back home</a></li>
-    </ul>
-  </nav>
-  <main>
-
-    <!-- Question-->
-    <h1>What words of encouragement would you give to <br>
-    someone who is currently struggling with mental illness?</h1>
-
-
-    <!-- Input pt. 1-->
-    <section class="input-1">
-      <!-- Post it note and tape -->
-      <div class="note-tape-container">
-        <div id="tape" class="tape-color-1"></div>
-        <div id="note" class="note-color-1">
-          <span id="note-content">i'm always rooting for you</span>
-          <br/>
-          -<span id="name">name</span></div>
-      </div>
-
-      <!-- Color picker, name form -->
-      <div>
+    <nav>
         <ul>
-          <li>
-            note color
-            <div class="color-picker">
-              <div class="note-option note-color-1"></div>
-              <div class="note-option note-color-2"></div>
-              <div class="note-option note-color-3"></div>
-              <div class="note-option note-color-4"></div>
-              <div class="note-option note-color-5"></div>
-            </div>
-
-          </li>
-          <li>
-            tape color
-            <div class="color-picker">
-              <div class="tape-option tape-color-1"></div>
-              <div class="tape-option tape-color-2"></div>
-              <div class="tape-option tape-color-3"></div>
-              <div class="tape-option tape-color-4"></div>
-              <div class="tape-option tape-color-5"></div>
-            </div>
-          </li>
-          <li>
-            name
-            <input id="name-input" type="text" placeholder="leave blank if anonymous" maxlength="24">
-          </li>
+            <li><a href="./index.html">go back home</a></li>
         </ul>
-      </div>
-    </section>
+    </nav>
+    <main>
+        <form>
+            <!-- Question-->
+            <h1>What words of encouragement would you give to <br> someone who is currently struggling with mental illness?</h1>
+            <div id="thank-you">Thank you for leaving a note :)<br/>
+                <a href="./grid.html">Check out your note</a> <br/> or <br/>
+                <a href="./story.html">Read the story</a>
+            </div>
 
-    <!-- Input pt. 2-->
-    <section class="input-2">
-      <label>message</label>
-      <textarea maxlength="200"></textarea>
-      <span>Character count: <span id="char-count">0</span>/200</span>
-    </section>
+            <!-- Input pt. 1-->
+            <section class="input-1">
+                <!-- Post it note and tape -->
+                <div class="note-tape-container">
+                    <div id="tape" class="tape-color-1"></div>
+                    <div id="note" class="note-color-1">
+                        <span id="note-content">i'm always rooting for you</span>
+                        <br/> -
+                        <span id="name">name</span></div>
+                </div>
 
-    <button>Submit</button>
-  </main>
+                <!-- Color picker, name form -->
+                <div>
+                    <ul>
+                        <li>
+                            note color
+                            <div class="color-picker">
+                                <div class="note-option note-color-1"></div>
+                                <div class="note-option note-color-2"></div>
+                                <div class="note-option note-color-3"></div>
+                                <div class="note-option note-color-4"></div>
+                                <div class="note-option note-color-5"></div>
+                            </div>
+
+                        </li>
+                        <li>
+                            tape color
+                            <div class="color-picker">
+                                <div class="tape-option tape-color-1"></div>
+                                <div class="tape-option tape-color-2"></div>
+                                <div class="tape-option tape-color-3"></div>
+                                <div class="tape-option tape-color-4"></div>
+                                <div class="tape-option tape-color-5"></div>
+                            </div>
+                        </li>
+                        <li>
+                            name
+                            <input id="name-input" type="text" placeholder="leave blank if anonymous" maxlength="24">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Input pt. 2-->
+            <section class="input-2">
+                <label>message</label>
+                <textarea maxlength="200" required></textarea>
+                <span>Character count: <span id="char-count">0</span>/200</span>
+            </section>
+
+            <button id="submit">Submit</button>
+
+        </form>
+    </main>
 </body>
+
 </html>

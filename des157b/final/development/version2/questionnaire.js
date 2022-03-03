@@ -4,11 +4,20 @@ let nameField = document.querySelector("#name");
 let nameInput = document.querySelector("#name-input")
 let noteOptions = document.querySelectorAll(".note-option")
 let tapeOptions = document.querySelectorAll(".tape-option")
+let submitBtn = document.querySelector("#submit");
+let thankYou = document.querySelector("#thank-you")
 let note = document.querySelector("#note");
 let tape = document.querySelector("#tape")
+let form = document.querySelector("form")
+let formValues = {
+    "name": "",
+    "content": "",
+    "noteColor": "note-color-1",
+    "tapeColor": "tape-color-1"
+}
 let charCount = document.querySelector("#char-count")
-let noteColors = ["#E8DFF5", "#FCE1E4", "#FCF4DD", "#DDEDEA", "#DAEAF6"];
-let tapeColors = ["#00A5E3", "#8DD7BF", "#FF96C5", "#FF5768", "#FFBF65"];
+let tapeColors = ["#E8DFF5", "#FCE1E4", "#FCF4DD", "#DDEDEA", "#DAEAF6"];
+let noteColors = ["#E8DFF5", "#8DD7BF", "#FF96C5", "#FF5768", "#FFBF65"];
 
 textArea.addEventListener("input", function() {
     noteContent.textContent = textArea.value;
@@ -24,9 +33,10 @@ noteOptions.forEach((noteOption, index) => {
     noteOption.addEventListener("click", function() {
         note.removeAttribute("class");
         note.classList.add(`note-color-${index+1}`)
+        formValues.noteColor = `note-color-${index+1}`;
     })
-    
-    noteOption.addEventListener("mouseover", function () {
+
+    noteOption.addEventListener("mouseover", function() {
         noteOption.textContent = noteColors[index]
     })
 
@@ -40,13 +50,54 @@ tapeOptions.forEach((tapeOption, index) => {
     tapeOption.addEventListener("click", function() {
         tape.removeAttribute("class");
         tape.classList.add(`tape-color-${index+1}`)
+        formValues.tapeColor = `tape-color-${index+1}`;
+
     })
 
-    tapeOption.addEventListener("mouseover", function () {
+    tapeOption.addEventListener("mouseover", function() {
         tapeOption.textContent = tapeColors[index]
     })
 
-   tapeOption.addEventListener("mouseout", function() {
+    tapeOption.addEventListener("mouseout", function() {
         tapeOption.textContent = "";
     })
 })
+
+// Form submit
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    if (textArea.value != "") {
+        let f = formValues;
+        f.name = nameInput.value;
+        f.content = textArea.value;
+        console.log(f.name, f.content, f.noteColor, f.tapeColor);
+        console.log("submitted form")
+
+
+
+        addNote(f.name, f.content, f.noteColor, f.tapeColor);
+    }
+})
+
+async function addnote(n, c, nc, tc) {
+    const newNoteData = new Parse.Object('notes');
+    newNoteData.set('name', n);
+    newNoteData.set('content', c);
+    newNoteData.set('noteColor', nc);
+    newNoteData.set('tapeColor', tc);
+    try {
+        const result = await newNoteData.save();
+        submitBtn.style.opacity = 1;
+        submitBtn.style.color = "black";
+        submitBtn.textContent = "Submitted!"
+        submitBtn.style.cursor = "default"
+        submitBtn.disabled = true;
+    } catch(error) {
+        console.log(error);
+        submitBtn.style.opacity = 1;
+        submitBtn.style.color = "black";
+        submitBtn.textContent = "Error, please refresh :("
+        submitBtn.style.cursor = "default"
+        submitBtn.disabled = true;
+    }
+}

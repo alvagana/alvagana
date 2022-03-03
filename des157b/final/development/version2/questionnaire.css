@@ -5,9 +5,11 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
 h1 {
-    text-shadow: 2px 2px rgba(0,0,0,0.1);
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
 }
+
 nav {
     position: sticky;
     width: 100%;
@@ -19,7 +21,9 @@ nav {
     padding-left: 0;
     text-align: left;
 }
-nav ul li, ul li {
+
+nav ul li,
+ul li {
     list-style-type: none;
 }
 
@@ -50,7 +54,7 @@ main {
     height: auto;
     padding: 10px;
     text-align: left;
-    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-right: 10px;
     font-size: 24px;
     font-family: 'Caveat';
@@ -62,6 +66,7 @@ main {
     height: 300px;
     width: auto;
 }
+
 .input-1 div ul li {
     font-size: 36px;
     display: flex;
@@ -79,6 +84,11 @@ main {
     display: flex;
     flex-direction: column;
     text-align: left;
+    align-items: center;
+}
+
+.input-2 label {
+    text-align: left;
 }
 
 #name-input {
@@ -88,7 +98,8 @@ main {
     font-size: 20px;
 }
 
-#name-input:focus, textarea:focus {
+#name-input:focus,
+textarea:focus {
     outline: none;
 }
 
@@ -98,6 +109,7 @@ textarea {
     font-family: Caveat;
     font-size: 18px;
     border: 2px solid black;
+    resize: none;
 }
 
 .note-tape-container {
@@ -113,18 +125,18 @@ textarea {
     left: 100px;
 }
 
-.tape-option, .note-option {
+.tape-option,
+.note-option {
     width: 60px;
     height: 30px;
     background-color: pink;
     margin-right: 11px;
     cursor: pointer;
-    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     font-size: 15px;
     text-align: center;
     line-height: 30px;
 }
-
 
 main button {
     border: none;
@@ -142,7 +154,28 @@ main button:hover {
     opacity: 1;
 }
 
+#thank-you {
+    background-color: #8DD7BF;
+    height: auto;
+    display: none;
+    text-align: center;
+    font-size: 36px;
+}
+
+#thank-you a {
+    text-decoration: none;
+    color: black;
+    opacity: 0.7;
+    font-size: 24px;
+}
+
+#thank-you a:hover {
+    opacity: 1;
+}
+
+
 /* COLORS */
+
 .tape-color-1 {
     background-color: #E8DFF5;
 }
@@ -183,23 +216,33 @@ main button:hover {
     background-color: #FFBF65;
 }
 
-.tape-color-1, .tape-color-2, .tape-color-3, .tape-color-4, .tape-color-5,
-.note-color-1, .note-color-2, .note-color-3, .note-color-4, .note-color-5 {
+.tape-color-1,
+.tape-color-2,
+.tape-color-3,
+.tape-color-4,
+.tape-color-5,
+.note-color-1,
+.note-color-2,
+.note-color-3,
+.note-color-4,
+.note-color-5 {
     transition: background-color 0.25s;
-} 
+}
 
 @keyframes fadeUp {
     0% {
-      opacity: 0;
-      top: 20px;
+        opacity: 0;
+        top: 20px;
     }
     100% {
-      opacity: 1;
-      top: 0px;
+        opacity: 1;
+        top: 0px;
     }
 }
 
+
 /* MASONRY GRID PORTION */
+
 .grid {
     width: 900px;
     margin-bottom: 100px;
@@ -210,6 +253,6 @@ main button:hover {
     height: 100px;
     position: fixed;
     bottom: 0;
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 30%, rgba(0,0,0,0) 100%);  
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 30%, rgba(0, 0, 0, 0) 100%);
 }
