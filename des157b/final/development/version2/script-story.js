@@ -1,5 +1,6 @@
 const storyText = document.querySelector("#story-text span")
 const storyGIF = document.querySelector("#gif img")
+var grid = document.querySelector('.grid');
 const storyTextList = [
     "",
     `In 2019, there were ovr 19 million Asian-Americans living in the U.S.
@@ -84,10 +85,65 @@ function setGIFStyles(i) {
     } else if (i == 8) {
         storyGIF.style.top = "100px";
         storyGIF.style.right = "20px";   
+    } else if (i == 10) {
+        storyGIF.style.display = "none"
+        grid.style.display = "block";
+        displayNotes();
+    } else if (i == 11) {
+        storyGIF.style.display = "block";
+        grid.style.display = "none";  
     } else {
         storyGIF.style.top = "0px";
         storyGIF.style.right = "0px";   
     }
 
 
+}
+
+/* grid */
+var msnry = new Masonry(grid, {
+    // options...
+    itemSelector: '.grid-item',
+    columnWidth: 300
+});
+
+/* b4a */
+async function displayNotes() {
+    const notes = Parse.Object.extend('notes');
+    const query = new Parse.Query(notes);
+    const results = await query.ascending('name').find();
+    console.log("Results: ", results);
+    maxLength = Math.min(results.length, 10);
+    for (let i = 0; i <  maxLength; i++) {
+        createNote(results[i].attributes);
+    }
+}
+
+/* TODO: make sure colors passed in = class names */
+function createNoteElement(n, c, nc, tc) {
+    let note = document.createElement("div")
+    note.innerHTML = `
+    <div class="grid-item note-tape-container">
+      <div id="tape" class=${tc}></div>
+      <div id="note" class="${nc}">
+          <span id="note-content">${c}</span>
+          <br/> -
+          <span id="name">${n}</span>
+      </div>
+    </div>`
+    return note
+
+}
+
+function createNote(o) {
+    let name = o.name;
+    let content = o.content;
+    let noteColor = o.noteColor;
+    let tapeColor = o.tapeColor;
+    let temp = createNoteElement(name, content, noteColor, tapeColor)
+
+    // In order to add a note, we have to append the child to grid and then append to masonry
+    grid.appendChild(temp)
+    msnry.prepended([temp])
+    msnry.layout()
 }

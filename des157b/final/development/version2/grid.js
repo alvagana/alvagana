@@ -10,8 +10,11 @@ async function displayNotes() {
     const notes = Parse.Object.extend('notes');
     const query = new Parse.Query(notes);
     const results = await query.ascending('name').find();
-    console.log("Results: ", results[0].attributes);
-    createNote(results[0].attributes);
+    console.log("Results: ", results);
+    maxLength = Math.min(results.length, 20);
+    for (let i = 0; i <  maxLength; i++) {
+        createNote(results[i].attributes);
+    }
 }
 
 /* TODO: make sure colors passed in = class names */
@@ -35,7 +38,7 @@ function createNote(o) {
     let content = o.content;
     let noteColor = o.noteColor;
     let tapeColor = o.tapeColor;
-    let temp = createNoteElement("alvin agana", "des157b is a cool class", "note-color-1", "tape-color-3")
+    let temp = createNoteElement(name, content, noteColor, tapeColor)
 
     // In order to add a note, we have to append the child to grid and then append to masonry
     grid.appendChild(temp)

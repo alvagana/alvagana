@@ -16,8 +16,8 @@ let formValues = {
     "tapeColor": "tape-color-1"
 }
 let charCount = document.querySelector("#char-count")
-let tapeColors = ["#E8DFF5", "#FCE1E4", "#FCF4DD", "#DDEDEA", "#DAEAF6"];
-let noteColors = ["#E8DFF5", "#8DD7BF", "#FF96C5", "#FF5768", "#FFBF65"];
+let noteColors = ["Blue", "Green", "Pink", "Red", "Orange"];
+let tapeColors = ["Mauve", "Light Pink", "Yellow", "Green", "Sky Blue"];
 
 textArea.addEventListener("input", function() {
     noteContent.textContent = textArea.value;
@@ -63,23 +63,7 @@ tapeOptions.forEach((tapeOption, index) => {
     })
 })
 
-// Form submit
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    if (textArea.value != "") {
-        let f = formValues;
-        f.name = nameInput.value;
-        f.content = textArea.value;
-        console.log(f.name, f.content, f.noteColor, f.tapeColor);
-        console.log("submitted form")
-
-
-
-        addNote(f.name, f.content, f.noteColor, f.tapeColor);
-    }
-})
-
-async function addnote(n, c, nc, tc) {
+async function addNote(n, c, nc, tc) {
     const newNoteData = new Parse.Object('notes');
     newNoteData.set('name', n);
     newNoteData.set('content', c);
@@ -92,6 +76,7 @@ async function addnote(n, c, nc, tc) {
         submitBtn.textContent = "Submitted!"
         submitBtn.style.cursor = "default"
         submitBtn.disabled = true;
+        thankYou.style.display = "block";
     } catch(error) {
         console.log(error);
         submitBtn.style.opacity = 1;
@@ -101,3 +86,16 @@ async function addnote(n, c, nc, tc) {
         submitBtn.disabled = true;
     }
 }
+
+// Form submit
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    if (textArea.value != "") {
+        let f = formValues;
+        f.name = nameInput.value;
+        f.content = textArea.value;
+        console.log(f.name, f.content, f.noteColor, f.tapeColor);
+        console.log("submitted form")
+        addNote(f.name, f.content, f.noteColor, f.tapeColor);
+    }
+})
