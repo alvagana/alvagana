@@ -1,3 +1,5 @@
+var grid=document.querySelector(".grid"),msnry=new Masonry(grid,{itemSelector:".grid-item",columnWidth:300});async function displayNotes(){const e=Parse.Object.extend("notes"),n=new Parse.Query(e),t=await n.ascending("name").find();console.log("Results: ",t),maxLength=Math.min(t.length,20);for(let e=0;e<maxLength;e++)createNote(t[e].attributes)}function createNoteElement(e,n,t,a){let i=document.createElement("div");return i.innerHTML=`\n    <div class="grid-item note-tape-container">\n      <div id="tape" class=${a}></div>\n      <div id="note" class="${t}">\n          <span id="note-content">${n}</span>\n          <br/> -\n          <span id="name">${e}</span>\n      </div>\n    </div>`,i}function createNote(e){let n=createNoteElement(e.name,e.content,e.noteColor,e.tapeColor);grid.appendChild(n),msnry.prepended([n]),msnry.layout()}displayNotes();
+/*
 var grid = document.querySelector('.grid');
 var msnry = new Masonry(grid, {
     // options...
@@ -5,7 +7,7 @@ var msnry = new Masonry(grid, {
     columnWidth: 300
 });
 
-/* b4a */
+// b4a
 async function displayNotes() {
     const notes = Parse.Object.extend('notes');
     const query = new Parse.Query(notes);
@@ -17,7 +19,6 @@ async function displayNotes() {
     }
 }
 
-/* TODO: make sure colors passed in = class names */
 function createNoteElement(n, c, nc, tc) {
     let note = document.createElement("div")
     note.innerHTML = `
@@ -47,3 +48,4 @@ function createNote(o) {
 }
 
 displayNotes();
+*/

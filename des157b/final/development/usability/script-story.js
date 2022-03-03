@@ -1,3 +1,5 @@
+const storyText=document.querySelector("#story-text span"),storyGIF=document.querySelector("#gif img");var grid=document.querySelector(".grid");const storyTextList=["","In 2019, there were ovr 19 million Asian-Americans living in the U.S.\n    Within that population, roughly 15% reported that they have experienced\n    mental illness.","Unfortunately, that’s only what’s reported. \n    In fact, Asian-Americans are 3x less likely to seek treatment \n    or help than other racial groups in the U.S.","I want you to meet Angela.\n    Angela is a highschool student w/ good grades and many friends.\n    Everyone sees her as a happy, hand-working individual.","But actually, Angela struggles everyday to fit this image that everyone sees of her.\n    Instead, she’s tired, stressed, and she doesn’t know who to talk to.","At home, when Angela tries to talk to them about her feelings. They tell her to\n    “be grateful” of her life and not to “think about it too much” because their\n    generation has gone through “worse”.","Secretly, Angela’s parents also hide their feelings. They do not what to be\n    labeled as “weak” to others. They do not want to bring shame to the family and think\n    that they have failed.","This situation is more common than you think. Regardless of your race\n    and where you come from, maybe you’re like Angela. Maybe you know someone who is\n    facing a similar struggle. And so, I want you to know a few things. ","First, I want you to know..that mental illness is bigger than you think. Like way bigger!\n    We can’t erase the stigma over night..but we can take a step forward today.","I encouraghe you to push for schools to teach about mental health.  Maybe you need to have that difficult \n    conversation wth your parents. Check up on your friends, and most importantly,\n    check in with yourself. Because slowly and together, we can erase the stigma.","Lastly, I want you to know that you are never alone. Apparently, there are \n    some people that want you to share something with you..","Thank you for listening <3"],storyGifList=["","./images/map.gif","./images/stats.gif","./images/angela.gif","","","","./images/people.gif","./images/together.gif","./images/texting.gif","",""];let slideCount=0;function handleKey(e){32==e.keyCode&&slideCount<11&&getNextSlide(slideCount+=1)}function getNextSlide(e){storyGIF.setAttribute("src",storyGifList[e]),storyText.textContent=storyTextList[e],setGIFStyles(e)}function setGIFStyles(e){storyText.classList.contains("fadeUp")?(storyText.classList.remove("fadeUp"),storyText.classList.add("fadeUp-dummy")):(storyText.classList.remove("fadeUp-dummy"),storyText.classList.add("fadeUp")),3==e||7==e?(storyGIF.style.top="100px",storyGIF.style.right="0px"):8==e?(storyGIF.style.top="100px",storyGIF.style.right="20px"):10==e?(storyGIF.style.display="none",grid.style.display="block",displayNotes()):11==e?(storyGIF.style.display="block",grid.style.display="none"):(storyGIF.style.top="0px",storyGIF.style.right="0px")}document.addEventListener("keydown",handleKey);var msnry=new Masonry(grid,{itemSelector:".grid-item",columnWidth:300});async function displayNotes(){const e=Parse.Object.extend("notes"),t=new Parse.Query(e),n=await t.ascending("name").find();console.log("Results: ",n),maxLength=Math.min(n.length,10);for(let e=0;e<maxLength;e++)createNote(n[e].attributes)}function createNoteElement(e,t,n,o){let s=document.createElement("div");return s.innerHTML=`\n    <div class="grid-item note-tape-container">\n      <div id="tape" class=${o}></div>\n      <div id="note" class="${n}">\n          <span id="note-content">${t}</span>\n          <br/> -\n          <span id="name">${e}</span>\n      </div>\n    </div>`,s}function createNote(e){let t=createNoteElement(e.name,e.content,e.noteColor,e.tapeColor);grid.appendChild(t),msnry.prepended([t]),msnry.layout()}
+/*
 const storyText = document.querySelector("#story-text span")
 const storyGIF = document.querySelector("#gif img")
 var grid = document.querySelector('.grid');
@@ -100,14 +102,14 @@ function setGIFStyles(i) {
 
 }
 
-/* grid */
+// grid
 var msnry = new Masonry(grid, {
     // options...
     itemSelector: '.grid-item',
     columnWidth: 300
 });
 
-/* b4a */
+// b4a
 async function displayNotes() {
     const notes = Parse.Object.extend('notes');
     const query = new Parse.Query(notes);
@@ -119,7 +121,6 @@ async function displayNotes() {
     }
 }
 
-/* TODO: make sure colors passed in = class names */
 function createNoteElement(n, c, nc, tc) {
     let note = document.createElement("div")
     note.innerHTML = `
@@ -147,3 +148,4 @@ function createNote(o) {
     msnry.prepended([temp])
     msnry.layout()
 }
+*/
