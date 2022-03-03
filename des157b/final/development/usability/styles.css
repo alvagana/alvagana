@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 36px;
+}
+
+main p {
+    font-size: 24px;
+    font-family: 'Comic Sans';
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+nav button {
+    width: 200px;
+    height: 70px;
+    cursor: pointer;
+    font-family: 'Nanum Brush Script', cursive;
+    border: none;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+section {
+    border: 5px solid black;
+    width:  100vw;
+    height: 100vh;
+}
