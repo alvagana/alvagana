@@ -92,7 +92,11 @@ form.addEventListener("submit", function(event) {
     event.preventDefault();
     if (textArea.value != "") {
         let f = formValues;
-        f.name = nameInput.value;
+        if (nameInput.value != "") {
+            f.name = nameInput.value;
+        } else {
+            f.name = "anonymous"
+        }
         f.content = textArea.value;
         console.log(f.name, f.content, f.noteColor, f.tapeColor);
         console.log("submitted form")
