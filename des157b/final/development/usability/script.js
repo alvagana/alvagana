@@ -1,5 +1,5 @@
 const body = document.querySelector("body");
-
+/*
 alert(`
 Hi! Thank you so much for participating in my user test.
 Here are a few simple tasks for you to do:
@@ -14,6 +14,7 @@ Here are a few simple tasks for you to do:
 You can view these instructions anytime by navigating back to the home page by clicking "go back home" on the top left corner.
 `
 )
+*/
 /* 
 SLIDING WINDOW METHOD
 
