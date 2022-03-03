@@ -1,0 +1,254 @@
+body{margin:0;padding:0;font-family:'Nanum Brush Script',cursive;overflow-y:scroll;overflow-x:hidden}h1{text-shadow:2px 2px rgba(0,0,0,.1)}nav{position:sticky;width:100%;height:30px;font-size:24px}.input-1 ul{padding-left:0;text-align:left}nav ul li,ul li{list-style-type:none}nav ul li a{text-decoration:none;opacity:.5;color:gray}nav ul li a:hover{opacity:1}main{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;animation:fadeUp 1s forwards}#note{width:300px;overflow-wrap:break-word;inline-size:250px;height:auto;padding:10px;text-align:left;box-shadow:0 4px 4px 0 rgba(0,0,0,.25);margin-right:10px;font-size:24px;font-family:Caveat}.input-1{display:flex;align-items:center;height:300px;width:auto}.input-1 div ul li{font-size:36px;display:flex;flex-direction:column;margin-top:20px}.color-picker{display:flex;flex-direction:row}.input-2{margin-top:10px;display:flex;flex-direction:column;text-align:left;align-items:center}.input-2 label{text-align:left}#name-input{border:none;border-bottom:2px solid #000;font-family:Caveat;font-size:20px}#name-input:focus,textarea:focus{outline:0}textarea{width:500px;height:100px;font-family:Caveat;font-size:18px;border:2px solid #000;resize:none}.note-tape-container{position:relative}#tape{width:60px;height:20px;position:relative;opacity:.9;top:10px;left:100px}.note-option,.tape-option{width:60px;height:30px;background-color:pink;margin-right:11px;cursor:pointer;box-shadow:0 4px 4px 0 rgba(0,0,0,.25);font-size:15px;text-align:center;line-height:30px}main button{border:none;background:#fff;border:solid #000;border-radius:5px;font-family:'Nanum Brush Script',cursive;font-size:30px;padding:5px;cursor:pointer;opacity:.6}main button:hover{opacity:1}#thank-you{background-color:#8dd7bf;height:auto;display:none;text-align:center;font-size:36px;padding:10px;width:50%;margin-left:25%;box-shadow:0 4px 4px 0 rgba(0,0,0,.25)}#thank-you a{text-decoration:none;color:#000;opacity:.7;font-size:24px}#thank-you a:hover{opacity:1}.tape-color-1{background-color:#e8dff5}.tape-color-2{background-color:#fce1e4}.tape-color-3{background-color:#fcf4dd}.tape-color-4{background-color:#ddedea}.tape-color-5{background-color:#daeaf6}.note-color-1{background-color:#00a5e3}.note-color-2{background-color:#8dd7bf}.note-color-3{background-color:#ff96c5}.note-color-4{background-color:#ff5768}.note-color-5{background-color:#ffbf65}.note-color-1,.note-color-2,.note-color-3,.note-color-4,.note-color-5,.tape-color-1,.tape-color-2,.tape-color-3,.tape-color-4,.tape-color-5{transition:background-color .25s}@keyframes fadeUp{0%{opacity:0;top:20px}100%{opacity:1;top:0}}.grid{width:900px;margin-bottom:100px}.bottom-fade{width:100%;height:100px;position:fixed;bottom:0;background:#fff;background:linear-gradient(0deg,#fff 30%,rgba(0,0,0,0) 100%)}
+/*
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Brush Script', cursive;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+h1 {
+    text-shadow: 2px 2px rgba(0,0,0,0.1);
+}
+nav {
+    position: sticky;
+    width: 100%;
+    height: 30px;
+    font-size: 24px;
+}
+
+.input-1 ul {
+    padding-left: 0;
+    text-align: left;
+}
+nav ul li, ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    opacity: 0.5;
+    color: gray;
+}
+
+nav ul li a:hover {
+    opacity: 1;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    animation: fadeUp 1s forwards;
+}
+
+#note {
+    width: 300px;
+    overflow-wrap: break-word;
+    inline-size: 250px;
+    height: auto;
+    padding: 10px;
+    text-align: left;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    margin-right: 10px;
+    font-size: 24px;
+    font-family: 'Caveat';
+}
+
+.input-1 {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    width: auto;
+}
+
+.input-1 div ul li {
+    font-size: 36px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.color-picker {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-2 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+}
+
+.input-2 label {
+    text-align: left;
+}
+
+#name-input {
+    border: none;
+    border-bottom: 2px solid black;
+    font-family: 'Caveat';
+    font-size: 20px;
+}
+
+#name-input:focus, textarea:focus {
+    outline: none;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+    font-family: Caveat;
+    font-size: 18px;
+    border: 2px solid black;
+    resize: none;
+}
+
+.note-tape-container {
+    position: relative;
+}
+
+#tape {
+    width: 60px;
+    height: 20px;
+    position: relative;
+    opacity: 0.9;
+    top: 10px;
+    left: 100px;
+}
+
+.tape-option, .note-option {
+    width: 60px;
+    height: 30px;
+    background-color: pink;
+    margin-right: 11px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    font-size: 15px;
+    text-align: center;
+    line-height: 30px;
+}
+
+
+main button {
+    border: none;
+    background: white;
+    border: solid black;
+    border-radius: 5px;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 30px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+main button:hover {
+    opacity: 1;
+}
+
+#thank-you {
+    background-color: #8DD7BF;
+    height: auto;
+    display: none;
+    text-align: center;
+    font-size: 36px;
+    padding: 10px;
+    width: 50%;
+    margin-left: 25%;
+    box-shadow: 0 4px 4px 0px rgba(0,0,0,0.25);
+}
+
+#thank-you a {
+    text-decoration: none;
+    color: black;
+    opacity: 0.7;
+    font-size: 24px;
+}
+
+#thank-you a:hover {
+    opacity: 1;
+}
+*/
+
+/* COLORS */
+/*
+.tape-color-1 {
+    background-color: #E8DFF5;
+}
+
+.tape-color-2 {
+    background-color: #FCE1E4;
+}
+
+.tape-color-3 {
+    background-color: #FCF4DD;
+}
+
+.tape-color-4 {
+    background-color: #DDEDEA;
+}
+
+.tape-color-5 {
+    background-color: #DAEAF6;
+}
+
+.note-color-1 {
+    background-color: #00A5E3;
+}
+
+.note-color-2 {
+    background-color: #8DD7BF;
+}
+
+.note-color-3 {
+    background-color: #FF96C5;
+}
+
+.note-color-4 {
+    background-color: #FF5768;
+}
+
+.note-color-5 {
+    background-color: #FFBF65;
+}
+
+.tape-color-1, .tape-color-2, .tape-color-3, .tape-color-4, .tape-color-5,
+.note-color-1, .note-color-2, .note-color-3, .note-color-4, .note-color-5 {
+    transition: background-color 0.25s;
+} 
+
+@keyframes fadeUp {
+    0% {
+      opacity: 0;
+      top: 20px;
+    }
+    100% {
+      opacity: 1;
+      top: 0px;
+    }
+}
+*/
+
+/* MASONRY GRID PORTION */
+/*
+.grid {
+    width: 900px;
+    margin-bottom: 100px;
+}
+
+.bottom-fade {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 30%, rgba(0,0,0,0) 100%);  
+}
+
+*/
