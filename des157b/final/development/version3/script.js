@@ -1,3 +1,5 @@
+const body=document.querySelector("body");let aboutSpan=document.getElementById("about-span"),readStorySpan=document.getElementById("read-story-span"),writeANoteSpan=document.getElementById("write-a-note-span"),viewNotesSpan=document.getElementById("view-notes-span"),about=document.querySelector("#about"),viewNotes=document.querySelector("#view-notes"),writeNote=document.querySelector("#write-a-note"),readStory=document.querySelector("#read-story"),aboutCircle=new CircleType(aboutSpan).radius(80),readStoryCircle=new CircleType(readStorySpan).radius(300);about.addEventListener("click",function(){window.location.replace("./learn.html")}),about.addEventListener("mouseover",function(){aboutSpan.style.fontSize="29px"}),about.addEventListener("mouseout",function(){aboutSpan.style.fontSize="24px"}),viewNotes.addEventListener("click",function(){window.location.replace("./grid.html")}),viewNotes.addEventListener("mouseover",function(){viewNotesSpan.style.fontSize="29px"}),viewNotes.addEventListener("mouseout",function(){viewNotesSpan.style.fontSize="24px"}),readStory.addEventListener("click",function(){window.location.replace("./story.html")}),readStory.addEventListener("mouseover",function(){readStorySpan.style.fontSize="29px"}),readStory.addEventListener("mouseout",function(){readStorySpan.style.fontSize="24px"}),writeNote.addEventListener("click",function(){window.location.replace("./questionnaire.html")}),writeNote.addEventListener("mouseover",function(){writeANoteSpan.style.fontSize="29px"}),writeNote.addEventListener("mouseout",function(){writeANoteSpan.style.fontSize="24px"});
+/*
 const body = document.querySelector("body");
 let aboutSpan = document.getElementById('about-span');
 let readStorySpan = document.getElementById('read-story-span');
@@ -65,6 +67,7 @@ writeNote.addEventListener("mouseover", function() {
 writeNote.addEventListener("mouseout", function() {
     writeANoteSpan.style.fontSize = "24px";
 })
+*/
 /*
 alert(`
 Hi! Thank you so much for participating in my user test.
