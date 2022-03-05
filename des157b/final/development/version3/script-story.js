@@ -43,7 +43,7 @@ const storyGifList = [
     "./images/stats.gif",
     "./images/angela.gif",
     "./images/reality.gif",
-    "",
+    "./images/parent1.gif",
     "",
     "./images/people.gif",
     "./images/together.gif",
@@ -84,7 +84,7 @@ function setGIFStyles(i) {
     }
 
 
-    if (i == 3 || i == 7) {
+    if (i == 3 || i == 7 || i == 4 || i == 5) {
         storyGIF.style.top = "100px";
         storyGIF.style.right = "0px";
     } else if (i == 8) {
