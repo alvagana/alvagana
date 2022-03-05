@@ -1,4 +1,70 @@
 const body = document.querySelector("body");
+let aboutSpan = document.getElementById('about-span');
+let readStorySpan = document.getElementById('read-story-span');
+let writeANoteSpan = document.getElementById('write-a-note-span');
+let viewNotesSpan = document.getElementById('view-notes-span');
+
+let about = document.querySelector("#about");
+let viewNotes = document.querySelector("#view-notes");
+let writeNote = document.querySelector("#write-a-note");
+let readStory = document.querySelector("#read-story");
+let aboutCircle = new CircleType(aboutSpan)
+  .radius(80);
+
+let readStoryCircle = new CircleType(readStorySpan)
+  .radius(300);
+
+// about
+about.addEventListener("click", function() {
+    window.location.replace("./learn.html")
+}) 
+
+about.addEventListener("mouseover", function() {
+    aboutSpan.style.fontSize = "29px";
+})
+
+about.addEventListener("mouseout", function() {
+    aboutSpan.style.fontSize = "24px";
+})
+
+// view notes
+viewNotes.addEventListener("click", function() {
+    window.location.replace("./grid.html")
+}) 
+
+viewNotes.addEventListener("mouseover", function() {
+    viewNotesSpan.style.fontSize = "29px";
+})
+
+viewNotes.addEventListener("mouseout", function() {
+    viewNotesSpan.style.fontSize = "24px";
+})
+
+// read story
+readStory.addEventListener("click", function() {
+    window.location.replace("./story.html")
+}) 
+
+readStory.addEventListener("mouseover", function() {
+    readStorySpan.style.fontSize = "29px";
+})
+
+readStory.addEventListener("mouseout", function() {
+    readStorySpan.style.fontSize = "24px";
+})
+
+// read story
+writeNote.addEventListener("click", function() {
+    window.location.replace("./questionnaire.html")
+}) 
+
+writeNote.addEventListener("mouseover", function() {
+    writeANoteSpan.style.fontSize = "29px";
+})
+
+writeNote.addEventListener("mouseout", function() {
+    writeANoteSpan.style.fontSize = "24px";
+})
 /*
 alert(`
 Hi! Thank you so much for participating in my user test.
