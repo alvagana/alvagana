@@ -20,6 +20,32 @@ main {
     background-repeat: no-repeat;
 }
 
+ul {
+    width: 600px;
+    display: flex;
+    padding-left: 0;
+    justify-content: space-around;
+}
+
+ul li {
+    list-style-type: none;
+    display: inline;
+}
+a {
+    text-decoration: none;
+    color: gray;
+    opacity: 0.7;
+}
+a:hover {
+    opacity: 1;
+}
+#body-flex {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    animation: fadeUp 1s forwards;
+}
+
 
 #about {
     position: absolute;

@@ -11,11 +11,17 @@ nav {
     font-size: 24px;
 }
 
-nav ul li {
+nav ul li, ul li {
     list-style-type: none;
 }
+#thank-you-list {
+    padding-left: 0;
+}
+a:hover {
+    opacity: 1;
+}
 
-nav ul li a {
+nav ul li a, ul li a {
     text-decoration: none;
     opacity: 0.5;
     color: gray;
@@ -44,6 +50,7 @@ main {
 
 #gif img {
     position: relative;
+    top: 100px;
 }
 
 

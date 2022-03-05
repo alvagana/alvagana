@@ -12,6 +12,16 @@ h1 {
     text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.1);
 }
 
+a {
+    color: gray;
+    font-size: 22px;
+    text-decoration: none;
+    opacity: 0.7;
+}
+a:hover {
+    opacity: 1;
+}
+
 nav {
     position: sticky;
     width: 100%;

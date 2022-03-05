@@ -38,7 +38,7 @@ const storyTextList = [
 ]
 
 const storyGifList = [
-    "",
+    "./imaegs/me.gif",
     "./images/map.gif",
     "./images/stats.gif",
     "./images/angela.gif",
@@ -99,6 +99,12 @@ function setGIFStyles(i) {
         grid.style.display = "none";
         tip.textContent = "";
         storyTextContainer.style.height = "100%";
+        storyText.innerHTML += 
+        `<ul id="thank-you-list">
+            <li><a href="./index.html">go back home</a></li>
+            <li><a href="./grid.html">view notes</a></li>
+            <li><a href="./questionnaire.html">leave a note</a></li>
+        </ul>`
     } else {
         storyGIF.style.top = "0px";
         storyGIF.style.right = "0px";
