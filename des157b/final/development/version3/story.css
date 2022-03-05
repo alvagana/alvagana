@@ -58,6 +58,7 @@ main {
 
 .grid {
     display: none;
+    position: relative;
 }
 
 .grid {

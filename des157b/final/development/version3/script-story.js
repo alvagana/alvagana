@@ -44,7 +44,7 @@ const storyGifList = [
     "./images/angela.gif",
     "./images/reality.gif",
     "./images/parent1.gif",
-    "",
+    "./images/parent2.gif",
     "./images/people.gif",
     "./images/together.gif",
     "./images/texting.gif",
@@ -84,7 +84,7 @@ function setGIFStyles(i) {
     }
 
 
-    if (i == 3 || i == 7 || i == 4 || i == 5) {
+    if (i == 3 || i == 7 || i == 4 || i == 5 || i == 6) {
         storyGIF.style.top = "100px";
         storyGIF.style.right = "0px";
     } else if (i == 8) {
@@ -93,6 +93,7 @@ function setGIFStyles(i) {
     } else if (i == 10) {
         storyGIF.style.display = "none"
         grid.style.display = "block";
+        grid.style.top = "30px";
         displayNotes();
     } else if (i == 11) {
         storyGIF.style.display = "none";
