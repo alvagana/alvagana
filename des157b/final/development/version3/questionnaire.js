@@ -17,7 +17,7 @@ let formValues = {
 }
 let charCount = document.querySelector("#char-count")
 let noteColors = ["Blue", "Green", "Pink", "Red", "Orange"];
-let tapeColors = ["Mauve", "Light Pink", "Yellow", "Green", "Sky Blue"];
+let tapeColors = ["Mauve", "Peach", "Yellow", "Green", "Sky Blue"];
 
 textArea.addEventListener("input", function() {
     noteContent.textContent = textArea.value;
