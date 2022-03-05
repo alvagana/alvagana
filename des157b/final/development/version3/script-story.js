@@ -42,7 +42,7 @@ const storyGifList = [
     "./images/map.gif",
     "./images/stats.gif",
     "./images/angela.gif",
-    "",
+    "./images/reality.gif",
     "",
     "",
     "./images/people.gif",
