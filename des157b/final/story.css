@@ -1,0 +1,203 @@
+body{margin:0;font-family:'Nanum Brush Script',cursive;overflow:hidden}nav{position:fixed;width:100%;height:30px;font-size:24px}nav ul li,ul li{list-style-type:none}#thank-you-list{padding-left:0}a:hover{opacity:1}nav ul li a,ul li a{text-decoration:none;opacity:.5;color:gray}nav ul li a:hover{opacity:1}main{height:100vh;width:100vw;display:flex;flex-direction:column}#gif{height:70%;display:flex;justify-content:center;align-items:center}#gif img{position:relative;top:100px}.grid{display:none;position:relative}.grid{width:900px;margin-bottom:100px}.tape-color-1{background-color:#e8dff5}.tape-color-2{background-color:#fce1e4}.tape-color-3{background-color:#fcf4dd}.tape-color-4{background-color:#ddedea}.tape-color-5{background-color:#daeaf6}.note-color-1{background-color:#00a5e3}.note-color-2{background-color:#8dd7bf}.note-color-3{background-color:#ff96c5}.note-color-4{background-color:#ff5768}.note-color-5{background-color:#ffbf65}.note-tape-container{position:relative}#tape{width:60px;height:20px;position:relative;opacity:.9;top:10px;left:100px}#note{width:300px;overflow-wrap:break-word;inline-size:250px;height:auto;padding:10px;text-align:left;box-shadow:0 4px 4px 0 rgba(0,0,0,.25);margin-right:10px;font-size:24px;font-family:Caveat}#story-text{font-size:40px;text-align:center;width:75%;margin-left:12.5%;height:25%}#story-text span{position:relative;text-shadow:.5px .5px rgba(0,0,0,.25)}#tip{text-align:center;width:100%;font-size:22px;color:gray;animation:fadeInOut 3s infinite}@keyframes fadeInOut{0%{opacity:.75}50%{opacity:.25}100%{opacity:.75}}.fadeUp{animation:fadeUp 1s forwards}.fadeUp-dummy{animation:fadeUp-dummy 1s forwards}@keyframes fadeUp{0%{opacity:0;top:20px}100%{opacity:1;top:0}}@keyframes fadeUp-dummy{0%{opacity:0;top:20px}100%{opacity:1;top:0}}
+/*
+body {
+    margin: 0;
+    font-family: 'Nanum Brush Script', cursive;
+    overflow: hidden;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    font-size: 24px;
+}
+
+nav ul li, ul li {
+    list-style-type: none;
+}
+#thank-you-list {
+    padding-left: 0;
+}
+a:hover {
+    opacity: 1;
+}
+
+nav ul li a, ul li a {
+    text-decoration: none;
+    opacity: 0.5;
+    color: gray;
+}
+
+nav ul li a:hover {
+    opacity: 1;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+*/
+
+/* GIF portion */
+/*
+#gif {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gif img {
+    position: relative;
+    top: 100px;
+}
+*/
+
+
+/* grid container */
+/*
+.grid {
+    display: none;
+    position: relative;
+}
+
+.grid {
+    width: 900px;
+    margin-bottom: 100px;
+}
+
+.tape-color-1 {
+    background-color: #E8DFF5;
+}
+
+.tape-color-2 {
+    background-color: #FCE1E4;
+}
+
+.tape-color-3 {
+    background-color: #FCF4DD;
+}
+
+.tape-color-4 {
+    background-color: #DDEDEA;
+}
+
+.tape-color-5 {
+    background-color: #DAEAF6;
+}
+
+.note-color-1 {
+    background-color: #00A5E3;
+}
+
+.note-color-2 {
+    background-color: #8DD7BF;
+}
+
+.note-color-3 {
+    background-color: #FF96C5;
+}
+
+.note-color-4 {
+    background-color: #FF5768;
+}
+
+.note-color-5 {
+    background-color: #FFBF65;
+}
+
+.note-tape-container {
+    position: relative;
+}
+
+#tape {
+    width: 60px;
+    height: 20px;
+    position: relative;
+    opacity: 0.9;
+    top: 10px;
+    left: 100px;
+}
+
+#note {
+    width: 300px;
+    overflow-wrap: break-word;
+    inline-size: 250px;
+    height: auto;
+    padding: 10px;
+    text-align: left;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-right: 10px;
+    font-size: 24px;
+    font-family: 'Caveat';
+}
+*/
+
+/* Text portfion */
+/*
+#story-text {
+    font-size: 40px;
+    text-align: center;
+    width: 75%;
+    margin-left: 12.5%;
+    height: 25%;
+}
+
+#story-text span {
+    position: relative;
+    text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.25);
+}
+
+#tip {
+    text-align: center;
+    width: 100%;
+    font-size: 22px;
+    color: gray;
+    animation: fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 0.75;
+    }
+}
+
+.fadeUp {
+    animation: fadeUp 1s forwards;
+}
+
+.fadeUp-dummy {
+    animation: fadeUp-dummy 1s forwards;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        top: 20px;
+    }
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+@keyframes fadeUp-dummy {
+    0% {
+        opacity: 0;
+        top: 20px;
+    }
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+*/

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>masonry</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="questionnaire.css" />
+    <script src="grid.js" defer></script>
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+
+
+    <!-- B4A -->
+    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    <script type="text/javascript">
+        Parse.initialize("rCf7j7XS2KWPGNj6kuCORf8r3V3IGj38AeI1UOSk", "hSN6TF0rQePCWGKtlHYLxjgynFNih9dHF2H1DLwI"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+        Parse.serverURL = 'https://parseapi.back4app.com/'
+    </script>
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="./index.html">go back home</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <!-- Question-->
+        <h1>What words of encouragement would you give to <br> someone who is currently struggling with mental illness?</h1>
+        <a href="./questionnaire.html">I want to leave a note!</a>
+
+        <div class="grid">
+            <!--
+        <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-1"></div>
+            <div id="note" class="note-color-2">
+              <span id="note-content">Doggo ipsum corgo. Borkdrive h*ck pats mlem, puggorino woofer. I am bekom fat pats. Boof the neighborhood pupper very good spot lotsa pats fluffer adorable doggo, doing me a frighten clouds long bois.</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-3"></div>
+            <div id="note" class="note-color-4">
+              <span id="note-content">Doggo ipsum corgo. Borkdrive h*ck pats mlem, puggorino woofer. I am bekom fat pats.</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-5"></div>
+            <div id="note" class="note-color-1">
+              <span id="note-content">i'm always rooting for you</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-2"></div>
+            <div id="note" class="note-color-3">
+              <span id="note-content"> Boof the neighborhood pupper very good spot lotsa pats fluffer adorable doggo, doing me a frighten clouds long bois.</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-5"></div>
+            <div id="note" class="note-color-5">
+              <span id="note-content">i'm always rooting for you i'm always rooting for you dogggooooo</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-1"></div>
+            <div id="note" class="note-color-3">
+              <span id="note-content">i'm always rooting for you</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-2"></div>
+            <div id="note" class="note-color-2">
+              <span id="note-content">Doggo ipsum corgo. Borkdrive h*ck pats mlem, puggorino woofer. I am bekom fat pats.</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-3"></div>
+            <div id="note" class="note-color-1">
+              <span id="note-content">i'm always rooting for you i'm always rooting for you i'm always rooting for you i'm always rooting for you</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-3"></div>
+            <div id="note" class="note-color-2">
+              <span id="note-content">i'm always rooting for you i'm always rooting for you i'm always rooting for you i'm always rooting for you doggo!!!!</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-4"></div>
+            <div id="note" class="note-color-3">
+              <span id="note-content">i'm always rooting for you</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-2"></div>
+            <div id="note" class="note-color-4">
+              <span id="note-content">i'm always rooting for you i'm always rooting for you</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-4"></div>
+            <div id="note" class="note-color-2">
+              <span id="note-content">i'm always rooting for you</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+          <div class="grid-item note-tape-container">
+            <div id="tape" class="tape-color-5"></div>
+            <div id="note" class="note-color-1">
+              <span id="note-content"> Boof the neighborhood pupper very good spot lotsa pats fluffer adorable doggo, doing me a frighten clouds long bois.</span>
+              <br/>
+              -<span id="name">name</span></div>
+          </div>
+        -->
+        </div>
+
+    </main>
+    <div class="bottom-fade"></div>
+</body>
+
+</html>
