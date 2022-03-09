@@ -51,7 +51,7 @@ const storyTextList = [
     Everyone sees her as a happy, hand-working individual.`,
     `But actually, Angela struggles everyday to fit this image that everyone sees of her.
     Instead, she’s tired, stressed, and she doesn’t know who to talk to.`,
-    `At home, when Angela tries to talk to them about her feelings. They tell her to
+    `At home, when Angela tries to talk to her parents about her feelings, they tell her to
     “be grateful” of her life and not to “think about it too much” because their
     generation has gone through “worse”.`,
     `Secretly, Angela’s parents also hide their feelings. They do not what to be
